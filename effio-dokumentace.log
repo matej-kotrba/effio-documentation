@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.12.23)  25 DEC 2023 14:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.12.23)  25 DEC 2023 18:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -595,25 +595,33 @@ LaTeX Info: Redefining \textsw on input line 47.
 LaTeX Info: Redefining \textssc on input line 48.
 LaTeX Info: Redefining \textulc on input line 49.
 ))
+(C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count307
+\float@exts=\toks32
+\float@box=\box56
+\@float@everytoks=\toks33
+\@floatcapt=\box57
+)
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count307
-\lst@gtempboxa=\box56
-\lst@token=\toks32
-\lst@length=\count308
+\lst@mode=\count308
+\lst@gtempboxa=\box58
+\lst@token=\toks34
+\lst@length=\count309
 \lst@currlwidth=\dimen198
-\lst@column=\count309
-\lst@pos=\count310
+\lst@column=\count310
+\lst@pos=\count311
 \lst@lostspace=\dimen199
 \lst@width=\dimen256
-\lst@newlines=\count311
-\lst@lineno=\count312
+\lst@newlines=\count312
+\lst@lineno=\count313
 \lst@maxwidth=\dimen257
 
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count313
-\lst@skipnumbers=\count314
-\lst@framebox=\box57
+\c@lstnumber=\count314
+\lst@skipnumbers=\count315
+\lst@framebox=\box59
 )
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2023/02/27 1.9 listings configuration
@@ -629,15 +637,15 @@ Package: expl3 2023-08-29 L3 programming layer (loader)
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdfte
 x.def
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count315
-\l__pdf_internal_box=\box58
+\l__color_backend_stack_int=\count316
+\l__pdf_internal_box=\box60
 ))
 Package: l3keys2e 2023-08-29 LaTeX2e option processing using LaTeX3 keys
 )
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count316
-\l__lipsum_a_int=\count317
-\l__lipsum_b_int=\count318
+\g__lipsum_par_int=\count317
+\l__lipsum_a_int=\count318
+\l__lipsum_b_int=\count319
 
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex))
 (effio-dokumentace.aux)
@@ -699,17 +707,17 @@ LaTeX Font Info:    ... okay on input line 176.
 
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count319
+\scratchcounter=\count320
 \scratchdimen=\dimen258
-\scratchbox=\box59
-\nofMPsegments=\count320
-\nofMParguments=\count321
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count322
+\scratchbox=\box61
+\nofMPsegments=\count321
+\nofMParguments=\count322
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count323
 \MPscratchDim=\dimen259
-\MPnumerator=\count323
-\makeMPintoPDFobject=\count324
-\everyMPtoPDFconversion=\toks34
+\MPnumerator=\count324
+\makeMPintoPDFobject=\count325
+\everyMPtoPDFconversion=\toks36
 )
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-bas
 e.sty
@@ -721,6 +729,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -743,21 +752,21 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-\c@mv@tabular=\count325
-\c@mv@boldtabular=\count326
-\c@lstlisting=\count327
+\c@mv@tabular=\count326
+\c@mv@boldtabular=\count327
+\c@lstlisting=\count328
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 18
 6.
 
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
-<image/logo-skoly.png, id=72, 356.2911pt x 137.5539pt>
+<image/logo-skoly.png, id=96, 356.2911pt x 137.5539pt>
 File: image/logo-skoly.png Graphic file (type png)
 <use image/logo-skoly.png>
 Package pdftex.def Info: image/logo-skoly.png  used on input line 190.
 (pdftex.def)             Requested size: 273.14923pt x 105.45715pt.
-<image/effio.png, id=74, 1927.2pt x 1084.05pt>
+<image/effio.png, id=98, 1927.2pt x 1084.05pt>
 File: image/effio.png Graphic file (type png)
 <use image/effio.png>
 Package pdftex.def Info: image/effio.png  used on input line 208.
@@ -828,115 +837,79 @@ g> <./image/effio.png>] [2
 
 ]
 Kapitola 1.
-<image/effio-architecture-simple.png, id=125, 2403.98125pt x 1209.51875pt>
+<image/effio-architecture-simple.png, id=156, 2403.98125pt x 1209.51875pt>
 File: image/effio-architecture-simple.png Graphic file (type png)
 <use image/effio-architecture-simple.png>
 Package pdftex.def Info: image/effio-architecture-simple.png  used on input lin
 e 330.
 (pdftex.def)             Requested size: 455.24411pt x 229.03581pt.
-
-LaTeX Warning: Citation `effio-architecture' on page 3 undefined on input line 
-331.
-
-
-LaTeX Warning: Citation `effio-architecture' on page 3 undefined on input line 
-331.
-
-File: image/effio-architecture-simple.png Graphic file (type png)
-<use image/effio-architecture-simple.png>
-Package pdftex.def Info: image/effio-architecture-simple.png  used on input lin
-e 336.
-(pdftex.def)             Requested size: 455.24411pt x 229.03581pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [3
 
- <./image/effio-architecture-simple.png>] [4] [5]
+ <./image/effio-architecture-simple.png>] [4]
 Kapitola 2.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
-57.
+53.
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 357--358
+Underfull \hbox (badness 10000) in paragraph at lines 353--354
 
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
-61.
+57.
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-[6
+[5
 
-] [7] [8] [9] [10] [11]
+]
+Overfull \hbox (5.84903pt too wide) in paragraph at lines 378--379
+[]\T1/ptm/m/n/12 Auth.js je knihovna slou-ºící pro au-ten-ti-fi-kaci a au-to-ri
+-zaci, po-sky-tuje moº-nost "session based",
+ []
+
+[6] [7]
 Kapitola 3.
+[8
+
+]
+<image/schema.png, id=188, 2370.8575pt x 2336.73pt>
+File: image/schema.png Graphic file (type png)
+<use image/schema.png>
+Package pdftex.def Info: image/schema.png  used on input line 388.
+(pdftex.def)             Requested size: 455.24411pt x 448.68985pt.
+ [9
+
+ <./image/schema.png>] [10] [11] [12] [13] [14]
+Kapitola 4.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[12
+[15
 
 ]
 File: image/logo-skoly.png Graphic file (type png)
 <use image/logo-skoly.png>
-Package pdftex.def Info: image/logo-skoly.png  used on input line 592.
+Package pdftex.def Info: image/logo-skoly.png  used on input line 610.
 (pdftex.def)             Requested size: 273.14923pt x 105.45715pt.
 
 
-LaTeX Warning: Citation `socSSPU' on page 13 undefined on input line 597.
+LaTeX Warning: Citation `socSSPU' on page 16 undefined on input line 615.
 
-<image/vysledek_10.pdf, id=197, 433.62pt x 289.08pt>
+<image/vysledek_10.pdf, id=242, 433.62pt x 289.08pt>
 File: image/vysledek_10.pdf Graphic file (type pdf)
 <use image/vysledek_10.pdf>
-Package pdftex.def Info: image/vysledek_10.pdf  used on input line 602.
+Package pdftex.def Info: image/vysledek_10.pdf  used on input line 620.
 (pdftex.def)             Requested size: 286.806pt x 191.21242pt.
-<image/vysledek_20.pdf, id=198, 433.62pt x 289.08pt>
+<image/vysledek_20.pdf, id=243, 433.62pt x 289.08pt>
 File: image/vysledek_20.pdf Graphic file (type pdf)
 <use image/vysledek_20.pdf>
-Package pdftex.def Info: image/vysledek_20.pdf  used on input line 606.
+Package pdftex.def Info: image/vysledek_20.pdf  used on input line 624.
 (pdftex.def)             Requested size: 286.806pt x 191.21242pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.13202pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.13202pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.13202pt}.
-
-[13]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.13202pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.13202pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.13202pt}.
-
-[14 <./image/vysledek_10.pdf> <./image/vysledek_20.pdf
-
-pdfTeX warning: pdflatex.exe (file ./image/vysledek_20.pdf): PDF inclusion: mul
-tiple pdfs with page group included in a single page
->]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 632.
-LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
-643.
- (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmtt.fd
-File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.13202pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.13202pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.13202pt}.
-
-[15]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.13202pt, for example:
@@ -954,39 +927,63 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.13202pt}.
 
-[17]
-Kapitola 4.
-[18
+[17 <./image/vysledek_10.pdf> <./image/vysledek_20.pdf
 
-] [19
-
-] (effio-dokumentace.lof
-
-LaTeX Warning: Citation `effio-architecture' on page 20 undefined on input line
- 3.
-
+pdfTeX warning: pdflatex.exe (file ./image/vysledek_20.pdf): PDF inclusion: mul
+tiple pdfs with page group included in a single page
+>]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 650.
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
+661.
+ (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmtt.fd
+File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.13202pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.13202pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.13202pt}.
+
+[18]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.13202pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.13202pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.13202pt}.
+
+[19]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.13202pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.13202pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.13202pt}.
+
+[20]
+Kapitola 5.
+[21
+
+] [22
+
+] (effio-dokumentace.lof)
 \tf@lof=\write5
 \openout5 = `effio-dokumentace.lof'.
 
- (effio-dokumentace.lot)
+ [23
+
+] (effio-dokumentace.lot)
 \tf@lot=\write6
 \openout6 = `effio-dokumentace.lot'.
 
- [20
-
-]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[21]
+ [24]
 P\v {r}\'{\i }loha A.
-[22
+[25
 
 ] (effio-dokumentace.aux)
  ***********
@@ -998,16 +995,16 @@ L3 programming layer <2023-08-29>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `effio-dokumentace.out' has not changed.
-(rerunfilecheck)             Checksum: 5C308139981AAC1809E96070FDA3499A;2276.
+(rerunfilecheck)             Checksum: D4385A36B8134E73D67056B60B872CCC;3151.
  ) 
 Here is how much of TeX's memory you used:
- 18340 strings out of 475248
- 295099 string characters out of 5758756
+ 18419 strings out of 475248
+ 296380 string characters out of 5758756
  1952785 words of memory out of 5000000
- 39353 multiletter control sequences out of 15000+600000
+ 39419 multiletter control sequences out of 15000+600000
  640916 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,12n,117p,882b,2200s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,12n,117p,917b,2200s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Oem\AppData\Local\MiKTeX\fonts/pk/ljfour/public/esint/dpi720\esint
 10.pk> <C:\Users\Oem\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tc
 tt1200.pk> <C:\Users\Oem\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
@@ -1027,9 +1024,9 @@ ata/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Oem/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Oem/AppData/
 Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Oem/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on effio-dokumentace.pdf (25 pages, 948147 bytes).
+Output written on effio-dokumentace.pdf (28 pages, 1212158 bytes).
 PDF statistics:
- 548 PDF objects out of 1000 (max. 8388607)
- 116 named destinations out of 1000 (max. 500000)
- 182 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 595 PDF objects out of 1000 (max. 8388607)
+ 125 named destinations out of 1000 (max. 500000)
+ 235 words of extra memory for PDF output out of 10000 (max. 10000000)
 

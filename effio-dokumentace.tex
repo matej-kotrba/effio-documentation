@@ -74,7 +74,7 @@ openright
 \usepackage{helvet} % Helvet font
 \usepackage{mathptmx} % Times New Roman
 \usepackage{Oswald} % Oswald font
-
+\usepackage{float}
 
 %% makra pro sazbu matematiky
 \newcommand{\dif}{\mathrm{d}} %% makro pro sazbu diferenciálu, místo toho
@@ -324,17 +324,13 @@ Možná tady doplnit co je v dokumentaci
 
 \section{Architektura}
 
-Vzhledem k tomu, že záměrem bylo vytvořit aplikaci, která bude pro veškeré "backendové" úlohy využívat cloud, tak je architektura relativně složité téma, proto se pokusím stručně popsat základní proces vykreslení stránky. Uživatel získává statické soubory ze "CDN", dynamicky vytvořené stránky pro první zobrazení ("first render") jsou generovány na instancích "serverless funkcí" třetí strany, každá instance se vytváří podle potřeby na reálném serveru poskytovatele, není dedikovaná a ani nezůstavá aktivní po delší dobu. Server je dále využíván pro potřeby klienta, které si on sám nemůže obstarat především z bezpečnostních důvodů (DB queries, secret env variables...). Databáze vytváří spojení se serverem a ten získává potřebná data, viz. obrázek dole.
+Vzhledem k tomu, že záměrem bylo vytvořit aplikaci, která bude pro veškeré "backendové" úlohy využívat cloud, tak je architektura relativně složité téma, proto se pokusím stručně popsat základní proces vykreslení stránky. Uživatel získává statické soubory ze "CDN", dynamicky vytvořené stránky pro první zobrazení ("first render") jsou generovány na instancích "serverless funkcí" třetí strany, každá instance se vytváří podle potřeby na reálném serveru poskytovatele, není dedikovaná a ani nezůstavá aktivní po delší dobu. Server je dále využíván pro potřeby klienta, které si on sám nemůže obstarat především z bezpečnostních důvodů (DB queries, secret env variables...). Databáze vytváří spojení se serverem a ten získává potřebná data, viz. obrázek dole \ref{fig:effio-architecture}.
 \begin{figure}[h!]
 	\centering %% příkaz, který ti obrázek zarovná na střed
 	\includegraphics[width=1\linewidth]{image/effio-architecture-simple.png} 
-	\caption{Jednoduchý přehled architektury Effia \cite{effio-architecture}.} %% popisek obrázku, nezapomeň na citace!
+	\caption{Jednoduchý přehled architektury Effia.} %% popisek obrázku, nezapomeň na citace!
 	\label{fig:effio-architecture} %% označení až budeš chtít na obrázek odkazovat
 \end{figure}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1\linewidth]{image/effio-architecture-simple.png} 
-\end{figure} 
 
 \subsection{Koncept "single page application" a tradičního web serveru }
 V minulé sekci jsem zmínil pojem web server, ten generuje stránku, která je poslána uživateli, ta se poté generuje znovu vždy když je uživatel přesměrován na jinout stránku, tento koncept má spoustu nevýhod jako například nemožnost jednoduše uchovávat data mezi těmito přechody."Single page application" je vlastně JavaScript framework, který se o překreslování obrazu a přesměrování stará sám za pomocí JavaScriptu bez nutnosti dotazovat se serveru o novou stránku či data. Tento přístup bohužel také není perfektní, nutnost stahovat veškerý kód nebo velice chabý SEO rating.
@@ -371,6 +367,28 @@ V minulé sekci jsem se zmínil o problémech s otypováním API endpointů, tRP
 
 \section{Prisma}
 Prisma slouží jako ORM (Object–relational mapping), to znamená pomocí JavaScriptu získávat data z databáze bez přímého použití jazyka SQL, Prisma se skládá z klientské části, která pomocí protokolu založeném na JSON komunikuje se serverovou částí, tam je následně uskutečněn SQL dotaz a odpověď je poslána klientovi. Také řeší již zmíněný problém s otypováním těchto dotazů, pro Prismu je totiž nutné vytvořit \texttt{schema.prisma} soubor kde se definuje model databáze, ten poté můžeme pomocí Prisma CLI nahrávat do databáze ale také vytvářet dynamické typy, které poté využijeme jak v~dotazech tak v~aplikaci pro data, která dostaneme zpět.
+
+\section{Zod}
+Zod je validační knihovna jako např. Yup. Jeho výhodou je avšak možnost využít jeho validační schémata jako typy a také samotná validace funguje jako "type guard" (kontroluje a nastavuje typy u vložené proměnné). Jeho další výhodou je například jeho nízká velikost.
+
+\section{Tailwind CSS}
+Tailwind CSS je "CSS utility library", to znamená, že narozdíl od frameworků jako je třeba Bootstrap nebo Material UI neposkytuje celé předpřipravené komponenty ale připravené CSS classy, které se aplikují na HTML elementy, jeho výhodou je naprostá kontrola nad chováním stylů, které se aplikují, přehlednost a rychlost se kterou se dá styly vytvářet.
+
+\section{Auth.js}
+Auth.js je knihovna sloužící pro autentifikaci a autorizaci, poskytuje možnost "session based", to je použito v Effiu, a JWT autentifikace. Dále knihovna podporuje OAuth s mnohými providery, v tomto projektu je využit GitHub a Google s jednoduchou možností přidat další. Výhodou knihovny je, že data si vývojář spravuje sám, neboli jsou ukládána do jeho vlastní databáze v podobě tabulek (které si také může sám upravit): Account, Session, User a Verification Token, které poskytují naprostou kontrolu nad ověřením uživatelů.
+
+\chapter{Cesta k řešení a její implementace}
+\section{Založení a konfigurace projektu}
+Prvním krokem bylo založení projektu a stažení potřebných knihoven technologií, které jsem plánoval využít. Kombinace mnou vybraných technologií nebyla kompletně konvenční a proto jsem se musel v~některých případech obrátit na komunitou vytvořené adaptéry, příkladem je například knihovna \texttt{trpc-sveltekit}, která propojuje SvelteKit a tRPC, které je primárně navrženo buď jako samostatný server a nebo jako implementace do Next.js.
+
+\clearpage
+\section{Model databáze}
+\begin{figure}[H]
+	\centering %% příkaz, který ti obrázek zarovná na střed
+	\includegraphics[width=1\linewidth]{image/schema.png} 
+	\caption{Databázový model Effia.} %% popisek obrázku, nezapomeň na citace!
+	\label{fig:schema} %% označení až budeš chtít na obrázek odkazovat
+\end{figure}
 
 \subsection{Formátování textu}
 Formátování textu je klíčovým prvkem pro zvýraznění důležitých informací a zlepšení čitelnosti dokumentu.
