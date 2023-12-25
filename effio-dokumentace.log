@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.12.23)  24 DEC 2023 11:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.12.23)  25 DEC 2023 14:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./effio-dokumentace2.tex
-(effio-dokumentace2.tex
+**./effio-dokumentace.tex
+(effio-dokumentace.tex
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
@@ -93,7 +93,10 @@ Package: cmap 2021/02/06 v1.0j CMap support: searchable PDF
 
 Package cmap Warning: fontenc already loaded - some fonts may be unprocessed.
 
-) (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+) (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/tools\indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+(C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
@@ -637,27 +640,27 @@ Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 \l__lipsum_b_int=\count318
 
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex))
-(effio-dokumentace2.aux)
-\openout1 = `effio-dokumentace2.aux'.
+(effio-dokumentace.aux)
+\openout1 = `effio-dokumentace.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -666,7 +669,7 @@ LaTeX Font Info:    ... okay on input line 175.
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: twoside 
+* modes: 
 * h-part:(L,W,R)=(99.58464pt, 455.24411pt, 42.67912pt)
 * v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
 * \paperwidth=597.50787pt
@@ -674,13 +677,13 @@ LaTeX Font Info:    ... okay on input line 175.
 * \textwidth=455.24411pt
 * \textheight=702.78308pt
 * \oddsidemargin=27.31465pt
-* \evensidemargin=-29.59087pt
+* \evensidemargin=27.31465pt
 * \topmargin=-38.1381pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=85.0pt
+* \marginparwidth=35.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.8pt plus 4.0pt minus 2.0pt
@@ -688,8 +691,8 @@ LaTeX Font Info:    ... okay on input line 175.
 * \voffset=0.0pt
 * \mag=1000
 * \@twocolumnfalse
-* \@twosidetrue
-* \@mparswitchtrue
+* \@twosidefalse
+* \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
@@ -721,10 +724,10 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 175.
- (effio-dokumentace2.out) (effio-dokumentace2.out)
+Package hyperref Info: Link coloring OFF on input line 176.
+ (effio-dokumentace.out) (effio-dokumentace.out)
 \@outlinefile=\write3
-\openout3 = `effio-dokumentace2.out'.
+\openout3 = `effio-dokumentace.out'.
 
 
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
@@ -744,67 +747,67 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 \c@mv@boldtabular=\count326
 \c@lstlisting=\count327
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 18
-5.
+6.
 
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
-<image/logo-skoly.png, id=56, 356.2911pt x 137.5539pt>
+<image/logo-skoly.png, id=72, 356.2911pt x 137.5539pt>
 File: image/logo-skoly.png Graphic file (type png)
 <use image/logo-skoly.png>
-Package pdftex.def Info: image/logo-skoly.png  used on input line 189.
+Package pdftex.def Info: image/logo-skoly.png  used on input line 190.
 (pdftex.def)             Requested size: 273.14923pt x 105.45715pt.
-<image/effio.png, id=58, 1927.2pt x 1084.05pt>
+<image/effio.png, id=74, 1927.2pt x 1084.05pt>
 File: image/effio.png Graphic file (type png)
 <use image/effio.png>
-Package pdftex.def Info: image/effio.png  used on input line 207.
+Package pdftex.def Info: image/effio.png  used on input line 208.
 (pdftex.def)             Requested size: 364.19667pt x 204.84683pt.
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
- 212.
+ 213.
 
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )<<ot1.cmap>>
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 212.
+ 213.
  (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )<<oml.cmap>>
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 212.
+ 213.
 
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )<<oms.cmap>>
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 212.
+ 213.
  (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )<<omx.cmap>>
 LaTeX Font Info:    Trying to load font information for U+esint on input line 2
-12.
+13.
 
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/esint\uesint.fd
 File: uesint.fd 
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 21
-2.
+3.
 
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 2
-12.
+13.
 
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 212.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 213.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 212.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 213.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 212.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 213.
 
 [1
 
@@ -813,62 +816,85 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 pData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./image/logo-skoly.pn
 g> <./image/effio.png>] [2
 
-] [3] [4
+] [3
 
-] [5] (effio-dokumentace2.toc)
+] (effio-dokumentace.toc)
 \tf@toc=\write4
-\openout4 = `effio-dokumentace2.toc'.
+\openout4 = `effio-dokumentace.toc'.
 
  [1
 
 ] [2
 
 ]
-[3] [4
-
-]
 Kapitola 1.
-<image/effio-architecture-simple.png, id=122, 1082.0425pt x 631.35875pt>
+<image/effio-architecture-simple.png, id=125, 2403.98125pt x 1209.51875pt>
 File: image/effio-architecture-simple.png Graphic file (type png)
 <use image/effio-architecture-simple.png>
 Package pdftex.def Info: image/effio-architecture-simple.png  used on input lin
-e 329.
-(pdftex.def)             Requested size: 455.24411pt x 265.63129pt.
-[5 <./image/effio-architecture-simple.png>]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
-46.
+e 330.
+(pdftex.def)             Requested size: 455.24411pt x 229.03581pt.
 
-(C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
-File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-) [6]
-[7] [8] [9] [10] [11] [12
+LaTeX Warning: Citation `effio-architecture' on page 3 undefined on input line 
+331.
 
-]
-Kapitola 2.
+
+LaTeX Warning: Citation `effio-architecture' on page 3 undefined on input line 
+331.
+
+File: image/effio-architecture-simple.png Graphic file (type png)
+<use image/effio-architecture-simple.png>
+Package pdftex.def Info: image/effio-architecture-simple.png  used on input lin
+e 336.
+(pdftex.def)             Requested size: 455.24411pt x 229.03581pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[3
 
-Underfull \vbox (badness 2326) has occurred while \output is active []
+ <./image/effio-architecture-simple.png>] [4] [5]
+Kapitola 2.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
+57.
+(C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
 
- [13]
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
+61.
+(C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+[6
+
+] [7] [8] [9] [10] [11]
+Kapitola 3.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12
+
+]
 File: image/logo-skoly.png Graphic file (type png)
 <use image/logo-skoly.png>
-Package pdftex.def Info: image/logo-skoly.png  used on input line 588.
+Package pdftex.def Info: image/logo-skoly.png  used on input line 592.
 (pdftex.def)             Requested size: 273.14923pt x 105.45715pt.
 
 
-LaTeX Warning: Citation `socSSPU' on page 14 undefined on input line 593.
+LaTeX Warning: Citation `socSSPU' on page 13 undefined on input line 597.
 
-<image/vysledek_10.pdf, id=191, 433.62pt x 289.08pt>
+<image/vysledek_10.pdf, id=197, 433.62pt x 289.08pt>
 File: image/vysledek_10.pdf Graphic file (type pdf)
 <use image/vysledek_10.pdf>
-Package pdftex.def Info: image/vysledek_10.pdf  used on input line 598.
+Package pdftex.def Info: image/vysledek_10.pdf  used on input line 602.
 (pdftex.def)             Requested size: 286.806pt x 191.21242pt.
-<image/vysledek_20.pdf, id=192, 433.62pt x 289.08pt>
+<image/vysledek_20.pdf, id=198, 433.62pt x 289.08pt>
 File: image/vysledek_20.pdf Graphic file (type pdf)
 <use image/vysledek_20.pdf>
-Package pdftex.def Info: image/vysledek_20.pdf  used on input line 602.
+Package pdftex.def Info: image/vysledek_20.pdf  used on input line 606.
 (pdftex.def)             Requested size: 286.806pt x 191.21242pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -881,7 +907,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.13202pt}.
 
-[14]
+[13]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.13202pt, for example:
@@ -890,18 +916,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.13202pt}.
 
-[15 <./image/vysledek_10.pdf> <./image/vysledek_20.pdf
+[14 <./image/vysledek_10.pdf> <./image/vysledek_20.pdf
 
 pdfTeX warning: pdflatex.exe (file ./image/vysledek_20.pdf): PDF inclusion: mul
 tiple pdfs with page group included in a single page
 >]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 628.
+nput line 632.
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
-639.
+643.
  (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmtt.fd
 File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.13202pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.13202pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.13202pt}.
+
+[15]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.13202pt, for example:
@@ -920,49 +955,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.13202pt}.
 
 [17]
+Kapitola 4.
+[18
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.13202pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.13202pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+] [19
 
-(fancyhdr)                \addtolength{\topmargin}{-3.13202pt}.
+] (effio-dokumentace.lof
 
-[18]
-Kapitola 3.
-[19
+LaTeX Warning: Citation `effio-architecture' on page 20 undefined on input line
+ 3.
+
+)
+\tf@lof=\write5
+\openout5 = `effio-dokumentace.lof'.
+
+ (effio-dokumentace.lot)
+\tf@lot=\write6
+\openout6 = `effio-dokumentace.lot'.
+
+ [20
 
 ]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.13202pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.13202pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.13202pt}.
-
-[20
-
-] [21]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.13202pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.13202pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.13202pt}.
-
-[22
-
-] (effio-dokumentace2.lof)
-\tf@lof=\write5
-\openout5 = `effio-dokumentace2.lof'.
-
- (effio-dokumentace2.lot)
-\tf@lot=\write6
-\openout6 = `effio-dokumentace2.lot'.
-
- [23]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -971,11 +984,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[24]
+[21]
 P\v {r}\'{\i }loha A.
-[25
+[22
 
-] (effio-dokumentace2.aux)
+] (effio-dokumentace.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
@@ -984,17 +997,17 @@ L3 programming layer <2023-08-29>
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `effio-dokumentace2.out' has not changed.
-(rerunfilecheck)             Checksum: 74929F0E542F897FF5CAFEFD08D0CADB;1897.
+Package rerunfilecheck Info: File `effio-dokumentace.out' has not changed.
+(rerunfilecheck)             Checksum: 5C308139981AAC1809E96070FDA3499A;2276.
  ) 
 Here is how much of TeX's memory you used:
- 18296 strings out of 475248
- 294086 string characters out of 5758756
- 1951785 words of memory out of 5000000
- 39313 multiletter control sequences out of 15000+600000
- 640602 words of font info for 126 fonts, out of 8000000 for 9000
+ 18340 strings out of 475248
+ 295099 string characters out of 5758756
+ 1952785 words of memory out of 5000000
+ 39353 multiletter control sequences out of 15000+600000
+ 640916 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,12n,117p,810b,2200s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,12n,117p,882b,2200s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Oem\AppData\Local\MiKTeX\fonts/pk/ljfour/public/esint/dpi720\esint
 10.pk> <C:\Users\Oem\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tc
 tt1200.pk> <C:\Users\Oem\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
@@ -1014,9 +1027,9 @@ ata/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Oem/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Oem/AppData/
 Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Oem/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on effio-dokumentace2.pdf (30 pages, 633399 bytes).
+Output written on effio-dokumentace.pdf (25 pages, 948147 bytes).
 PDF statistics:
- 550 PDF objects out of 1000 (max. 8388607)
- 119 named destinations out of 1000 (max. 500000)
- 150 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 548 PDF objects out of 1000 (max. 8388607)
+ 116 named destinations out of 1000 (max. 500000)
+ 182 words of extra memory for PDF output out of 10000 (max. 10000000)
 

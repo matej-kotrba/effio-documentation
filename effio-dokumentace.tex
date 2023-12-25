@@ -1,6 +1,6 @@
 \documentclass[12pt, a4paper,
 %oneside,      %% -- odkomentujte, pokud chcete svou práci mít pouze jednostrannou, mezera pro hřbet pak automaticky bude pouze na levé straně
-twoside,        %% -- pro oboustranné práce, mezera pro hřbet následně střídá strany.
+%twoside,        %% -- pro oboustranné práce, mezera pro hřbet následně střídá strany.
 openright
 ]{report}
 
@@ -28,6 +28,7 @@ openright
 \usepackage[utf8]{inputenc} %% balíky pro kódování textu
 \usepackage[T1]{fontenc}
 \usepackage{cmap} %% balíček zajišťující, že vytvořené PDF bude prohledávatelné a kopírovatelné
+\usepackage{indentfirst}
 
 \usepackage{graphicx} %% balík pro vkládání obrázků
 
@@ -307,7 +308,7 @@ openright
 %Třetí parametr Úvod je text, který se objeví v obsahu. V tomto případě bude v obsahu zobrazen název "Úvod".	
 V dnešní době se běžně využívají webové aplikace, které umožňují vytváření testů/kvízů, které poté jiní uživatelé vyplňují. Prostředí těchto aplikací jsou však často nepřehledné a vytváření testů či kvízů je úporné. S touto myšlenkou jsem se rozhodl vytvořit aplikaci, která by kombinovala možnosti jiných aplikací s přehledným moderním zobrazením a dalšími užitečnými prvky.
 
-Má aplikace by krom již zmíněné funkcionality pro tvorbu testů a kvízů měla do jisté míry umožňovat prvky sociálních sítí jako třeba skupiny, komunitní místo kde by se zobrazovaly testy ostatních uživatelé, a podobně. Hlavní myšlenkou bylo vytvořit nejen aplikaci jako takovou ale také využít moderní technologie a postupy, neboli vytvořit ji "typesafe", bez potřeby vlastního serveru za pomocí cloudové technologie "serverless" a plně responzivní pro uživatele na kterémkoli zařízení.
+Má aplikace by krom již zmíněné funkcionality pro tvorbu testů a kvízů měla do jisté míry umožňovat prvky sociálních sítí jako třeba skupiny, komunitní místo kde by se mimo jiné zobrazovaly testy ostatních uživatelů. Hlavní myšlenkou bylo vytvořit nejen aplikaci jako takovou ale také využít moderní technologie a postupy, neboli vytvořit ji "typesafe", bez potřeby vlastního serveru za pomocí cloudové technologie "serverless" a plně responzivní pro uživatele na kterémkoli zařízení.
 
 Možná tady doplnit co je v dokumentaci
 
@@ -323,7 +324,13 @@ Možná tady doplnit co je v dokumentaci
 
 \section{Architektura}
 
-Vzhledem k tomu, že záměrem bylo vytvořit aplikaci, která bude pro veškeré "backendové" úlohy využívat cloud, tak je architektura relativně složité téma, proto se pokusím stručně popsat základní proces požadavku a odpovědi. Uživatel získává statické soubory ze "CDN", dynamicky vytvořené stránky pro první zobrazení ("first render") jsou generovány na serveru, ten není spravován mnou a ani to není tradiční web server (spíše se vytvářejí instance pro zpracování požadavku, které ho vyřizují). Dále je server využíván pro veškeré požadavky, které klient vyžaduje ale nemohou být vyřízeny přímo na něm. Databáze vytváří spojení se serverem a ten získává data co potřebuje, viz. obrázek dole.
+Vzhledem k tomu, že záměrem bylo vytvořit aplikaci, která bude pro veškeré "backendové" úlohy využívat cloud, tak je architektura relativně složité téma, proto se pokusím stručně popsat základní proces vykreslení stránky. Uživatel získává statické soubory ze "CDN", dynamicky vytvořené stránky pro první zobrazení ("first render") jsou generovány na instancích "serverless funkcí" třetí strany, každá instance se vytváří podle potřeby na reálném serveru poskytovatele, není dedikovaná a ani nezůstavá aktivní po delší dobu. Server je dále využíván pro potřeby klienta, které si on sám nemůže obstarat především z bezpečnostních důvodů (DB queries, secret env variables...). Databáze vytváří spojení se serverem a ten získává potřebná data, viz. obrázek dole.
+\begin{figure}[h!]
+	\centering %% příkaz, který ti obrázek zarovná na střed
+	\includegraphics[width=1\linewidth]{image/effio-architecture-simple.png} 
+	\caption{Jednoduchý přehled architektury Effia \cite{effio-architecture}.} %% popisek obrázku, nezapomeň na citace!
+	\label{fig:effio-architecture} %% označení až budeš chtít na obrázek odkazovat
+\end{figure}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{image/effio-architecture-simple.png} 
@@ -333,40 +340,37 @@ Vzhledem k tomu, že záměrem bylo vytvořit aplikaci, která bude pro vešker�
 V minulé sekci jsem zmínil pojem web server, ten generuje stránku, která je poslána uživateli, ta se poté generuje znovu vždy když je uživatel přesměrován na jinout stránku, tento koncept má spoustu nevýhod jako například nemožnost jednoduše uchovávat data mezi těmito přechody."Single page application" je vlastně JavaScript framework, který se o překreslování obrazu a přesměrování stará sám za pomocí JavaScriptu bez nutnosti dotazovat se serveru o novou stránku či data. Tento přístup bohužel také není perfektní, nutnost stahovat veškerý kód nebo velice chabý SEO rating.
 
 \subsection{Metaframework}
-Oba zmíněné koncepty přinášejí své výhody ale s ním také nevýhody, Metaframework je technologie, která kombinuje výhody obou konceptů a přináší za mě nejlepší variantu jak vytvářet webovout aplikaci. Disponuje jak možností běhu kódu na serveru tak přesměrováním na klientské části a dalších výhod. Takových technologií existuje celá řada, jako například populární NextJS, já si pro svůj projekt zvolil SvelteKit.
+Oba zmíněné koncepty přinášejí své výhody ale s ním také nevýhody, Metaframework je technologie, která kombinuje výhody obou konceptů a přináší za mě nejlepší variantu jak vytvářet webovout aplikaci. Disponuje možností běhu kódu na serveru, přesměrováním na klientské části a dalšími výhodami. Takových technologií existuje celá řada, jako například populární NextJS, já si pro svůj projekt zvolil SvelteKit.
 
 \subsection{Cloud hosting}
-Jak již bylo zmíněno v~úvodu tak tato aplikace by se měla obejít bez vlastního serveru, nejde ale jeonom o databázi ale také například o ukládání obrázků nebo hostování aplikace jako takové, to je prováděno přes "Cloud hostingy" jako Vercel pro hostování, který zároveň řeší i rozposlání statických dat do CDN a poskytuje serverless lambda funkce, nebo Cloudinary, který slouží jako "bucket" pro obrázky a také jejich možnost editace přes url parametry.
+Jak již bylo zmíněno v~úvodu tak tato aplikace by se měla obejít bez vlastního serveru, nejde ale jenom o databázi ale také například o ukládání obrázků nebo hostování aplikace jako takové, to je prováděno přes "Cloud hostingy" jako Vercel pro hostování stránky jako takové, zároveň ale řeší i rozesílání statických dat do CDN a poskytuje serverless lambda funkce, Cloudinary, který slouží jako "bucket" pro obrázky a také jejich možnost editace přes url parametry, nebo Pusher, který slouží jako web socket server například pro chat.
 
 \section{Typesafety}
-\label{sec:typesafety}
 
 Webové aplikace standartně využívají JavaScript, ten ale obnáší signifikantní nevýhodu v podobě nemožnosti "otypovat" kód, to způsobuje obtíž orientovat se v kódu, velké množství produkčních chyb a také spoustu času stráveného pochopením dříve napsaného kódu. Pro Effio jsem se tedy rozhodl využít moderní technologie a vytvořit tak téměř plně "typesafe" (otypovanou) aplikaci. TypeScript v Effiu nahrazuje JavaScript, ten do tohoto jazyka přináší typy. To ale nestačí, API endpointy, stejně jako databázové dotazy stále nemůžou být otypované a proto jsem připojil také knihovny tRPC a Prisma.
 
-\begin{verbatim}
-	\documentclass[options]{class}
-	\usepackage[options]{package}
-\end{verbatim}
 
-\subsection{Hlavní tělo dokumentu}
-Hlavní tělo dokumentu začíná příkazem \verb|\begin{document}| a končí \verb|\end{document}|. Veškerý obsah, který chcete mít ve svém dokumentu, by měl být umístěn mezi tyto dva příkazy. 
+\chapter{Využité technologie}
 
-\subsection{Sekce a podsekce}
-Pro organizaci obsahu se často používají sekce a podsekce. Tyto struktury pomáhají čtenáři lépe navigovat dokumentem a rozdělit text do logických bloků.
+\section{SvelteKit}
 
-\begin{verbatim}
-	\section{Název sekce}
-	\subsection{Název podsekce}
-	\subsubsection{Název podpodsekce}
-\end{verbatim}
+Svelte je open source JavaScriptový framework vyvíjený od roku týmem Riche Harrise, jeho hlavní výhodou je rychlost ale také intuitivita, protože jazyk se snaží vypadat jako JavaScript, zatímco rozšiřuje jeho možnosti, díky tomu se za posledních let těší rostoucí popularitě webobých vývojářů. Na rozdíl od ostatních webových frameworků (například React, Angular, Solid nebo Qwik) Svelte disponuje vlastním jazykem, který se zapisuje do \texttt{.svelte} souboru, ten se následně kompiluje do vysoce efektivního JavaScriptu.\\
 
-\subsection{Odstavce a rozestupy}
-V \LaTeX{}u je nový odstavec vytvořen jednoduše vložením jedné nebo více prázdných řádek. Rozestupy mezi odstavci, stejně jako zarovnání textu, můžeme upravit podle potřeby.
+SvelteKit je metaframework postavený na Svelte. Jeho hlavní výhody se skládají z:
+\begin{itemize}
+	\item Rychlost - Svelte vytváří velice rychlou aplikaci, v kombinaci s Vitem (bundler) se ale také spojuje s velice rychlým build timem a fast refreshy. To ale není jediné místo kde se rychlost projevuje, za pomocí SvelteKitu se aplikace vyvíjí velmi rychle díky velice malému množství "boilerplate" kódu.
+	\item Flexibilita - Aplikace často potřebuje různé typy vykreslování stránek, SvelteKit dovoluje jednoduše nakonfigurovat jednotlivé stránky či cesty pro specifické způsoby jako SPA, SSR, SSG nebo MPA.
+	\item Přehlednost - SvelteKit využívá "file based routing", tedy cesty aplikace jsou generovány podle složek, které vývojář vytvoří, soubory se poté vždy jmenují stejně, \texttt{+page.svelte} pro stránku, \texttt{+layout.svelte} pro layout apod. Díky tomu je vždy jasné pro co specifický souboru slouží, přehlednosti také přidává, již u Sveltu zmíněná podobnost s JavaScriptem.
+\end{itemize} 
 
-\section{Práce s textem}
-\label{sec:prace_s_textem}
+\section{Typescript}
+Typescript se dá považovat jako nadstavba JavaScriptu, poskytuje ale jednu výraznou výhodu - typy, díky nim je možno mnohem snadněji dohledávat chyby, vracet se k dříve napsanému kódu a celkově mnohem zlepší "developer experience" při vytváření aplikace. Sám o sobě pomůže s otypováním jednotlivých částí kódu, neporadí si však například s API endpointy nebo databázovými dotazy, které se poté musí otypovat ručně, což je ale velice špatný způsob.
 
-Tato část se zaměřuje na základní techniky práce s textem v \LaTeX{}u, včetně formátování textu, vytváření seznamů a využití křížových odkazů a poznámek pod čarou.
+\section{tRPC}
+V minulé sekci jsem se zmínil o problémech s otypováním API endpointů, tRPC (Typescript Remote Procedure Call) tento problém řeší tím, že vytváří dynamické typy pro jednotlivé endpointy, podle toho jak si je sami nadefinujeme.
+
+\section{Prisma}
+Prisma slouží jako ORM (Object–relational mapping), to znamená pomocí JavaScriptu získávat data z databáze bez přímého použití jazyka SQL, Prisma se skládá z klientské části, která pomocí protokolu založeném na JSON komunikuje se serverovou částí, tam je následně uskutečněn SQL dotaz a odpověď je poslána klientovi. Také řeší již zmíněný problém s otypováním těchto dotazů, pro Prismu je totiž nutné vytvořit \texttt{schema.prisma} soubor kde se definuje model databáze, ten poté můžeme pomocí Prisma CLI nahrávat do databáze ale také vytvářet dynamické typy, které poté využijeme jak v~dotazech tak v~aplikaci pro data, která dostaneme zpět.
 
 \subsection{Formátování textu}
 Formátování textu je klíčovým prvkem pro zvýraznění důležitých informací a zlepšení čitelnosti dokumentu.
@@ -524,12 +528,12 @@ Tato kapitola poskytuje podrobný návod na vytváření bibliografie a správn�
 \subsection{Vytváření bibliografie}
 \LaTeX{} umožňuje efektivní správu bibliografických záznamů a jejich automatické formátování. Tento proces zahrnuje několik kroků od definování zdrojů po jejich začlenění do dokumentu.
 
-\begin{verbatim}
-	\begin{thebibliography}{99}
-		\bibitem{nazev}
-		Autor, \emph{Název knihy}, Nakladatelství, Rok.
-	\end{thebibliography}
-\end{verbatim}
+%\begin{verbatim}
+%	\begin{thebibliography}{99}
+%		\bibitem{nazev}
+%		Autor, \emph{Název knihy}, Nakladatelství, Rok.
+%	\end{thebibliography}
+%\end{verbatim}
 
 \subsection{Citování zdrojů}
 Správné citování zdrojů je klíčové pro akademickou integritu a umožňuje čtenářům dohledat zmiňované informace. V \LaTeX{}u je možné citovat zdroje jednoduše pomocí příkazu \verb|\cite|.
