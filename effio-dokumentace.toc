@@ -17,34 +17,36 @@
 \contentsline {chapter}{\numberline {3}Cesta k řešení a její implementace}{8}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Založení a konfigurace projektu}{8}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Model databáze}{9}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Formátování textu}{9}{subsection.3.2.1}%
-\contentsline {subsubsection}{Zvýraznění textu}{9}{subsection.3.2.1}%
-\contentsline {subsubsection}{Seznamy a výčty}{10}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Křížové odkazy a poznámky pod čarou}{10}{subsection.3.2.2}%
-\contentsline {subsubsection}{Křížové odkazy}{10}{subsection.3.2.2}%
-\contentsline {subsubsection}{Poznámky pod čarou}{10}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Matematické vzorce a symboly}{11}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Základní matematické prostředí}{11}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Rovnice a symboly}{11}{subsection.3.3.2}%
-\contentsline {subsubsection}{Vložení jednoduché rovnice}{11}{subsection.3.3.2}%
-\contentsline {subsubsection}{Pokročilé matematické výrazy}{11}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Práce s obrázky a tabulkami}{12}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Vkládání obrázků}{12}{subsection.3.4.1}%
-\contentsline {subsubsection}{Formáty obrázků}{12}{subsection.3.4.1}%
-\contentsline {subsubsection}{Pozicování obrázků}{12}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Vytváření tabulek}{12}{subsection.3.4.2}%
-\contentsline {subsubsection}{Základní tabulky}{12}{subsection.3.4.2}%
-\contentsline {subsubsection}{Pokročilé tabulky}{13}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Bibliografie a citace}{13}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Vytváření bibliografie}{13}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Citování zdrojů}{14}{subsection.3.5.2}%
-\contentsline {chapter}{\numberline {4}Tipy k psaní}{15}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Základy}{15}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Tabulky}{15}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Obrázky}{16}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Literatura}{17}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Programový kód}{18}{subsection.4.1.4}%
-\contentsline {section}{\numberline {4.2}Pokročilejší tipy}{19}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Rovnice}{19}{subsection.4.2.1}%
-\contentsline {chapter}{\numberline {5}Když dokončuji práci}{21}{chapter.5}%
-\contentsline {chapter}{\numberline {A}Spot diagramy a další }{25}{appendix.A}%
+\contentsline {section}{\numberline {3.3}Design}{10}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Testy a jejich vlastnosti}{10}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Tvorba testu}{10}{subsection.3.4.1}%
+\contentsline {subsubsection}{Zvýraznění textu}{11}{subsection.3.4.1}%
+\contentsline {subsubsection}{Seznamy a výčty}{11}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Křížové odkazy a poznámky pod čarou}{11}{subsection.3.4.2}%
+\contentsline {subsubsection}{Křížové odkazy}{12}{subsection.3.4.2}%
+\contentsline {subsubsection}{Poznámky pod čarou}{12}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}Matematické vzorce a symboly}{12}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Základní matematické prostředí}{12}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Rovnice a symboly}{12}{subsection.3.5.2}%
+\contentsline {subsubsection}{Vložení jednoduché rovnice}{12}{subsection.3.5.2}%
+\contentsline {subsubsection}{Pokročilé matematické výrazy}{13}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}Práce s obrázky a tabulkami}{13}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Vkládání obrázků}{13}{subsection.3.6.1}%
+\contentsline {subsubsection}{Formáty obrázků}{13}{subsection.3.6.1}%
+\contentsline {subsubsection}{Pozicování obrázků}{13}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Vytváření tabulek}{14}{subsection.3.6.2}%
+\contentsline {subsubsection}{Základní tabulky}{14}{subsection.3.6.2}%
+\contentsline {subsubsection}{Pokročilé tabulky}{14}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.7}Bibliografie a citace}{14}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Vytváření bibliografie}{15}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Citování zdrojů}{15}{subsection.3.7.2}%
+\contentsline {chapter}{\numberline {4}Tipy k psaní}{16}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Základy}{16}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Tabulky}{16}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Obrázky}{17}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Literatura}{18}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Programový kód}{19}{subsection.4.1.4}%
+\contentsline {section}{\numberline {4.2}Pokročilejší tipy}{20}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Rovnice}{20}{subsection.4.2.1}%
+\contentsline {chapter}{\numberline {5}Když dokončuji práci}{22}{chapter.5}%
+\contentsline {chapter}{\numberline {A}Spot diagramy a další }{26}{appendix.A}%

@@ -383,15 +383,33 @@ Prvním krokem bylo založení projektu a stažení potřebných knihoven techno
 
 \clearpage
 \section{Model databáze}
+Dalším krokem bylo vytvořit databázový model, vystavený obrázek nezachycuje model počáteční ale ten, ke kterému postupem práce Effio dospělo přidáváním nových funkcionalit, model byl také několikrát částečně přepracován.
 \begin{figure}[H]
 	\centering %% příkaz, který ti obrázek zarovná na střed
 	\includegraphics[width=1\linewidth]{image/schema.png} 
-	\caption{Databázový model Effia.} %% popisek obrázku, nezapomeň na citace!
+	\caption{Databázový model Effia. Vytvořeno pomocí \href{https://github.com/Ovyerus/prismaliser}{Prismaliser}} %% popisek obrázku, nezapomeň na citace!
 	\label{fig:schema} %% označení až budeš chtít na obrázek odkazovat
 \end{figure}
+\clearpage
+\section{Design}
+Jednou z~hlavních myšlenek bylo vytvořit pohledem přívětivou aplikaci, proto se návrh designu stál klíčovou částí pro stylově propracovanější prvky stránky. Pro tvorbu designu, stejně jako vytváření a úpravu potřebných obrázků jsem využil aplikaci Figma.
+\begin{figure}[h]
+	\centering %% příkaz, který ti obrázek zarovná na střed
+	\includegraphics[width=1\linewidth]{image/figma.png} 
+	\caption{Prvotní návrh domovské stránky.} %% popisek obrázku, nezapomeň na citace!
+	\label{fig:figma} %% označení až budeš chtít na obrázek odkazovat
+\end{figure}
 
-\subsection{Formátování textu}
-Formátování textu je klíčovým prvkem pro zvýraznění důležitých informací a zlepšení čitelnosti dokumentu.
+\section{Testy a jejich vlastnosti}
+Jednou z esenciálních funkcionalit Effia je možnost vytvořit test, k~tomuto existuje mnoho různých postupů, nad danou problematikou jsem se zprvu zamýšlel a až poté napsal funkční nástroj pro jejich vytváření ale to stejně nakonec nezabránilo následné nutnosti přepsat téměř celou funkcionalitu při vytváření testu.
+
+\subsection{Tvorba testu}
+Jako první si uživatel zvolí mezi kvízovým a programovacím testem, u obou si poté vybere šablonu.
+\begin{itemize}
+	\item Kvízový - po výběru šablony, kde si uživatel může zvolit i import z GIFT formátu, se uživatel dostane do tvorby testu samotného, vybírat si aktuálně může z~6~typů otázek: \textit{Pick One}, \textit{True/False}, \textit{Connect}, \textit{Write}, \textit{Fill} a \textit{Geography}, otázkám lze svévolně měnit pořadí, přidávat komentáře k~odpovědím a upravovat počet získaných bodů.
+	\item Programovací - po výběru šablony se uživatel dostane do tvorby testu programovacího, kde ho pojmenuje problém, popíše co má uživatel řešit, nadefinuje kontrolní vstupy a očekávané výstupy, poté může zanechat nápovědy
+\end{itemize}
+Po dokončení těchto úprav se uživatel dostane do konečných úprav testu, což činí jméno, popisek a obrázek testu, volitelné zařazení do skupin, tagy, rozhodne se jestli využít známkovací systém, který si může sám upravit a následně tvorbu ukončí, tím se test vytvoří a zveřejní nebo se uloží jako návrh podle výběru.
 
 \subsubsection{Zvýraznění textu}
 V \LaTeX{}u existuje několik způsobů, jak zvýraznit text. Můžeme použít tučné písmo, kurzívu nebo podtržení.
