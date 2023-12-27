@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.12.23)  27 DEC 2023 16:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.12.23)  27 DEC 2023 17:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -761,12 +761,12 @@ LaTeX Font Info:    Trying to load font information for T1+phv on input line 18
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
-<image/logo-skoly.png, id=112, 356.2911pt x 137.5539pt>
+<image/logo-skoly.png, id=108, 356.2911pt x 137.5539pt>
 File: image/logo-skoly.png Graphic file (type png)
 <use image/logo-skoly.png>
 Package pdftex.def Info: image/logo-skoly.png  used on input line 190.
 (pdftex.def)             Requested size: 273.14923pt x 105.45715pt.
-<image/effio.png, id=114, 1927.2pt x 1084.05pt>
+<image/effio.png, id=110, 1927.2pt x 1084.05pt>
 File: image/effio.png Graphic file (type png)
 <use image/effio.png>
 Package pdftex.def Info: image/effio.png  used on input line 208.
@@ -837,34 +837,34 @@ g> <./image/effio.png>] [2
 
 ]
 Kapitola 1.
-<image/effio-architecture-simple.png, id=176, 2403.98125pt x 1209.51875pt>
+<image/effio-architecture-simple.png, id=171, 2403.98125pt x 1209.51875pt>
 File: image/effio-architecture-simple.png Graphic file (type png)
 <use image/effio-architecture-simple.png>
 Package pdftex.def Info: image/effio-architecture-simple.png  used on input lin
-e 330.
+e 317.
 (pdftex.def)             Requested size: 455.24411pt x 229.03581pt.
 [3
 
  <./image/effio-architecture-simple.png>] [4]
 Kapitola 2.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
-53.
+40.
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 353--354
+Underfull \hbox (badness 10000) in paragraph at lines 340--341
 
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
-57.
+44.
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 [5
 
 ]
-Overfull \hbox (8.73154pt too wide) in paragraph at lines 378--379
+Overfull \hbox (8.73154pt too wide) in paragraph at lines 365--366
 []\T1/ptm/m/n/12 Auth.js je knihovna slou-ºící pro au-ten-ti-fi-kaci a au-to-ri
 -zaci, po-sky-tuje moº-nost ^^Rsession based^^P,
  []
@@ -874,65 +874,65 @@ Kapitola 3.
 [8
 
 ]
-<image/schema.png, id=208, 2370.8575pt x 2336.73pt>
+<image/schema.png, id=203, 2370.8575pt x 2336.73pt>
 File: image/schema.png Graphic file (type png)
 <use image/schema.png>
-Package pdftex.def Info: image/schema.png  used on input line 396.
+Package pdftex.def Info: image/schema.png  used on input line 383.
 (pdftex.def)             Requested size: 455.24411pt x 448.68985pt.
  [9
 
  <./image/schema.png>]
-<image/figma.png, id=217, 1539.95325pt x 829.29825pt>
+<image/figma.png, id=212, 1539.95325pt x 829.29825pt>
 File: image/figma.png Graphic file (type png)
 <use image/figma.png>
-Package pdftex.def Info: image/figma.png  used on input line 405.
+Package pdftex.def Info: image/figma.png  used on input line 392.
 (pdftex.def)             Requested size: 455.24411pt x 245.15967pt.
  [10
 
  <./image/figma.png>]
-<image/test-creator1.png, id=227, 1099.7085pt x 547.44525pt>
+<image/test-creator1.png, id=222, 1099.7085pt x 547.44525pt>
 File: image/test-creator1.png Graphic file (type png)
 <use image/test-creator1.png>
-Package pdftex.def Info: image/test-creator1.png  used on input line 425.
+Package pdftex.def Info: image/test-creator1.png  used on input line 412.
 (pdftex.def)             Requested size: 223.07211pt x 111.04082pt.
-<image/test-creator2.png, id=228, 1099.7085pt x 550.4565pt>
+<image/test-creator2.png, id=223, 1099.7085pt x 550.4565pt>
 File: image/test-creator2.png Graphic file (type png)
 <use image/test-creator2.png>
-Package pdftex.def Info: image/test-creator2.png  used on input line 431.
+Package pdftex.def Info: image/test-creator2.png  used on input line 418.
 (pdftex.def)             Requested size: 223.07211pt x 111.65161pt.
-<image/test-taking.png, id=229, 971.42924pt x 548.64975pt>
+<image/test-taking.png, id=224, 971.42924pt x 548.64975pt>
 File: image/test-taking.png Graphic file (type png)
 <use image/test-taking.png>
-Package pdftex.def Info: image/test-taking.png  used on input line 446.
+Package pdftex.def Info: image/test-taking.png  used on input line 433.
 (pdftex.def)             Requested size: 341.43307pt x 192.83397pt.
  [11 <./image/test-creator1.png> <./image/test-creator2.png>]
-<image/programming.png, id=238, 972.63374pt x 548.64975pt>
+<image/programming.png, id=233, 972.63374pt x 548.64975pt>
 File: image/programming.png Graphic file (type png)
 <use image/programming.png>
-Package pdftex.def Info: image/programming.png  used on input line 456.
+Package pdftex.def Info: image/programming.png  used on input line 443.
 (pdftex.def)             Requested size: 341.43307pt x 192.59119pt.
  [12 <./image/test-taking.png> <./image/programming.png>]
-<image/community.png, id=249, 970.827pt x 548.64975pt>
+<image/community.png, id=244, 970.827pt x 548.64975pt>
 File: image/community.png Graphic file (type png)
 <use image/community.png>
-Package pdftex.def Info: image/community.png  used on input line 470.
+Package pdftex.def Info: image/community.png  used on input line 457.
 (pdftex.def)             Requested size: 455.24411pt x 257.27103pt.
  [13 <./image/community.png>]
-<image/homepage.png, id=258, 1097.2995pt x 543.83176pt>
+<image/homepage.png, id=253, 1097.2995pt x 543.83176pt>
 File: image/homepage.png Graphic file (type png)
 <use image/homepage.png>
-Package pdftex.def Info: image/homepage.png  used on input line 498.
+Package pdftex.def Info: image/homepage.png  used on input line 485.
 (pdftex.def)             Requested size: 455.24411pt x 225.61958pt.
  [14 <./image/homepage.png>]
-<image/res1.png, id=265, 224.63925pt x 486.618pt>
+<image/res1.png, id=260, 224.63925pt x 486.618pt>
 File: image/res1.png Graphic file (type png)
 <use image/res1.png>
-Package pdftex.def Info: image/res1.png  used on input line 510.
+Package pdftex.def Info: image/res1.png  used on input line 497.
 (pdftex.def)             Requested size: 111.53606pt x 241.61545pt.
-<image/res2.png, id=266, 221.02576pt x 486.01575pt>
+<image/res2.png, id=261, 221.02576pt x 486.01575pt>
 File: image/res2.png Graphic file (type png)
 <use image/res2.png>
-Package pdftex.def Info: image/res2.png  used on input line 517.
+Package pdftex.def Info: image/res2.png  used on input line 504.
 (pdftex.def)             Requested size: 111.53606pt x 245.25432pt.
  [15
 
@@ -948,39 +948,31 @@ Kapitola 4.
 \tf@lof=\write5
 \openout5 = `effio-dokumentace.lof'.
 
- (effio-dokumentace.lot)
-\tf@lot=\write6
-\openout6 = `effio-dokumentace.lot'.
-
- [19]
-P\v {r}\'{\i }loha A.
-[20
-
-] (effio-dokumentace.aux)
+ [19] (effio-dokumentace.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
 Package rerunfilecheck Info: File `effio-dokumentace.out' has not changed.
-(rerunfilecheck)             Checksum: 1423D9E28C3E26C97A633CEE53FC6AAB;3702.
+(rerunfilecheck)             Checksum: 4C99379185CF6D6B1D7A2AF7C9E3597B;3529.
  ) 
 Here is how much of TeX's memory you used:
- 17905 strings out of 475248
- 291385 string characters out of 5758756
+ 17888 strings out of 475248
+ 291071 string characters out of 5758756
  1928785 words of memory out of 5000000
- 38976 multiletter control sequences out of 15000+600000
- 626773 words of font info for 105 fonts, out of 8000000 for 9000
+ 38961 multiletter control sequences out of 15000+600000
+ 621203 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,11n,93p,929b,629s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,11n,93p,1307b,629s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Oem\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt12
 00.pk><C:/Users/Oem/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb
 8a.pfb><C:/Users/Oem/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a
 .pfb><C:/Users/Oem/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.p
 fb><C:/Users/Oem/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pf
 b>
-Output written on effio-dokumentace.pdf (23 pages, 3073331 bytes).
+Output written on effio-dokumentace.pdf (22 pages, 3067672 bytes).
 PDF statistics:
- 413 PDF objects out of 1000 (max. 8388607)
- 80 named destinations out of 1000 (max. 500000)
- 302 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 417 PDF objects out of 1000 (max. 8388607)
+ 85 named destinations out of 1000 (max. 500000)
+ 294 words of extra memory for PDF output out of 10000 (max. 10000000)
 
