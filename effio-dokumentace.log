@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.12.23)  27 DEC 2023 12:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.12.23)  27 DEC 2023 16:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -761,12 +761,12 @@ LaTeX Font Info:    Trying to load font information for T1+phv on input line 18
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
-<image/logo-skoly.png, id=104, 356.2911pt x 137.5539pt>
+<image/logo-skoly.png, id=140, 356.2911pt x 137.5539pt>
 File: image/logo-skoly.png Graphic file (type png)
 <use image/logo-skoly.png>
 Package pdftex.def Info: image/logo-skoly.png  used on input line 190.
 (pdftex.def)             Requested size: 273.14923pt x 105.45715pt.
-<image/effio.png, id=106, 1927.2pt x 1084.05pt>
+<image/effio.png, id=142, 1927.2pt x 1084.05pt>
 File: image/effio.png Graphic file (type png)
 <use image/effio.png>
 Package pdftex.def Info: image/effio.png  used on input line 208.
@@ -827,17 +827,17 @@ g> <./image/effio.png>] [2
 
 ] [3
 
-] (effio-dokumentace.toc)
+] (effio-dokumentace.toc [4
+
+])
 \tf@toc=\write4
 \openout4 = `effio-dokumentace.toc'.
 
- [1
-
-] [2
+ [1] [2
 
 ]
 Kapitola 1.
-<image/effio-architecture-simple.png, id=166, 2403.98125pt x 1209.51875pt>
+<image/effio-architecture-simple.png, id=215, 2403.98125pt x 1209.51875pt>
 File: image/effio-architecture-simple.png Graphic file (type png)
 <use image/effio-architecture-simple.png>
 Package pdftex.def Info: image/effio-architecture-simple.png  used on input lin
@@ -874,7 +874,7 @@ Kapitola 3.
 [8
 
 ]
-<image/schema.png, id=198, 2370.8575pt x 2336.73pt>
+<image/schema.png, id=247, 2370.8575pt x 2336.73pt>
 File: image/schema.png Graphic file (type png)
 <use image/schema.png>
 Package pdftex.def Info: image/schema.png  used on input line 396.
@@ -882,7 +882,7 @@ Package pdftex.def Info: image/schema.png  used on input line 396.
  [9
 
  <./image/schema.png>]
-<image/figma.png, id=207, 1539.95325pt x 829.29825pt>
+<image/figma.png, id=257, 1539.95325pt x 829.29825pt>
 File: image/figma.png Graphic file (type png)
 <use image/figma.png>
 Package pdftex.def Info: image/figma.png  used on input line 405.
@@ -890,42 +890,81 @@ Package pdftex.def Info: image/figma.png  used on input line 405.
  [10
 
  <./image/figma.png>]
-<image/test-creator1.png, id=217, 1099.7085pt x 547.44525pt>
+<image/test-creator1.png, id=266, 1099.7085pt x 547.44525pt>
 File: image/test-creator1.png Graphic file (type png)
 <use image/test-creator1.png>
-Package pdftex.def Info: image/test-creator1.png  used on input line 424.
+Package pdftex.def Info: image/test-creator1.png  used on input line 425.
 (pdftex.def)             Requested size: 223.07211pt x 111.04082pt.
-<image/test-creator2.png, id=218, 1099.7085pt x 550.4565pt>
+<image/test-creator2.png, id=267, 1099.7085pt x 550.4565pt>
 File: image/test-creator2.png Graphic file (type png)
 <use image/test-creator2.png>
-Package pdftex.def Info: image/test-creator2.png  used on input line 430.
+Package pdftex.def Info: image/test-creator2.png  used on input line 431.
 (pdftex.def)             Requested size: 223.07211pt x 111.65161pt.
- [11 <./image/test-creator1.png> <./image/test-creator2.png>] [12] [13] [14] [1
-5] [16]
+<image/test-taking.png, id=268, 971.42924pt x 548.64975pt>
+File: image/test-taking.png Graphic file (type png)
+<use image/test-taking.png>
+Package pdftex.def Info: image/test-taking.png  used on input line 446.
+(pdftex.def)             Requested size: 341.43307pt x 192.83397pt.
+ [11 <./image/test-creator1.png> <./image/test-creator2.png>]
+<image/programming.png, id=277, 972.63374pt x 548.64975pt>
+File: image/programming.png Graphic file (type png)
+<use image/programming.png>
+Package pdftex.def Info: image/programming.png  used on input line 456.
+(pdftex.def)             Requested size: 341.43307pt x 192.59119pt.
+ [12 <./image/test-taking.png> <./image/programming.png>]
+<image/community.png, id=288, 970.827pt x 548.64975pt>
+File: image/community.png Graphic file (type png)
+<use image/community.png>
+Package pdftex.def Info: image/community.png  used on input line 470.
+(pdftex.def)             Requested size: 455.24411pt x 257.27103pt.
+ [13 <./image/community.png>]
+<image/homepage.png, id=297, 1097.2995pt x 543.83176pt>
+File: image/homepage.png Graphic file (type png)
+<use image/homepage.png>
+Package pdftex.def Info: image/homepage.png  used on input line 498.
+(pdftex.def)             Requested size: 455.24411pt x 225.61958pt.
+ [14 <./image/homepage.png>]
+<image/res1.png, id=304, 224.63925pt x 486.618pt>
+File: image/res1.png Graphic file (type png)
+<use image/res1.png>
+Package pdftex.def Info: image/res1.png  used on input line 510.
+(pdftex.def)             Requested size: 111.53606pt x 241.61545pt.
+<image/res2.png, id=305, 221.02576pt x 486.01575pt>
+File: image/res2.png Graphic file (type png)
+<use image/res2.png>
+Package pdftex.def Info: image/res2.png  used on input line 517.
+(pdftex.def)             Requested size: 111.53606pt x 245.25432pt.
+ [15
+
+ <./image/res1.png> <./image/res2.png>]
 Kapitola 4.
+[16
+
+] [17] [18] [19] [20] [21]
+Kapitola 5.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[17
+[22
 
 ]
 File: image/logo-skoly.png Graphic file (type png)
 <use image/logo-skoly.png>
-Package pdftex.def Info: image/logo-skoly.png  used on input line 675.
+Package pdftex.def Info: image/logo-skoly.png  used on input line 751.
 (pdftex.def)             Requested size: 273.14923pt x 105.45715pt.
 
 
-LaTeX Warning: Citation `socSSPU' on page 18 undefined on input line 680.
+LaTeX Warning: Citation `socSSPU' on page 23 undefined on input line 756.
 
-<image/vysledek_10.pdf, id=278, 433.62pt x 289.08pt>
+<image/vysledek_10.pdf, id=367, 433.62pt x 289.08pt>
 File: image/vysledek_10.pdf Graphic file (type pdf)
 <use image/vysledek_10.pdf>
-Package pdftex.def Info: image/vysledek_10.pdf  used on input line 685.
+Package pdftex.def Info: image/vysledek_10.pdf  used on input line 761.
 (pdftex.def)             Requested size: 286.806pt x 191.21242pt.
-<image/vysledek_20.pdf, id=279, 433.62pt x 289.08pt>
+<image/vysledek_20.pdf, id=368, 433.62pt x 289.08pt>
 File: image/vysledek_20.pdf Graphic file (type pdf)
 <use image/vysledek_20.pdf>
-Package pdftex.def Info: image/vysledek_20.pdf  used on input line 689.
+Package pdftex.def Info: image/vysledek_20.pdf  used on input line 765.
 (pdftex.def)             Requested size: 286.806pt x 191.21242pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -938,7 +977,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.13202pt}.
 
-[18]
+[23]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.13202pt, for example:
@@ -947,15 +986,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.13202pt}.
 
-[19 <./image/vysledek_10.pdf> <./image/vysledek_20.pdf
+[24 <./image/vysledek_10.pdf> <./image/vysledek_20.pdf
 
 pdfTeX warning: pdflatex.exe (file ./image/vysledek_20.pdf): PDF inclusion: mul
 tiple pdfs with page group included in a single page
 >]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 715.
+nput line 791.
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
-726.
+802.
  (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmtt.fd
 File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
@@ -967,7 +1006,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.13202pt}.
 
-[20]
+[25]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.13202pt, for example:
@@ -976,7 +1015,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.13202pt}.
 
-[21]
+[26]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.13202pt, for example:
@@ -985,13 +1024,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.13202pt}.
 
-[22]
-Kapitola 5.
-[23
+[27]
+Kapitola 6.
+[28
 
-] [24
+] [29
 
-] (effio-dokumentace.lof [25
+] (effio-dokumentace.lof [30
 
 ])
 \tf@lof=\write5
@@ -1001,9 +1040,9 @@ Kapitola 5.
 \tf@lot=\write6
 \openout6 = `effio-dokumentace.lot'.
 
- [26]
+ [31]
 P\v {r}\'{\i }loha A.
-[27
+[32
 
 ] (effio-dokumentace.aux)
  ***********
@@ -1015,13 +1054,13 @@ L3 programming layer <2023-08-29>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `effio-dokumentace.out' has not changed.
-(rerunfilecheck)             Checksum: 8B0CC0DA9E8D676802151404D40F5BF0;3425.
+(rerunfilecheck)             Checksum: 8D342034F93E60AD97D08A44485EB28D;4800.
  ) 
 Here is how much of TeX's memory you used:
- 18457 strings out of 475248
- 297201 string characters out of 5758756
- 1952785 words of memory out of 5000000
- 39445 multiletter control sequences out of 15000+600000
+ 18536 strings out of 475248
+ 298699 string characters out of 5758756
+ 1951785 words of memory out of 5000000
+ 39506 multiletter control sequences out of 15000+600000
  640916 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,12n,117p,917b,2200s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1044,9 +1083,9 @@ ata/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Oem/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Oem/AppData/
 Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Oem/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on effio-dokumentace.pdf (30 pages, 1751199 bytes).
+Output written on effio-dokumentace.pdf (36 pages, 3353455 bytes).
 PDF statistics:
- 636 PDF objects out of 1000 (max. 8388607)
- 137 named destinations out of 1000 (max. 500000)
- 266 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 735 PDF objects out of 1000 (max. 8388607)
+ 155 named destinations out of 1000 (max. 500000)
+ 368 words of extra memory for PDF output out of 10000 (max. 10000000)
 
