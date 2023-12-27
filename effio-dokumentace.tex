@@ -377,6 +377,13 @@ Tailwind CSS je "CSS utility library", to znamená, že narozdíl od frameworků
 \section{Auth.js}
 Auth.js je knihovna sloužící pro autentifikaci a autorizaci, poskytuje možnost "session based", to je použito v Effiu, a JWT autentifikace. Dále knihovna podporuje OAuth s mnohými providery, v tomto projektu je využit GitHub a Google s jednoduchou možností přidat další. Výhodou knihovny je, že data si vývojář spravuje sám, neboli jsou ukládána do jeho vlastní databáze v podobě tabulek (které si také může sám upravit): Account, Session, User a Verification Token, které poskytují naprostou kontrolu nad ověřením uživatelů.
 
+%\section{Cloud provideři}
+%Effia plně spoléhá na cloudové řešení, díky nim je jednoduché zprovoznit plně funkční stránku bez jakékoliv starosti o fyzický hardware, stejně jako o škálování zdrojů podle potřeby.
+%\begin{itemize}
+	%\item \textbf{Vercel} se stará o hostování aplikace jako takové, distribuci statického obsahu na %CDN a jednoduše řeší znovuvytvoření stránky po změně kódu v~GitHub repozitáři. Vercel podporuje %"serverless" architekturu v~podobě tradiční lambda funkcí. Jedná se o instance dané funkce, %která se spouští na serveru, není dedikovaná ale spouští se a vypíná podle vytížení.
+%	\item \textbf{Cloudinary} slouží
+%\end{itemize}
+
 \chapter{Cesta k řešení a její implementace}
 \section{Založení a konfigurace projektu}
 Prvním krokem bylo založení projektu a stažení potřebných knihoven technologií, které jsem plánoval využít. Kombinace mnou vybraných technologií nebyla kompletně konvenční a proto jsem se musel v~některých případech obrátit na komunitou vytvořené adaptéry, příkladem je například knihovna \texttt{trpc-sveltekit}, která propojuje SvelteKit a tRPC, které je primárně navrženo buď jako samostatný server a nebo jako implementace do Next.js.
@@ -411,13 +418,45 @@ Jako první si uživatel zvolí mezi kvízovým a programovacím testem, u obou 
 \end{itemize}
 Po dokončení těchto úprav se uživatel dostane do konečných úprav testu, což činí jméno, popisek a obrázek testu, volitelné zařazení do skupin, tagy, rozhodne se jestli využít známkovací systém, který si může sám upravit, zvolí si zdali náhodně třídit otázky a následně tvorbu ukončí a rozhodne se zdali test uložit jako návrh nebo ho publikovat.
 
+\begin{figure}[h]
+	\centering
+	\begin{minipage}[]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{image/test-creator1.png}
+		\caption{Kvízový test}
+		\label{fig:test-creator1}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{image/test-creator2.png}
+		\caption{Programovací test}
+		\label{fig:test-creator2}
+	\end{minipage}
+\end{figure}
+
 \subsection{Vyplňování kvízu}
 Vytvořený test si poté může kdokoliv s~přístupem k~němu vyplnit (testy jsou základně dostupně pro všechny, po úpravě mohou být zveřejněny pouze pro členy skupin).
 
-Otázky se náhodně seřadí a uživatel je vyplňuje, náhodně seřazené jsou také odpovědi určitých typů otázek. Po vyplnění všech otázek uživatel test odevzdá, zkontroluje se a vrátí mu správné odpovědi, počet bodů, známku co získal a pokud je uživatel přihlášený tak se záznam a vyplnění uloží do databáze, uživatel si ho poté může zpětně zobrazit v sekci \textit{Test history}.
+Otázky se náhodně seřadí a uživatel je vyplňuje, zamíchané jsou také odpovědi určitých typů otázek. Po vyplnění všech uživatel test odevzdá, zkontroluje se a vrátí mu správné odpovědi, počet bodů, známku co získal a pokud je uživatel přihlášený tak se záznam a vyplnění uloží do databáze, uživatel si ho poté může zpětně zobrazit v sekci \textit{Test history}.
 
 \subsection{Plnění programovacího testu}
 Uživatel dostane popis toho co by měl kód umět, sadu testů, které mají otestovat funkcionalitu kódu a popřípadě nějaké nápovědy. Programovací test obsahuje vlastní editor do kterého uživatel píše, pro kontrolu testu můžeme použít tlačítko \textit{"Run"} a pokud testy prochází tak je test možné řešení odevzdat.
+
+\subsection{Skupiny}
+Každý přihlášený uživatel si může vytvořit vlastní skupinu, do které se můžou pomocí generovaného kódu připojit ostatní uživatelé. Skupina obsahuje kanály, ve kterých je možné psát textové zprávy, taky zde můžeme nají přidané testy, vlastník si poté může procházet grafy výsledku členů skupiny.
+
+\subsection{Komunitní místo}
+Na této stránce může uživatel najít nové a populární testy včetně všech testů, které existují. Testy jsou zobrazovány postupně podle principu "infinite scrolling", na což využívám JavaScript API Intersection Observer abych zjistil kdy uživatel dosáhl posledního prvku a vyžádal jsem si tak další, implementované je také vyhledávací pole, které filtruje zobrazované testy, další možností je filtrace pomocí tagů. Vizuálně jsou také rozlišeny kvízy od programovacích testů. Testy se také dají ohodnotit hvězdičkou, jejich aplikování využívá principu "optimistic update", to znamená, že po přidání hvězdičky ji uživatel okamžitě vidí přidanou zatímco se ověřuje jeho oprávnění a vytváří záznam hvězdičky v databázi, v~případě neúspěchu se poté uživateli sama hvězdička opět odebere. 
+
+\subsection{Kolekce testů}
+Zde si uživatel může zobrazit jím vytvořené testy, aplikovaná je stejná funkcionalita vyhledávacího pole a "infinite scrollingu". Každý test má ale také další možnosti, a to úpravu, export a smazání.
+\begin{itemize}
+	\item Úprava - uživatel se přesune na stránku úprav, tam může celý test přepracovat.
+	\item Export - vytvoří z~testu textový soubor ve formátu GIFT se všemi otázkami daného testu, které jsou podporovány Moodlem
+	\item Delete - smazání testu z databáze
+\end{itemize}
+
+\subsection{Světlý a tmavý režim}
+S ohledem na uživatele co preferují tmavý režim jsem se také rozhodl pro tvorbu tmavého režimu, ten je možné vidět na obrázku \ref{fig:test-creator2}, oba tyto režimy vyžadovali vlastní paletu barev a byly mnohokrát přepracovány aby k~sobě jednotlivé barvy co nejlépe pasovaly.
 
 \subsubsection{Zvýraznění textu}
 V \LaTeX{}u existuje několik způsobů, jak zvýraznit text. Můžeme použít tučné písmo, kurzívu nebo podtržení.
