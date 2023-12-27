@@ -409,7 +409,15 @@ Jako první si uživatel zvolí mezi kvízovým a programovacím testem, u obou 
 	\item Kvízový - po výběru šablony, kde si uživatel může zvolit i import z GIFT formátu, se uživatel dostane do tvorby testu samotného, vybírat si aktuálně může z~6~typů otázek: \textit{Pick One}, \textit{True/False}, \textit{Connect}, \textit{Write}, \textit{Fill} a \textit{Geography}, otázkám lze svévolně měnit pořadí, přidávat komentáře k~odpovědím a upravovat počet získaných bodů.
 	\item Programovací - po výběru šablony se uživatel dostane do tvorby testu programovacího, kde ho pojmenuje problém, popíše co má uživatel řešit, nadefinuje kontrolní vstupy a očekávané výstupy, poté může zanechat nápovědy
 \end{itemize}
-Po dokončení těchto úprav se uživatel dostane do konečných úprav testu, což činí jméno, popisek a obrázek testu, volitelné zařazení do skupin, tagy, rozhodne se jestli využít známkovací systém, který si může sám upravit a následně tvorbu ukončí, tím se test vytvoří a zveřejní nebo se uloží jako návrh podle výběru.
+Po dokončení těchto úprav se uživatel dostane do konečných úprav testu, což činí jméno, popisek a obrázek testu, volitelné zařazení do skupin, tagy, rozhodne se jestli využít známkovací systém, který si může sám upravit, zvolí si zdali náhodně třídit otázky a následně tvorbu ukončí a rozhodne se zdali test uložit jako návrh nebo ho publikovat.
+
+\subsection{Vyplňování kvízu}
+Vytvořený test si poté může kdokoliv s~přístupem k~němu vyplnit (testy jsou základně dostupně pro všechny, po úpravě mohou být zveřejněny pouze pro členy skupin).
+
+Otázky se náhodně seřadí a uživatel je vyplňuje, náhodně seřazené jsou také odpovědi určitých typů otázek. Po vyplnění všech otázek uživatel test odevzdá, zkontroluje se a vrátí mu správné odpovědi, počet bodů, známku co získal a pokud je uživatel přihlášený tak se záznam a vyplnění uloží do databáze, uživatel si ho poté může zpětně zobrazit v sekci \textit{Test history}.
+
+\subsection{Plnění programovacího testu}
+Uživatel dostane popis toho co by měl kód umět, sadu testů, které mají otestovat funkcionalitu kódu a popřípadě nějaké nápovědy. Programovací test obsahuje vlastní editor do kterého uživatel píše, pro kontrolu testu můžeme použít tlačítko \textit{"Run"} a pokud testy prochází tak je test možné řešení odevzdat.
 
 \subsubsection{Zvýraznění textu}
 V \LaTeX{}u existuje několik způsobů, jak zvýraznit text. Můžeme použít tučné písmo, kurzívu nebo podtržení.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.12.23)  26 DEC 2023 12:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.12.23)  27 DEC 2023 00:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -900,21 +900,21 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 ]
 File: image/logo-skoly.png Graphic file (type png)
 <use image/logo-skoly.png>
-Package pdftex.def Info: image/logo-skoly.png  used on input line 628.
+Package pdftex.def Info: image/logo-skoly.png  used on input line 633.
 (pdftex.def)             Requested size: 273.14923pt x 105.45715pt.
 
 
-LaTeX Warning: Citation `socSSPU' on page 17 undefined on input line 633.
+LaTeX Warning: Citation `socSSPU' on page 17 undefined on input line 638.
 
-<image/vysledek_10.pdf, id=262, 433.62pt x 289.08pt>
+<image/vysledek_10.pdf, id=263, 433.62pt x 289.08pt>
 File: image/vysledek_10.pdf Graphic file (type pdf)
 <use image/vysledek_10.pdf>
-Package pdftex.def Info: image/vysledek_10.pdf  used on input line 638.
+Package pdftex.def Info: image/vysledek_10.pdf  used on input line 643.
 (pdftex.def)             Requested size: 286.806pt x 191.21242pt.
-<image/vysledek_20.pdf, id=263, 433.62pt x 289.08pt>
+<image/vysledek_20.pdf, id=264, 433.62pt x 289.08pt>
 File: image/vysledek_20.pdf Graphic file (type pdf)
 <use image/vysledek_20.pdf>
-Package pdftex.def Info: image/vysledek_20.pdf  used on input line 642.
+Package pdftex.def Info: image/vysledek_20.pdf  used on input line 647.
 (pdftex.def)             Requested size: 286.806pt x 191.21242pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -942,9 +942,9 @@ pdfTeX warning: pdflatex.exe (file ./image/vysledek_20.pdf): PDF inclusion: mul
 tiple pdfs with page group included in a single page
 >]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 668.
+nput line 673.
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
-679.
+684.
  (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmtt.fd
 File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
@@ -1007,9 +1007,9 @@ Package rerunfilecheck Info: File `effio-dokumentace.out' has not changed.
 (rerunfilecheck)             Checksum: 8B0CC0DA9E8D676802151404D40F5BF0;3425.
  ) 
 Here is how much of TeX's memory you used:
- 18433 strings out of 475248
- 296625 string characters out of 5758756
- 1951785 words of memory out of 5000000
+ 18434 strings out of 475248
+ 296641 string characters out of 5758756
+ 1952785 words of memory out of 5000000
  39429 multiletter control sequences out of 15000+600000
  640916 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1033,9 +1033,9 @@ ata/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Oem/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Oem/AppData/
 Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Oem/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on effio-dokumentace.pdf (29 pages, 1610310 bytes).
+Output written on effio-dokumentace.pdf (29 pages, 1611171 bytes).
 PDF statistics:
- 617 PDF objects out of 1000 (max. 8388607)
- 129 named destinations out of 1000 (max. 500000)
+ 618 PDF objects out of 1000 (max. 8388607)
+ 130 named destinations out of 1000 (max. 500000)
  256 words of extra memory for PDF output out of 10000 (max. 10000000)
 
