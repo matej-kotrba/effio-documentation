@@ -368,6 +368,12 @@ Jak již bylo zmíněno v~úvodu tak tato aplikace by se měla obejít bez vlast
 
 Metaframework je technologie, která kombinuje výhody \uv{single page application} a tradičního web serveru a přináší za mě nejlepší variantu jak vytvářet webovou aplikaci. Disponuje možností běhu kódu na serveru, přesměrováním na klientské části a dalšími výhodami. Takových technologií existuje celá řada, jako například populární NextJS, já si pro svůj projekt zvolil SvelteKit.
 
+\chapter{Využité technologie}
+
+\section{SvelteKit}
+
+Svelte je open source JavaScriptový framework vyvíjený od roku 2016 týmem Riche Harrise, jeho hlavní výhodou je rychlost ale také intuitivita, protože jazyk se snaží vypadat jako JavaScript, zatímco rozšiřuje jeho možnosti, díky tomu se za posledních let těší rostoucí popularitě webových vývojářů. Na rozdíl od ostatních frontendových frameworků (například React, Angular, Solid nebo Qwik) Svelte disponuje vlastním jazykem, který se zapisuje do \texttt{.svelte} souboru, ten se následně kompiluje do vysoce efektivního JavaScriptu.\\
+
 SvelteKit je metaframework postavený na Svelte. Jeho hlavní výhody se skládají z:
 \begin{itemize}
 	\item Rychlost - Svelte vytváří velice rychlou aplikaci, v kombinaci s Vitem (bundler) se ale také spojuje s velice rychlým build timem a hot module replacementem. To ale není jediné místo kde se rychlost projevuje, za pomocí SvelteKitu se aplikace vyvíjí velmi rychle díky velice malému množství \uv{boilerplate} kódu.
@@ -385,6 +391,10 @@ Prisma slouží jako ORM (Object–relational mapping), to znamená pomocí Java
 Zod je validační knihovna jako např. Yup. Jeho výhodou je avšak možnost využít jeho validační schémata jako typy a také samotná validace funguje jako \uv{type guard} (kontroluje a nastavuje typy u vložené proměnné). Jeho další výhodou je například jeho nízká velikost.
 
 \subsection{Auth.js}
+\section{Tailwind CSS}
+Tailwind CSS je \uv{CSS utility library}, to znamená, že narozdíl od frameworků jako je třeba Bootstrap nebo Material UI neposkytuje celé předpřipravené komponenty ale připravené CSS třídy, které se aplikují na HTML elementy, jeho výhodou je naprostá kontrola nad chováním stylů, které se aplikují, přehlednost a rychlost se kterou se dá styly vytvářet.
+
+\section{Auth.js}
 Auth.js je knihovna sloužící pro autentifikaci a autorizaci, poskytuje možnost \uv{session based}, to je použito v Effiu, a JWT autentifikace. Dále knihovna podporuje OAuth s mnohými providery, v tomto projektu je využit GitHub a Google s jednoduchou možností přidat další. Výhodou knihovny je, že data si vývojář spravuje sám, neboli jsou ukládána do jeho vlastní databáze v podobě tabulek (které si také může sám upravit): Account, Session, User a Verification Token, které poskytují naprostou kontrolu nad ověřením uživatelů.
 
 %\section{Cloud provideři}
@@ -450,7 +460,7 @@ Po dokončení těchto úprav se uživatel dostane do konečných úprav testu, 
 \section{Vyplňování testu}
 \label{sec:test-take}
 \subsection{Vyplňování kvízu}
-Vytvořený test si poté může kdokoliv s~přístupem k~němu vyplnit (testy jsou základně dostupně pro všechny, po úpravě mohou být zveřejněny pouze pro členy skupin).
+Vytvořený test si poté může kdokoliv s~přístupem k~němu vyplnit (testy jsou základně dostupné pro všechny, po úpravě mohou být zveřejněny pouze pro členy skupin).
 
 Otázky se náhodně seřadí a uživatel je vyplňuje, zamíchané jsou také odpovědi určitých typů otázek. Po vyplnění všech uživatel test odevzdá, zkontroluje se a vrátí mu správné odpovědi, počet bodů, známku co získal a pokud je uživatel přihlášený tak se záznam a vyplnění uloží do databáze, uživatel si ho poté může zpětně zobrazit v sekci \textit{Test history}.
 
@@ -476,7 +486,7 @@ Uživatel dostane popis toho co by měl kód umět, sadu testů, které mají ot
 
 \subsection{Komunitní místo}
 \label{subsec:community}
-Na této stránce může uživatel najít nové a populární testy včetně všech testů, které existují. Testy jsou zobrazovány postupně podle principu \uv{infinite scrolling}, na což využívám JavaScript API Intersection Observer abych zjistil kdy uživatel dosáhl posledního prvku a vyžádal jsem si tak další, implementované je také vyhledávací pole, které filtruje zobrazované testy, další možností je filtrace pomocí tagů. Vizuálně jsou také rozlišeny kvízy od programovacích testů. Testy se také dají ohodnotit hvězdičkou, jejich aplikování využívá principu \uv{optimistic update}, to znamená, že po přidání hvězdičky ji uživatel okamžitě vidí přidanou zatímco se ověřuje jeho oprávnění a vytváří záznam hvězdičky v databázi, v~případě neúspěchu se poté uživateli sama hvězdička opět odebere. 
+Na této stránce může uživatel najít nové a populární testy včetně všech testů, které existují. Testy jsou zobrazovány postupně podle techniky \uv{infinite scrolling}, na což využívám JavaScript API Intersection Observer, abych zjistil, kdy uživatel dosáhl posledního prvku a vyžádal si tak další testy. Implementované je vyhledávací pole, které filtruje zobrazované testy, další možností je filtrace pomocí tagů. Vizuálně jsou také rozlišeny kvízy od programovacích testů. Testy se dají ohodnotit hvězdičkou, jejich aplikování využívá principu \uv{optimistic update}, to znamená, že po přidání hvězdičky ji uživatel okamžitě vidí přidanou, zatímco se ověřuje jeho oprávnění a vytváří záznam hvězdičky v databázi. V~případě neúspěchu se poté uživateli sama hvězdička opět odebere. 
 
 \begin{figure}[H]
 	\centering %% příkaz, který ti obrázek zarovná na střed
@@ -545,7 +555,7 @@ Hlavním cílem bylo vytvořit rychlou, cloudovou aplikaci pro vytváření a sd
 
 Za úspěch považuji také grafickou část aplikace, která za mě tvoří minimalistický moderní vzhled.
 
-Hlavní neúspěch nebo spíše nedodělanost vidím ve skupinách a přizpůsobení možností testů pro ně, původně jsem zamýšlel vytvořit skupiny jako místo pro sdílení materiálů s více zajímavými možnostmi pro vlastníka, aby sloužili jako funkce vhodná pro výuku. Cíle nejsou zdaleka nerealistické ale těchto cílů jsem nebyl schopen dosáhnou z~nedostatku času, jako vylepšení by ale za mně bylo velice přínosné.
+Hlavní neúspěch nebo spíše nedodělanost vidím ve skupinách a přizpůsobení možností testů pro ně, původně jsem zamýšlel vytvořit skupiny jako místo pro sdílení materiálů s více zajímavými možnostmi pro vlastníka, aby sloužili jako funkce vhodná pro výuku. Cíle nejsou zdaleka nerealistické, ale těchto cílů jsem nebyl schopen dosáhnou z~nedostatku času, jako vylepšení by ale za mně bylo velice přínosné.
 	
 \chapter*{Závěr}
 	
