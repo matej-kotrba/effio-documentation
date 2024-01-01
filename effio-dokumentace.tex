@@ -323,13 +323,32 @@ Webové aplikace standartně využívají JavaScript, ten ale obnáší signifik
 
 \chapter{Backend}
 
-Jednoduchý příklad komunikace \uv{backendu} Effia
+\section{Architektura backendu}
 \begin{figure}[h!]
 	\centering %% příkaz, který ti obrázek zarovná na střed
 	\includegraphics[width=1\linewidth]{image/effio-architecture-simple.png} 
-	\caption{Jednoduchý přehled architektury Effia.} %% popisek obrázku, nezapomeň na citace!
+	\caption{Jednoduchý přehled backendové části Effia.} %% popisek obrázku, nezapomeň na citace!
 	\label{fig:effio-architecture} %% označení až budeš chtít na obrázek odkazovat
 \end{figure}
+
+	\begin{itemize}
+		\item CDN - neboli Content Delivery Network je síť serverů, které jsou charakteristické hlavně tím, že jsou rozmístěny po celém světě a ve velkém množství, starají se o distribuci statického obsahu díky čemu nemusí klient data získávat ze vzdáleného server ale právě z~tohoto, který je ve většině případů mnohem blíže. Dále se starají o cachování dat, což opět zkracuje dobu pro uživatele aby zobrazil obsah.
+		\item Server - neoznačuje server jako takový ale spíše místo kde se spouštějí instance serverových funkcí, což jsou funkce, které se vytváří podle potřeby na reálných serverech, které ale spravuje provider této služby, v~mém případě Vercel, respektive Cloudflare.
+		
+		Programátora nemusí tyto serveru vůbec zajímat, instance se sami škálují a obecně jsou pro vývojáře velice příjemných řešením. V poslední letech se tato architektura těší významné oblibě nejen malých projektů ale také velikých firem jako je Amazon, ty se ale v poslední době opět začínají vracet k~hostování vlastních serverů, které se po dlouholetých diskuzích znovu zdají výhodnější pro takto masivní účely typu Amazonu.
+		
+		Tento server je v Effiu využíván hlavně pro první zobrazení stránky metodou SSR (\uv{server side rendering}) a také získáváním dat, které nemohou být získány na klientu (např. SQL dotazy), pro jednotlivé stránky, formulářovými akcemi nebo jako API endpointy.
+		
+		\item DB - MySQL databáze hostovaná přes službu Planetscale, ta disponuje velice zajímavými možnosti jako jsou \uv{větve} podobné verzovacímu systému Git, \uv{Deploy requesty}, které zlepšují práci v~týmu nebo možnost distribuce \uv{read-only} instancí databáze do rozdílných regionů. Pro mě byla veliká výhoda rychlost a velice štědrý \uv{free tier}.
+	\end{itemize}
+
+
+\section{Autentifikace}
+\subsection{Auth.js}
+Auth.js je knihovna sloužící pro autentifikaci, poskytuje možnost \uv{session based}, to je použito v Effiu, a JWT autentifikace. Dále knihovna podporuje OAuth s mnohými providery, v tomto projektu je využit GitHub a Google s~jednoduchou možností přidat další. Výhodou knihovny je, že data si vývojář spravuje sám, neboli jsou ukládána do jeho vlastní databáze v podobě tabulek (které si také může sám upravit): Account, Session, User a Verification Token, které poskytují naprostou kontrolu nad ověřením uživatelů.
+
+\subsection{Proces přihlášení}
+Uživatel se na podstránce /login rozhodne zdali se přihlásit pomocí Google nebo GitHub účtu, je poté přesměrován na stránku těchto providerů, kde potvrdí přístup k~informacím o jejich účtu a je navrácen zpět do Effia. V~databázi jsou vytvořeny tabulky o tomto uživateli včetně nové relace (Session), díky které je schopen přihlášení. To proběhne automaticky po navrácení se zpět od providera.
 
 \clearpage
 \section{Model databáze}
@@ -478,7 +497,7 @@ getTestById: procedure.input(z.object({
 	return test
 }),
 \end{lstlisting}
-\begin{lstlisting}[style=ES6, caption=Volání funkce pomocí tRPC klienta s metodou getTestById, label=trpc_code]
+\begin{lstlisting}[style=ES6, caption=Volání funkce pomocí tRPC klienta s metodou getTestById, label=trpc_code_use]
 	const imageUrlToDeleteTest = await trpc(get(page)).getTestById.query({
 		id: props.data.id,
 	})
@@ -486,16 +505,66 @@ getTestById: procedure.input(z.object({
 
 \subsection{Prisma}
 Prisma slouží jako ORM (Object–relational mapping), to znamená pomocí JavaScriptu získávat data z databáze bez přímého použití jazyka SQL, Prisma se skládá z klientské části, která pomocí protokolu založeném na JSON komunikuje se serverovou částí, tam je následně uskutečněn SQL dotaz a odpověď je poslána klientovi. Také řeší již zmíněný problém s otypováním těchto dotazů, pro Prismu je totiž nutné vytvořit \texttt{schema.prisma} soubor kde se definuje model databáze, ten poté můžeme pomocí Prisma CLI nahrávat do databáze ale také vytvářet dynamické typy, které poté využijeme jak v~dotazech tak v~aplikaci pro data, která dostaneme zpět.
+\begin{lstlisting}[style=ES6, caption=Získání testu podle id a přidání dat ze spojených tabulek, label=prisma_code_use]
+	const test = await ctx.prisma.test.findUnique({
+		where: {
+			id: input.id,
+		},
+		include: {
+			subcategories: input.includeGroupSubcategories || false,
+			owner: true,
+			tags: {
+				include: {
+					tag: true
+				}
+			},
+			testVersions: {
+				include: {
+					questions: {
+						include: {
+							type: true
+						}
+					}
+				},
+				orderBy: {
+					version: "desc"
+				},
+				take: 1
+			}
+		},
+	})
+\end{lstlisting}
+
+\clearpage
+\begin{lstlisting}[style=ES6, caption=Schéma modelu verze testu, label=prisma_code_schema]
+model TestVersion {
+	versionId      String       @id @default(uuid())
+	createdAt      DateTime     @default(now())
+	updatedAt      DateTime     @updatedAt
+	version        Int
+	testId         String
+	markSystemJSON Json
+	totalPoints    Int          @default(0)
+	testGroup      Test         @relation(fields: [testId], references: [id], onDelete: Cascade)
+	questions      Question[]
+	records        TestRecord[]
+	
+	@@index([testId])
+	@@index([version])
+}
+\end{lstlisting}
 
 \subsection{Zod}
 Zod je validační knihovna jako např. Yup. Jeho výhodou je avšak možnost využít jeho validační schémata jako typy a také samotná validace funguje jako \uv{type guard} (kontroluje a nastavuje typy u vložené proměnné). Jeho další výhodou je například jeho nízká velikost.
 
-\subsection{Auth.js}
-\section{Tailwind CSS}
-Tailwind CSS je \uv{CSS utility library}, to znamená, že narozdíl od frameworků jako je třeba Bootstrap nebo Material UI neposkytuje celé předpřipravené komponenty ale připravené CSS třídy, které se aplikují na HTML elementy, jeho výhodou je naprostá kontrola nad chováním stylů, které se aplikují, přehlednost a rychlost se kterou se dá styly vytvářet.
-
-\section{Auth.js}
-Auth.js je knihovna sloužící pro autentifikaci a autorizaci, poskytuje možnost \uv{session based}, to je použito v Effiu, a JWT autentifikace. Dále knihovna podporuje OAuth s mnohými providery, v tomto projektu je využit GitHub a Google s jednoduchou možností přidat další. Výhodou knihovny je, že data si vývojář spravuje sám, neboli jsou ukládána do jeho vlastní databáze v podobě tabulek (které si také může sám upravit): Account, Session, User a Verification Token, které poskytují naprostou kontrolu nad ověřením uživatelů.
+\begin{lstlisting}[style=ES6, caption=Validace vstupu pomocí validační knihovny Zod, label=zod]
+const answerSchema = z.string().min(ANSWER_MIN, `Answer has to be at least ${ANSWER_MIN} character long.`).max(ANSWER_MAX, `Answer can be max ${ANSWER_MAX} characters long.`)
+const result = answerSchema.safeParse(content.answers[item].answer)
+if (result.success === false) {
+	isError = true
+	content.answers[item].error = result.error.errors[0].message
+}
+\end{lstlisting}
 
 %\section{Cloud provideři}
 %Effia plně spoléhá na cloudové řešení, díky nim je jednoduché zprovoznit plně funkční stránku bez jakékoliv starosti o fyzický hardware, stejně jako o škálování zdrojů podle potřeby.
