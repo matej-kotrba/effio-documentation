@@ -126,9 +126,9 @@ openright
 
 \lstdefinestyle{JSES6Base}{
 	backgroundcolor=\color{white},
-	basicstyle=\ttfamily,
+	basicstyle=\ttfamily\footnotesize,
 	breakatwhitespace=false,
-	breaklines=false,
+	breaklines=true,
 	captionpos=b,
 	columns=fullflexible,
 	commentstyle=\color{mediumgray}\upshape,
@@ -354,9 +354,27 @@ Otázky
 	\item QuestionType - typ otázky, rozhoduje jejím chování na frontendu.
 	\item QuestionRecord - záznam otázky, po vyplnění testu se vytvoří ke každé otázce jeden nový záznam s~výsledky, je sdružován Test Recordem.
 \end{itemize}
+Testy
 \begin{itemize}
-	\item Test - obsahuje název testu, jeho popis a sdružuje veškeré další podrobnosti testu jako jsou Tagy, Stars nebo MarkSystem, obsahuje množství TestVersion, což je vlastně jednotlivá verze testu.
-	\item TestVersion - 
+	\item Test - obsahuje název testu, jeho popis a sdružuje veškeré další podrobnosti testu jako jsou Tagy, Stars, obsahuje množství TestVersion, což je vlastně jednotlivá verze testu.
+	\item TestVersion - verze testu, uchovává odpovědi, body a Mark System, verze se aktualizují při každé změně testu.
+	\item TestRecord - záznam vyplněného testu, obsahuje také Question Records.
+\end{itemize}
+Ostatní tabulky týkající se otázek
+\begin{itemize}
+	\item TestStar - ohodnocení testu hvězdičkou, každý uživatel mimo majitele může test takto ohodnotit, ekvivalent "liku" na sociálních sítích
+	\item MarkSystem - známkovací systém daného testu, uživatel si ho může sám upravit a při uložení testu je uchovám právě v~této tabulce.
+	\item Tag/TagOnTest - uchovává štítky týkající se tématu testu vybrané majitelem.
+\end{itemize}
+Skupiny
+\begin{itemize}
+	\item Group - skupina pro uživatele, obsahuje základní vlastnosti skupiny jako jméno, slug apod.
+	\item GroupSubcategory - jednotlivý kanál skupiny, každý tento kanál má i samostatné zprávy, chat apod.
+	\item GroupSubcategoryMessage - Zpráva v~kanálu, vztahuje se k~ní také její odesilatel, název, obsah atd. Obsahuje také MessageType, což je druh zprávy, kterou uživatel poslal.
+\end{itemize}
+Ostatní
+\begin{itemize}
+	\item Template - šablona testu
 \end{itemize}
 
 \subsection{Cloud hosting}
@@ -381,8 +399,90 @@ SvelteKit je metaframework postavený na Svelte. Jeho hlavní výhody se skláda
 	\item Přehlednost - SvelteKit využívá \uv{file based routing}, tedy cesty aplikace jsou generovány podle složek, které vývojář vytvoří, soubory se poté vždy jmenují stejně, \texttt{+page.svelte} pro stránku, \texttt{+layout.svelte} pro layout apod. Díky tomu je vždy jasné pro co specifický souboru slouží, přehlednosti také přidává, již u Sveltu zmíněná podobnost s JavaScriptem.
 \end{itemize} 
 
+\clearpage
+Tento kód ukazuje získání dat z~databáze při načtení stránky (load funkce) a poté také actions, což jsou formulářové akce vytvářené pro specifickou cestu, které poté můžeme využívat, zde je vidět mazání uživatele ze skupiny
+\begin{lstlisting}[style=ES6, caption=Ukázka z +page.server.ts, label=sveltekit_code]
+export const load: ServerLoad = async (event) => {
+	const users = prisma.user.findMany({ where: {name: event.params.name}})
+	
+	return users
+}
+
+export const actions: Actions = {
+	deleteUsers: async (event) => {
+		const formData = await event.request.formData()
+		const users: string[] = []
+		
+		formData.forEach((value) => {
+			users.push(value.toString())
+		})
+		
+		try {
+			
+			await (await trpcServer(event)).groups.kickUsersFromGroup({
+				groupSlug: event.params.name as string,
+				userIds: users,
+			})
+			return {
+				success: true
+			}
+		}
+		catch (e) {
+			if (e instanceof TRPCError) {
+				return fail(getHTTPStatusCodeFromError(e), { message: e.message })
+			}
+			else {
+				return fail(500, { message: "Something went wrong." })
+			}
+		}
+	}
+}
+\end{lstlisting}
+
 \subsection{tRPC}
-V minulé sekci jsem se zmínil o problémech s otypováním API endpointů, tRPC (Typescript Remote Procedure Call) tento problém řeší tím, že vytváří dynamické typy pro jednotlivé endpointy, podle toho jak si je sami nadefinujeme.
+V minulé sekci jsem se zmínil o problémech s otypováním API endpointů, tRPC (Typescript Remote Procedure Call) tento problém řeší tím, že vytváří dynamické typy pro jednotlivé endpointy, podle toho jak si je sami nadefinujeme, ty se potom dají volat pomocí funkcí bez požití \texttt{fetche} nebo třeba \texttt{axiosu}, tyto funkce jsou dokonale otypované a v~kódu tím pádem fungují jako jakákoliv jiná funkce vytvořená programátorem.
+\begin{lstlisting}[style=ES6, caption=Endpoint generovaný pomocí tRPC, label=trpc_code]
+getTestById: procedure.input(z.object({
+	id: z.string(),
+	includeGroupSubcategories: z.boolean().optional()
+})).query(async ({ ctx, input }) => {
+	const test = await ctx.prisma.test.findUnique({
+		where: {
+			id: input.id,
+		},
+		include: {
+			subcategories: input.includeGroupSubcategories || false,
+			owner: true,
+			tags: {
+				include: {
+					tag: true
+				}
+			},
+			testVersions: {
+				include: {
+					questions: {
+						include: {
+							type: true
+						}
+					}
+				},
+				orderBy: {
+					version: "desc"
+				},
+				take: 1
+			}
+		},
+	})
+	
+	if (!test) return null
+	return test
+}),
+\end{lstlisting}
+\begin{lstlisting}[style=ES6, caption=Volání funkce pomocí tRPC klienta s metodou getTestById, label=trpc_code]
+	const imageUrlToDeleteTest = await trpc(get(page)).getTestById.query({
+		id: props.data.id,
+	})
+\end{lstlisting}
 
 \subsection{Prisma}
 Prisma slouží jako ORM (Object–relational mapping), to znamená pomocí JavaScriptu získávat data z databáze bez přímého použití jazyka SQL, Prisma se skládá z klientské části, která pomocí protokolu založeném na JSON komunikuje se serverovou částí, tam je následně uskutečněn SQL dotaz a odpověď je poslána klientovi. Také řeší již zmíněný problém s otypováním těchto dotazů, pro Prismu je totiž nutné vytvořit \texttt{schema.prisma} soubor kde se definuje model databáze, ten poté můžeme pomocí Prisma CLI nahrávat do databáze ale také vytvářet dynamické typy, které poté využijeme jak v~dotazech tak v~aplikaci pro data, která dostaneme zpět.
