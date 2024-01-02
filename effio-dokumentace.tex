@@ -311,6 +311,21 @@ V dokumentaci jsou popsané využité technologie, postupy a jednotlivé funkcio
 
 \section{Architektura}
 
+\subsection{Možnosti řešení}
+Pro vytvoření webové aplikace je možno využít mnoho postupů, proto zmíním několik variant nad kterými jsem uvažoval s~jejich klady se zápory
+
+\begin{itemize}
+\item Tradiční web server - jedná se o nejběžnější variantu jak vytvářet webové stránky. Jednotlivé stránky jsou vytvářeny na serveru, následně jsou poslány na klienta, poslaný kód může obsahovat také JavaScript pro frontend funkcionalitu, pro backend je možné využít jazyk dle výběru. Pro veškeré přesměrování a další akce je nutné se obrátit na server.
+
+\item Single page application - toto řešení v~podstatě odstraňuje server a nechává veškerou zodpovědnost frontendovém frameworku jako např. React, Svelte nebo Solid, toto řešení ale nemá k~dispozici žádný způsob jak spouštět kód, která na klientu pouštět nemůžeme jako například SQL dotazy.
+
+\item Serverless - je architektura kdy vývojář využívá server poskytovatele, o ten se nemusí starat, a je škálován podle potřeby. Tento koncept ale má i své nevýhody, omezená doba relace odpovědi, menší úložný prostor pro načtení knihoven nebo třeba nemožnost spravovat svůj server.
+
+\item Edge runtime - tato technologie je podobná Serverless architektuře, serverový kód ale neběží v jedné lokalitě ale na jednotlivých CDN. Funkce se spouštějí
+
+\item Metaframework je technologie, která kombinuje výhody \uv{single page application} a tradičního web serveru a přináší za mě nejlepší variantu jak vytvářet webovou aplikaci. Disponuje možností běhu kódu na serveru, přesměrováním na klientské části a dalšími výhodami. Takových technologií existuje celá řada, jako například populární NextJS, já si pro svůj projekt zvolil SvelteKit.
+\end{itemize}
+
 Vzhledem k tomu, že záměrem bylo vytvořit aplikaci, která bude pro veškeré \uv{backendové} úlohy využívat cloud, tak je architektura relativně složité téma, proto se pokusím stručně popsat základní proces vykreslení stránky. Uživatel získává statické soubory ze \uv{CDN}, dynamicky vytvořené stránky pro první zobrazení (\uv{first render}) jsou generovány na instancích \uv{serverless funkcí} třetí strany, každá instance se vytváří podle potřeby na reálném serveru poskytovatele, není dedikovaná a ani nezůstavá aktivní po delší dobu. Server je dále využíván pro potřeby klienta, které si on sám nemůže obstarat především z bezpečnostních důvodů (DB queries, secret env variables...). Databáze vytváří spojení se serverem a ten získává potřebná data.
 
 \subsection{Koncept \uv{single page application} a tradičního web serveru }
@@ -340,6 +355,13 @@ Webové aplikace standartně využívají JavaScript, ten ale obnáší signifik
 		Tento server je v Effiu využíván hlavně pro první zobrazení stránky metodou SSR (\uv{server side rendering}) a také získáváním dat, které nemohou být získány na klientu (např. SQL dotazy), pro jednotlivé stránky, formulářovými akcemi nebo jako API endpointy.
 		
 		\item DB - MySQL databáze hostovaná přes službu Planetscale, ta disponuje velice zajímavými možnosti jako jsou \uv{větve} podobné verzovacímu systému Git, \uv{Deploy requesty}, které zlepšují práci v~týmu nebo možnost distribuce \uv{read-only} instancí databáze do rozdílných regionů. Pro mě byla veliká výhoda rychlost a velice štědrý \uv{free tier}.
+		\item Pusher, Cloudinary - jedná se o cloudové služby, které slouží účelům, které s~touto architekturou nejsem schopný zařídit.
+		
+		\begin{itemize}
+			\item Pusher se stará o web sockety, respektive stále spojení, které se \uv{serverless} spojením není možné. V~Effiu posloužil pro chat v~kanálech skupin pro aktualizaci zpráv všech uživatelů pokud nějaký pošle zprávu.
+			
+			\item Cloudinary slouží pro ukládání obrázků a jejich distribuci do CDN.
+		\end{itemize}
 	\end{itemize}
 
 
@@ -400,12 +422,6 @@ Ostatní
 Jak již bylo zmíněno v~úvodu tak tato aplikace by se měla obejít bez vlastního serveru, nejde ale jenom o databázi ale také například o ukládání obrázků nebo hostování aplikace jako takové, to je prováděno přes \uv{Cloud hostingy} jako Vercel pro hostování stránky jako takové, zároveň ale řeší i rozesílání statických dat do CDN a poskytuje serverless lambda funkce, Planetscale pro hostování mojí MySQL databáze, Cloudinary, který slouží jako \uv{bucket} pro obrázky a také jejich možnost editace přes url parametry, nebo Pusher, který slouží jako web socket server například pro chat.
 
 \section{Využité technologie}
-
-\subsection{SvelteKit}
-
-Metaframework je technologie, která kombinuje výhody \uv{single page application} a tradičního web serveru a přináší za mě nejlepší variantu jak vytvářet webovou aplikaci. Disponuje možností běhu kódu na serveru, přesměrováním na klientské části a dalšími výhodami. Takových technologií existuje celá řada, jako například populární NextJS, já si pro svůj projekt zvolil SvelteKit.
-
-\chapter{Využité technologie}
 
 \section{SvelteKit}
 
