@@ -321,7 +321,14 @@ Pro vytvoření webové aplikace je možno využít mnoho postupů, proto zmín�
 
 \item Serverless - je architektura kdy vývojář využívá server poskytovatele, o ten se nemusí starat, a je škálován podle potřeby. Tento koncept ale má i své nevýhody, omezená doba relace odpovědi, menší úložný prostor pro načtení knihoven nebo třeba nemožnost spravovat svůj server.
 
-\item Edge runtime - tato technologie je podobná Serverless architektuře, serverový kód ale neběží v jedné lokalitě ale na jednotlivých CDN. Funkce se spouštějí
+\item Edge runtime - tato technologie je podobná Serverless architektuře, serverový kód ale neběží v jedné lokalitě ale na jednotlivých CDN. Funkce se spouštějí ne skrze Node ale přes Edge runtime, toto obsahuje svou nevýhodu, Edge není Node, a proto nemůžeme používat Node moduly, jako je třeba \uv{fs}. Další nevýhodou je velice malé množství paměti, které je pro dostupnou instanci dostupné. Výhodou je poté velice nízká cena spuštění takové funkce a bezkonkurenční rychlost odpovědi, tato výhoda je největší u serverových úkolů jako přesměrování, cookies nebo geograficky založených údajů, v~případě několikanásobných dotazů do databáze se ale cesta potřebná k~získání dat zvětšuje a výhoda rychlosti mizí.
+
+\begin{figure}[h!]
+	\centering %% příkaz, který ti obrázek zarovná na střed
+	\includegraphics[width=0.7\linewidth]{image/edge-serverless.png} 
+	\caption{Rozdíl mezi serverless a edge.} %% popisek obrázku, nezapomeň na citace!
+	\label{fig:edge-serverless} %% označení až budeš chtít na obrázek odkazovat
+\end{figure}
 
 \item Metaframework je technologie, která kombinuje výhody \uv{single page application} a tradičního web serveru a přináší za mě nejlepší variantu jak vytvářet webovou aplikaci. Disponuje možností běhu kódu na serveru, přesměrováním na klientské části a dalšími výhodami. Takových technologií existuje celá řada, jako například populární NextJS, já si pro svůj projekt zvolil SvelteKit.
 \end{itemize}
