@@ -5,37 +5,37 @@
 \contentsline {subsection}{\numberline {1.1.1}Možnosti řešení}{3}{subsection.1.1.1}%
 \contentsline {section}{\numberline {1.2}Typesafety}{4}{section.1.2}%
 \contentsline {chapter}{\numberline {2}Backend}{6}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Architektura backendu}{6}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Autentifikace}{7}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Auth.js}{7}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Proces přihlášení}{7}{subsection.2.2.2}%
-\contentsline {section}{\numberline {2.3}Model databáze}{8}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Cloud hosting}{10}{subsection.2.3.1}%
-\contentsline {section}{\numberline {2.4}Využité backendové technologie}{10}{section.2.4}%
-\contentsline {section}{\numberline {2.5}SvelteKit}{10}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}tRPC}{11}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Prisma}{13}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}Zod}{15}{subsection.2.5.3}%
+\contentsline {section}{\numberline {2.1}Založení a konfigurace projektu}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Architektura backendu}{6}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Autentifikace}{7}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Auth.js}{7}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Proces přihlášení}{8}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Model databáze}{9}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Cloud hosting}{11}{subsection.2.4.1}%
+\contentsline {section}{\numberline {2.5}Využité backendové technologie}{11}{section.2.5}%
+\contentsline {section}{\numberline {2.6}SvelteKit}{11}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}tRPC}{12}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Prisma}{14}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Zod}{15}{subsection.2.6.3}%
 \contentsline {chapter}{\numberline {3}Frontend}{16}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Využité technologie}{16}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Svelte}{16}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Typescript}{16}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Tailwind CSS}{16}{subsection.3.1.3}%
-\contentsline {chapter}{\numberline {4}Kroky k řešení, funkcionality aplikace a implementace}{17}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Založení a konfigurace projektu}{17}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Design}{18}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Testy a jejich vlastnosti}{18}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Tvorba testu}{18}{subsection.4.3.1}%
-\contentsline {section}{\numberline {4.4}Vyplňování testu}{19}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Vyplňování kvízu}{19}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Plnění programovacího testu}{20}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}Zobrazování testů}{20}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Komunitní místo}{21}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Kolekce testů}{21}{subsection.4.5.2}%
-\contentsline {section}{\numberline {4.6}Skupiny}{22}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Světlý a tmavý režim}{22}{section.4.7}%
-\contentsline {section}{\numberline {4.8}Domovská stránka}{22}{section.4.8}%
-\contentsline {section}{\numberline {4.9}Responsivita}{23}{section.4.9}%
-\contentsline {chapter}{\numberline {5}Výsledky práce}{24}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Funkce aplikace}{24}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Splněné a nesplněné cíle}{24}{section.5.2}%
+\contentsline {section}{\numberline {3.1}Design}{16}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Responsivita}{16}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Světlý a tmavý režim}{17}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Využité frontendové technologie}{17}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Svelte}{17}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Typescript}{21}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Tailwind CSS}{21}{subsection.3.4.3}%
+\contentsline {chapter}{\numberline {4}Funkcionality aplikace a implementace}{22}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Domovská stránka}{22}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Přihlášení}{23}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Testy a jejich vlastnosti}{23}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Tvorba testu}{23}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}Vyplňování testu}{24}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Vyplňování kvízu}{24}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Plnění programovacího testu}{25}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Zobrazování testů}{26}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Komunitní místo}{26}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Kolekce testů}{26}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}Skupiny}{27}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Zhodnocení práce}{28}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Splněné a nesplněné cíle}{28}{section.5.1}%
