@@ -317,7 +317,7 @@ Pro vytvoření webové aplikace je možno využít mnoho postupů, proto zmín�
 \begin{itemize}
 \item Tradiční web server - jedná se o nejběžnější variantu jak vytvářet webové stránky. Jednotlivé stránky jsou vytvářeny na serveru, následně jsou poslány na klienta, poslaný kód může obsahovat také JavaScript pro frontend funkcionalitu, pro backend je možné využít jazyk dle výběru. Pro veškeré přesměrování a další akce je nutné se obrátit na server.
 
-\item Single page application - toto řešení v~podstatě odstraňuje server a nechává veškerou zodpovědnost frontendovém frameworku jako např. React, Svelte nebo Solid, toto řešení ale nemá k~dispozici žádný způsob jak spouštět kód, která na klientu pouštět nemůžeme jako například SQL dotazy.
+\item Single page application - toto řešení v~podstatě odstraňuje server a nechává veškerou zodpovědnost frontendovém frameworku jako např. React, Svelte nebo Solid, toto řešení ale nemá k~dispozici žádný způsob jak spouštět kód, která na klientu pouštět nemůžeme jako například SQL dotazy. Další nevýhodou je to, že stránka je generovaná až na klientovi JavaScriptem, proto search enginy nejsou schopny detekovat obsah stránky, což vede k~mnohem nižším výsledkům CEO.
 
 \item Serverless - je architektura kdy vývojář využívá server poskytovatele, o ten se nemusí starat, a je škálován podle potřeby. Tento koncept ale má i své nevýhody, omezená doba relace odpovědi, menší úložný prostor pro načtení knihoven nebo třeba nemožnost spravovat svůj server.
 
@@ -330,18 +330,23 @@ Pro vytvoření webové aplikace je možno využít mnoho postupů, proto zmín�
 	\label{fig:edge-serverless} %% označení až budeš chtít na obrázek odkazovat
 \end{figure}
 
-\item Metaframework je technologie, která kombinuje výhody \uv{single page application} a tradičního web serveru a přináší za mě nejlepší variantu jak vytvářet webovou aplikaci. Disponuje možností běhu kódu na serveru, přesměrováním na klientské části a dalšími výhodami. Takových technologií existuje celá řada, jako například populární NextJS, já si pro svůj projekt zvolil SvelteKit.
+\item Metaframework je technologie, která kombinuje výhody \uv{single page application} a tradičního web serveru. Disponuje možností běhu kódu na serveru, přesměrováním na klientské části a dalšími výhodami. Takových technologií existuje celá řada, jako například populární NextJS, já si pro svůj projekt zvolil SvelteKit. Další fází této architektury je hostování, nejlepší variantou většinou bývá hostování přes providery jako Vercel nebo Netlify, tato architektura se poté spíše primárně aplikuje se \uv{serverless}.
 \end{itemize}
 
-Vzhledem k tomu, že záměrem bylo vytvořit aplikaci, která bude pro veškeré \uv{backendové} úlohy využívat cloud, tak je architektura relativně složité téma, proto se pokusím stručně popsat základní proces vykreslení stránky. Uživatel získává statické soubory ze \uv{CDN}, dynamicky vytvořené stránky pro první zobrazení (\uv{first render}) jsou generovány na instancích \uv{serverless funkcí} třetí strany, každá instance se vytváří podle potřeby na reálném serveru poskytovatele, není dedikovaná a ani nezůstavá aktivní po delší dobu. Server je dále využíván pro potřeby klienta, které si on sám nemůže obstarat především z bezpečnostních důvodů (DB queries, secret env variables...). Databáze vytváří spojení se serverem a ten získává potřebná data.
+Jednou z hlavních myšlenek bylo hostování Effia na cloudových službách, proto jsem si vybíral hlavně mezi technologiemi \uv{serverless} a \uv{edge computing}, výhodou providera, kterého jsem si vybral - Vercel je, že kombinace těchto technologií je velice snadná, základní variantou je \uv{serverless} s~jednoduchým přepnutím dané cesty na \uv{edge}. Ve spojení s~konceptem metaframeworku nakonec utváří velmi flexibilní, rychlou a příjmenou variantu.
 
-\subsection{Koncept \uv{single page application} a tradičního web serveru }
-V minulé sekci jsem zmínil pojem web server, ten generuje stránku, která je poslána uživateli, ta se poté generuje znovu vždy když je uživatel přesměrován na jinout stránku, tento koncept má spoustu nevýhod jako například nemožnost jednoduše uchovávat data mezi těmito přechody.\uv{Single page application} je vlastně JavaScript framework, který se o překreslování obrazu a přesměrování stará sám za pomocí JavaScriptu bez nutnosti dotazovat se serveru o novou stránku či data. Tento přístup bohužel také není perfektní, nutnost stahovat veškerý kód nebo velice chabý SEO rating.
+\begin{figure}[h!]
+	\centering %% příkaz, který ti obrázek zarovná na střed
+	\includegraphics[width=1\linewidth]{image/edge-adapter.png} 
+	\caption{Možnost přepnutí dané cesty ze Serverless na Edge. \cite{SvelteKit}} %% popisek obrázku, nezapomeň na citace!
+	\label{fig:edge-adapter} %% označení až budeš chtít na obrázek odkazovat
+\end{figure}
+
+%Vzhledem k tomu, že záměrem bylo vytvořit aplikaci, která bude pro veškeré \uv{backendové} úlohy využívat cloud, tak je architektura relativně složité téma, proto se pokusím stručně popsat základní proces vykreslení stránky. Uživatel získává statické soubory ze \uv{CDN}, dynamicky vytvořené stránky pro první zobrazení (\uv{first render}) jsou generovány na instancích \uv{serverless funkcí} třetí strany, každá instance se vytváří podle potřeby na reálném serveru poskytovatele, není dedikovaná a ani nezůstavá aktivní po delší dobu. Server je dále využíván pro potřeby klienta, které si on sám nemůže obstarat především z bezpečnostních důvodů (DB queries, secret env variables...). Databáze vytváří spojení se serverem a ten získává potřebná data.
 
 \section{Typesafety}
 
-Webové aplikace standartně využívají JavaScript, ten ale obnáší signifikantní nevýhodu v podobě nemožnosti \uv{otypovat} kód, to způsobuje obtíž orientovat se v kódu, velké množství produkčních chyb a také spoustu času stráveného pochopením dříve napsaného kódu. Pro Effio jsem se tedy rozhodl využít moderní technologie a vytvořit tak téměř plně \uv{typesafe} (otypovanou) aplikaci. TypeScript v Effiu nahrazuje JavaScript, ten do tohoto jazyka přináší typy. To ale nestačí, API endpointy, stejně jako databázové dotazy stále nemůžou být otypované a proto jsem připojil také knihovny tRPC a Prisma.
-
+Webové aplikace standardně využívají JavaScript, ten ale obnáší signifikantní nevýhodu v podobě nemožnosti \uv{otypovat} kód, to způsobuje obtíž orientovat se v kódu, velké množství produkčních chyb a také spoustu času stráveného pochopením dříve napsaného kódu. Pro Effio jsem se tedy rozhodl využít moderní technologie a vytvořit tak téměř plně \uv{typesafe} (otypovanou) aplikaci. TypeScript v Effiu nahrazuje JavaScript, ten do tohoto jazyka přináší typy. To ale nestačí, API endpointy, stejně jako databázové dotazy stále nemůžou být otypované a proto jsem připojil také knihovny tRPC a Prisma.
 
 \chapter{Backend}
 
@@ -428,7 +433,7 @@ Ostatní
 \subsection{Cloud hosting}
 Jak již bylo zmíněno v~úvodu tak tato aplikace by se měla obejít bez vlastního serveru, nejde ale jenom o databázi ale také například o ukládání obrázků nebo hostování aplikace jako takové, to je prováděno přes \uv{Cloud hostingy} jako Vercel pro hostování stránky jako takové, zároveň ale řeší i rozesílání statických dat do CDN a poskytuje serverless lambda funkce, Planetscale pro hostování mojí MySQL databáze, Cloudinary, který slouží jako \uv{bucket} pro obrázky a také jejich možnost editace přes url parametry, nebo Pusher, který slouží jako web socket server například pro chat.
 
-\section{Využité technologie}
+\section{Využité backendové technologie}
 
 \section{SvelteKit}
 
@@ -482,7 +487,7 @@ export const actions: Actions = {
 \end{lstlisting}
 
 \subsection{tRPC}
-V minulé sekci jsem se zmínil o problémech s otypováním API endpointů, tRPC (Typescript Remote Procedure Call) tento problém řeší tím, že vytváří dynamické typy pro jednotlivé endpointy, podle toho jak si je sami nadefinujeme, ty se potom dají volat pomocí funkcí bez požití \texttt{fetche} nebo třeba \texttt{axiosu}, tyto funkce jsou dokonale otypované a v~kódu tím pádem fungují jako jakákoliv jiná funkce vytvořená programátorem.
+V minulé sekci jsem se zmínil o problémech s otypováním API endpointů, tRPC (Typescript Remote Procedure Call) tento problém řeší tím, že vytváří dynamické typy pro jednotlivé endpointy, podle toho jak si je sami nadefinujeme, ty se potom dají volat pomocí funkcí bez přímého použití \texttt{fetche} nebo třeba \texttt{axiosu} (tyto funkce ve skutnčnosti \uv{fetch} requesty vykonávají ale programátor se o ně nemusí starat přímo), tyto funkce jsou dokonale otypované a v~kódu tím pádem fungují jako jakákoliv jiná funkce vytvořená programátorem. Další výhodou je také to, že jednotlivé \uv{procedury}, což je vlastně API endpoint, mají k~dispozici metody pro kontrolu vstupu nebo třeba middleware, který například může zjišťovat stav přihlášení uživatele, jako zbytek knihovny jsou i tyto metody perfektně otypované.
 \begin{lstlisting}[style=ES6, caption=Endpoint generovaný pomocí tRPC, label=trpc_code]
 getTestById: procedure.input(z.object({
 	id: z.string(),
@@ -528,6 +533,7 @@ getTestById: procedure.input(z.object({
 
 \subsection{Prisma}
 Prisma slouží jako ORM (Object–relational mapping), to znamená pomocí JavaScriptu získávat data z databáze bez přímého použití jazyka SQL, Prisma se skládá z klientské části, která pomocí protokolu založeném na JSON komunikuje se serverovou částí, tam je následně uskutečněn SQL dotaz a odpověď je poslána klientovi. Také řeší již zmíněný problém s otypováním těchto dotazů, pro Prismu je totiž nutné vytvořit \texttt{schema.prisma} soubor kde se definuje model databáze, ten poté můžeme pomocí Prisma CLI nahrávat do databáze ale také vytvářet dynamické typy, které poté využijeme jak v~dotazech tak v~aplikaci pro data, která dostaneme zpět.
+Prisma je asi hlavní důvod nemožnosti využívat Edge runtime, tato knihovna je totiž příliž velká a proto pro velkou většinu mých funkcí není možné tuto architekturu využít, jako řešení by se nabízelo využít jinou knihovnu jako Drizzle ORM.
 \begin{lstlisting}[style=ES6, caption=Získání testu podle id a přidání dat ze spojených tabulek, label=prisma_code_use]
 	const test = await ctx.prisma.test.findUnique({
 		where: {
@@ -578,8 +584,9 @@ model TestVersion {
 \end{lstlisting}
 
 \subsection{Zod}
-Zod je validační knihovna jako např. Yup. Jeho výhodou je avšak možnost využít jeho validační schémata jako typy a také samotná validace funguje jako \uv{type guard} (kontroluje a nastavuje typy u vložené proměnné). Jeho další výhodou je například jeho nízká velikost.
+Zod je validační knihovna jako např. Yup. To znamená, že jeho prací je kontrolovat mnou vložené vstupy, knihovna vrací úspšnost a také chyby na které během kontroly narazí. Jeho výhodou je avšak možnost využít jeho validační schémata jako typy a také samotná validace funguje jako \uv{type guard} (kontroluje a nastavuje typy u vložené proměnné). Jeho další výhodou je například jeho nízká velikost.
 
+Tento kód kontroluje zdali vložený input odpovídá struktuře \uv{answerSchema}, popřípadě nastaví error do proměné, která se poté zobrazí klientovi.
 \begin{lstlisting}[style=ES6, caption=Validace vstupu pomocí validační knihovny Zod, label=zod]
 const answerSchema = z.string().min(ANSWER_MIN, `Answer has to be at least ${ANSWER_MIN} character long.`).max(ANSWER_MAX, `Answer can be max ${ANSWER_MAX} characters long.`)
 const result = answerSchema.safeParse(content.answers[item].answer)
@@ -600,7 +607,12 @@ if (result.success === false) {
 
 \section{Využité technologie}
 \subsection{Svelte}
-Svelte je open source JavaScriptový framework vyvíjený od roku týmem Riche Harrise, jeho hlavní výhodou je rychlost ale také intuitivita, protože jazyk se snaží vypadat jako JavaScript, zatímco rozšiřuje jeho možnosti, díky tomu se za posledních let těší rostoucí popularitě webobých vývojářů. Na rozdíl od ostatních webových frameworků (například React, Angular, Solid nebo Qwik) Svelte disponuje vlastním jazykem, který se zapisuje do \texttt{.svelte} souboru, ten se následně kompiluje do vysoce efektivního JavaScriptu.
+Svelte je open source JavaScriptový framework vyvíjený od roku týmem Riche Harrise, jeho hlavní výhodou je rychlost ale také intuitivita, protože jazyk se snaží vypadat jako JavaScript, zatímco rozšiřuje jeho možnosti, díky tomu se za posledních let těší rostoucí popularitě webobých vývojářů. Na rozdíl od ostatních webových frameworků (například React, Angular, Solid nebo Qwik) Svelte disponuje vlastním jazykem, který se zapisuje do \texttt{.svelte} souboru, ten se následně kompiluje do vysoce efektivního JavaScriptu. Soubor jako samtoný velice připomíná HTML soubor, který se ale dělí na určité prvky, v~základu se kód kompiluje jako HTML.
+
+Kód se ve Sveltu dělí na 3 částí
+\begin{itemize}
+	\item Script - jedná se o část, kde se vypisují funkce, proměnné apod. Celá tato část je obklopená \texttt{<script>} tagy, 
+\end{itemize}
 
 \subsection{Typescript}
 Typescript se dá považovat jako nadstavba JavaScriptu, poskytuje ale jednu výraznou výhodu - typy, díky nim je možno mnohem snadněji dohledávat chyby, vracet se k dříve napsanému kódu a celkově mnohem zlepší \uv{developer experience} při vytváření aplikace. Sám o sobě pomůže s otypováním jednotlivých částí kódu, neporadí si však například s API endpointy nebo databázovými dotazy, které se poté musí otypovat ručně, což je ale velice špatný způsob.
