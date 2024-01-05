@@ -258,8 +258,8 @@ openright
 
 %% Abstrakt v češtině
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\noindent{\Large{\bfseries{Anotace}\\}}
-	\noindent Výsledkem projektu je funkční webová aplikace pro vytváření a vyplňování testů, které se skládají z~různých možností otázek včetně programovací. Aplikace zahrnuje přihlášení přes Google a GitHub. Uživatel vytváří jednotlivé testy výběrem šablony, nebo importem z GIFT formátu, otázek, komentářů a následně upravuje detaily testu jako jméno, popis, obrázek, upravitelný známkovací systém, zařazení do skupin a tagy. Hotový test může sám zkusit z~vlastní kolekce testů a nebo z~komunitního centra, kde se nacházejí komunitou vytvořené testy, po vyplnění testu se uživateli objeví výsledky a známka. Kromě výroby a vyplňování testů aplikace obsahuje také skupiny, kde mohou mezi sebou uživatelé komunikovat pomocí chatu a majitel do ní může sdílet testy, na dříve vyplněné testy se může podívat v sekci testové historie. Přehled o aktivitě uživatele si může prohlédnout v dashboardu prostřednictvím vizuálních grafů. Dříve vytvořené testy se dají v části kolekce editovat, mazat a také exportovat do GIFT formátu v textovém souboru pro použití například v~Moodlu. Aplikace disponuje zcela responsivním designem se světlým a tmavým režimem.
+	\noindent{\Large{\bfseries{Abstrakt}\\}}
+	\noindent Výsledkem projektu je funkční webová aplikace pro vytváření a vyplňování testů, které se skládají z~různých možností otázek včetně programovací. Aplikace zahrnuje přihlášení přes Google a GitHub. Uživatel vytváří jednotlivé testy výběrem šablony, nebo importem z GIFT formátu, otázek, komentářů a následně upravuje detaily testu. Hotový test může sám zkusit z~vlastní kolekce testů a nebo z~komunitního centra, kde se nacházejí komunitou vytvořené testy, po vyplnění testu se uživateli objeví výsledky a známka. Kromě tvorby a vyplňování testů aplikace obsahuje také skupiny, v~níž mohou mezi sebou uživatelé např. komunikovat, na dříve vyplněné testy se může podívat v sekci testové historie. Přehled o aktivitě uživatele si může prohlédnout v dashboardu prostřednictvím vizuálních grafů. Dříve vytvořené testy se dají v části kolekce editovat, mazat a také exportovat do GIFT formátu~v textovém souboru pro použití například v~Moodlu. Aplikace disponuje zcela responsivním designem se světlým a tmavým režimem.
 	
 	\vspace{18pt}
 	
@@ -303,11 +303,11 @@ openright
 %První parametr toc označuje, že přidáváme záznam do Table of Contents (obsahu).
 %Druhý parametr chapter specifikuje úroveň záznamu. V tomto případě říkáme, že přidávaný záznam má být považován za kapitolu.
 %Třetí parametr Úvod je text, který se objeví v obsahu. V tomto případě bude v obsahu zobrazen název "Úvod".	
-V dnešní době se běžně využívají webové aplikace, které umožňují vytváření testů/kvízů, které poté jiní uživatelé vyplňují. Prostředí těchto aplikací jsou však často nepřehledné a vytváření testů či kvízů je úporné. S touto myšlenkou jsem se rozhodl vytvořit aplikaci, která by kombinovala možnosti jiných aplikací s přehledným moderním zobrazením a dalšími užitečnými prvky.
+V~dnešní době se běžně využívají webové aplikace, které umožňují vytváření testů/kvízů, které poté jiní uživatelé vyplňují. Prostředí těchto aplikací jsou však často nepřehledné a vytváření testů či kvízů je úporné. S touto myšlenkou jsem se rozhodl vytvořit aplikaci, která by kombinovala možnosti jiných aplikací s přehledným moderním zobrazením a dalšími užitečnými prvky.
 
 Má aplikace by kromě již zmíněné funkcionality pro tvorbu testů a kvízů měla do jisté míry umožňovat prvky sociálních sítí jako třeba skupiny, komunitní místo kde by se mimo jiné zobrazovaly testy ostatních uživatelů. Hlavní myšlenkou bylo vytvořit nejen aplikaci jako takovou ale také využít moderní technologie a postupy, neboli vytvořit ji \uv{typesafe}, bez potřeby vlastního serveru za pomocí cloudové technologie \uv{serverless} a plně responzivní pro uživatele na kterémkoli zařízení.
 
-V dokumentaci jsou popsané využité technologie, postupy a jednotlivé funkcionality celé aplikace. První část popisuje architekturu a přístup k~řešení, následuje popis backend a frontendu, ve 4. části kapitole se potom zmiňuji o různých možnostech, které Effio nabízí. Nakonec se poohlížím na dosažené cíle a možné vylepšení.
+V~dokumentaci jsou popsané využité technologie, postupy a jednotlivé funkcionality celé aplikace. První část popisuje architekturu a přístup k~řešení, následuje popis backendu a frontendu, ve čtvrté části kapitole se potom zmiňuji o různých možnostech, které Effio nabízí. Nakonec se poohlížím na dosažené cíle a možné vylepšení.
 
 %Tipy k psaní úvodu
 %Je povinný, nadpis neměňte, rozsah - max. 1 strana. 
@@ -356,7 +356,7 @@ Jednou z hlavních myšlenek bylo hostování Effia na cloudových službách, p
 
 \section{Typesafety}
 
-Webové aplikace standardně využívají JavaScript, ten ale obnáší signifikantní nevýhodu v podobě nemožnosti \uv{otypovat} kód, to způsobuje obtíž orientovat se v kódu, velké množství produkčních chyb a také spoustu času stráveného pochopením dříve napsaného kódu. Pro Effio jsem se tedy rozhodl využít moderní technologie a vytvořit tak téměř plně \uv{typesafe} (otypovanou) aplikaci. TypeScript v Effiu nahrazuje JavaScript, ten do tohoto jazyka přináší typy. To ale nestačí, API endpointy, stejně jako databázové dotazy stále nemůžou být otypované a proto jsem připojil také knihovny tRPC a Prisma.
+Webové aplikace standardně využívají JavaScript, ten ale obnáší signifikantní nevýhodu v~podobě nemožnosti \uv{otypovat} kód, to způsobuje obtíž orientovat se v~kódu, velké množství produkčních chyb a také spoustu času stráveného pochopením dříve napsaného kódu. Pro Effio jsem se tedy rozhodl využít moderní technologie a vytvořit tak téměř plně \uv{typesafe} (otypovanou) aplikaci. TypeScript v~Effiu nahrazuje JavaScript, ten do tohoto jazyka přináší typy. To ale nestačí, API endpointy, stejně jako databázové dotazy stále nemůžou být otypované a proto jsem připojil také knihovny tRPC a Prisma.
 
 \chapter{Backend}
 
@@ -375,9 +375,9 @@ Prvním krokem bylo založení projektu a stažení potřebných knihoven techno
 		\item CDN - neboli Content Delivery Network je síť serverů, které jsou charakteristické hlavně tím, že jsou rozmístěny po celém světě a ve velkém množství, starají se o distribuci statického obsahu díky čemu nemusí klient data získávat ze vzdáleného server ale právě z~tohoto, který je ve většině případů mnohem blíže. Dále se starají o cachování dat, což opět zkracuje dobu pro uživatele aby zobrazil obsah.
 		\item Server - neoznačuje server jako takový ale spíše místo kde se spouštějí instance serverových funkcí, což jsou funkce, které se vytváří podle potřeby na reálných serverech, které ale spravuje provider této služby, v~mém případě Vercel, respektive Cloudflare.
 		
-		Programátora nemusí tyto serveru vůbec zajímat, instance se sami škálují a obecně jsou pro vývojáře velice příjemných řešením. V poslední letech se tato architektura těší významné oblibě nejen malých projektů ale také velikých firem jako je Amazon, ty se ale v poslední době opět začínají vracet k~hostování vlastních serverů, které se po dlouholetých diskuzích znovu zdají výhodnější pro takto masivní účely typu Amazonu.
+		Programátora nemusí tyto serveru vůbec zajímat, instance se sami škálují a obecně jsou pro vývojáře velice příjemných řešením. V~poslední letech se tato architektura těší významné oblibě nejen malých projektů ale také velikých firem jako je Amazon, ty se ale v~poslední době opět začínají vracet k~hostování vlastních serverů, které se po dlouholetých diskuzích znovu zdají výhodnější pro takto masivní účely typu Amazonu.
 		
-		Tento server je v Effiu využíván hlavně pro první zobrazení stránky metodou SSR (\uv{server side rendering}) a také získáváním dat, které nemohou být získány na klientu (např. SQL dotazy), pro jednotlivé stránky, formulářovými akcemi nebo jako API endpointy.
+		Tento server je v~Effiu využíván hlavně pro první zobrazení stránky metodou SSR (\uv{server side rendering}) a také získáváním dat, které nemohou být získány na klientu (např. SQL dotazy), pro jednotlivé stránky, formulářovými akcemi nebo jako API endpointy.
 		
 		\item DB - MySQL databáze hostovaná přes službu Planetscale, ta disponuje velice zajímavými možnosti jako jsou \uv{větve} podobné verzovacímu systému Git, \uv{Deploy requesty}, které zlepšují práci v~týmu nebo možnost distribuce \uv{read-only} instancí databáze do rozdílných regionů. Pro mě byla veliká výhoda rychlost a velice štědrý \uv{free tier}.
 		\item Pusher, Cloudinary - jedná se o cloudové služby, které slouží účelům, které s~touto architekturou nejsem schopný zařídit.
@@ -392,7 +392,7 @@ Prvním krokem bylo založení projektu a stažení potřebných knihoven techno
 
 \section{Autentifikace}
 \subsection{Auth.js}
-Auth.js je knihovna sloužící pro autentifikaci, poskytuje možnost \uv{session based}, to je použito v Effiu, a JWT autentifikace. Dále knihovna podporuje OAuth s mnohými providery, v tomto projektu je využit GitHub a Google s~jednoduchou možností přidat další. Výhodou knihovny je, že data si vývojář spravuje sám, neboli jsou ukládána do jeho vlastní databáze v podobě tabulek (které si také může sám upravit): Account, Session, User a Verification Token, které poskytují naprostou kontrolu nad ověřením uživatelů.
+Auth.js je knihovna sloužící pro autentifikaci, poskytuje možnost \uv{session based}, to je použito v~Effiu, a JWT autentifikace. Dále knihovna podporuje OAuth s mnohými providery, v~tomto projektu je využit GitHub a Google s~jednoduchou možností přidat další. Výhodou knihovny je, že data si vývojář spravuje sám, neboli jsou ukládána do jeho vlastní databáze v~podobě tabulek (které si také může sám upravit): Account, Session, User a Verification Token, které poskytují naprostou kontrolu nad ověřením uživatelů.
 
 \subsection{Proces přihlášení}
 Uživatel se na podstránce /login rozhodne zdali se přihlásit pomocí Google nebo GitHub účtu, je poté přesměrován na stránku těchto providerů, kde potvrdí přístup k~informacím o jejich účtu a je navrácen zpět do Effia. V~databázi jsou vytvořeny tabulky o tomto uživateli včetně nové relace (Session), díky které je schopen přihlášení. To proběhne automaticky po navrácení se zpět od providera.
@@ -450,11 +450,9 @@ Jak již bylo zmíněno v~úvodu tak tato aplikace by se měla obejít bez vlast
 
 \section{SvelteKit}
 
-Svelte je open source JavaScriptový framework vyvíjený od roku 2016 týmem Riche Harrise, jeho hlavní výhodou je rychlost ale také intuitivita, protože jazyk se snaží vypadat jako JavaScript, zatímco rozšiřuje jeho možnosti, díky tomu se za posledních let těší rostoucí popularitě webových vývojářů. Na rozdíl od ostatních frontendových frameworků (například React, Angular, Solid nebo Qwik) Svelte disponuje vlastním jazykem, který se zapisuje do \texttt{.svelte} souboru, ten se následně kompiluje do vysoce efektivního JavaScriptu.\\
-
-SvelteKit je metaframework postavený na Svelte. Jeho hlavní výhody se skládají z:
+SvelteKit je metaframework postavený na Svelte, jako ostatní metaframeworky typu NextJS nebo SolidStart Jeho hlavní výhody se skládají z:
 \begin{itemize}
-	\item Rychlost - Svelte vytváří velice rychlou aplikaci, v kombinaci s Vitem (bundler) se ale také spojuje s velice rychlým build timem a hot module replacementem. To ale není jediné místo kde se rychlost projevuje, za pomocí SvelteKitu se aplikace vyvíjí velmi rychle díky velice malému množství \uv{boilerplate} kódu.
+	\item Rychlost - Svelte vytváří velice rychlou aplikaci, v~kombinaci s Vitem (bundler) se ale také spojuje s velice rychlým build timem a hot module replacementem. To ale není jediné místo kde se rychlost projevuje, za pomocí SvelteKitu se aplikace vyvíjí velmi rychle díky velice malému množství \uv{boilerplate} kódu.
 	\item Flexibilita - Aplikace často potřebuje různé typy vykreslování stránek, SvelteKit dovoluje jednoduše nakonfigurovat jednotlivé stránky či cesty pro specifické způsoby jako SPA, SSR, SSG nebo MPA. Dále také umožňuje různě kombinovat kód, který běží na serveru a ten co se spouští na klientovi, dává nad nimi rozsáhlou kontrolu a jednoduše se jeho chování upravuje.
 	\item Přehlednost - SvelteKit využívá \uv{file based routing}, tedy cesty aplikace jsou generovány podle složek, které vývojář vytvoří, soubory se poté vždy jmenují stejně, \texttt{+page.svelte} pro stránku, \texttt{+layout.svelte} pro layout apod. Díky tomu je vždy jasné pro co specifický souboru slouží, přehlednosti také přidává, již u Sveltu zmíněná podobnost s JavaScriptem.
 \end{itemize} 
@@ -500,7 +498,7 @@ export const actions: Actions = {
 \end{lstlisting}
 
 \subsection{tRPC}
-V minulé sekci jsem se zmínil o problémech s otypováním API endpointů, tRPC (Typescript Remote Procedure Call) tento problém řeší tím, že vytváří dynamické typy pro jednotlivé endpointy, podle toho jak si je sami nadefinujeme, ty se potom dají volat pomocí funkcí bez přímého použití \texttt{fetche} nebo třeba \texttt{axiosu} (tyto funkce ve skutnčnosti \uv{fetch} requesty vykonávají ale programátor se o ně nemusí starat přímo), tyto funkce jsou dokonale otypované a v~kódu tím pádem fungují jako jakákoliv jiná funkce vytvořená programátorem. Další výhodou je také to, že jednotlivé \uv{procedury}, což je vlastně API endpoint, mají k~dispozici metody pro kontrolu vstupu nebo třeba middleware, který například může zjišťovat stav přihlášení uživatele, jako zbytek knihovny jsou i tyto metody perfektně otypované.
+V~minulé sekci jsem se zmínil o problémech s otypováním API endpointů, tRPC (Typescript Remote Procedure Call) tento problém řeší tím, že vytváří dynamické typy pro jednotlivé endpointy, podle toho jak si je sami nadefinujeme, ty se potom dají volat pomocí funkcí bez přímého použití \texttt{fetche} nebo třeba \texttt{axiosu} (tyto funkce ve skutnčnosti \uv{fetch} requesty vykonávají ale programátor se o ně nemusí starat přímo), tyto funkce jsou dokonale otypované a v~kódu tím pádem fungují jako jakákoliv jiná funkce vytvořená programátorem. Další výhodou je také to, že jednotlivé \uv{procedury}, což je vlastně API endpoint, mají k~dispozici metody pro kontrolu vstupu nebo třeba middleware, který například může zjišťovat stav přihlášení uživatele, jako zbytek knihovny jsou i tyto metody perfektně otypované.
 \begin{lstlisting}[style=ES6, caption=Endpoint generovaný pomocí tRPC, label=trpc_code]
 getTestById: procedure.input(z.object({
 	id: z.string(),
@@ -546,7 +544,7 @@ getTestById: procedure.input(z.object({
 \end{lstlisting}
 \subsection{Prisma}
 Prisma slouží jako ORM (Object–relational mapping), to znamená pomocí JavaScriptu získávat data z databáze bez přímého použití jazyka SQL, Prisma se skládá z klientské části, která pomocí protokolu založeném na JSON komunikuje se serverovou částí, tam je následně uskutečněn SQL dotaz a odpověď je poslána klientovi. Také řeší již zmíněný problém s otypováním těchto dotazů, pro Prismu je totiž nutné vytvořit \texttt{schema.prisma} soubor kde se definuje model databáze, ten poté můžeme pomocí Prisma CLI nahrávat do databáze ale také vytvářet dynamické typy, které poté využijeme jak v~dotazech tak v~aplikaci pro data, která dostaneme zpět.
-Prisma je asi hlavní důvod nemožnosti využívat Edge runtime, tato knihovna je totiž příliž velká a proto pro velkou většinu mých funkcí není možné tuto architekturu využít, jako řešení by se nabízelo využít jinou knihovnu jako Drizzle ORM.
+Prisma je asi hlavní důvod nemožnosti využívat Edge runtime, tato knihovna totiž potřebuje využít TCP sokety pro komunikaci s~databázi, které aktuálně Edge runtime nepodporuje, jako řešení by se nabízelo využít jinou knihovnu jako Drizzle ORM.
 \begin{lstlisting}[style=ES6, caption=Získání testu podle id a přidání dat ze spojených tabulek, label=prisma_code_use]
 	const test = await ctx.prisma.test.findUnique({
 		where: {id: input.id},
@@ -650,10 +648,9 @@ S ohledem na uživatele co preferují tmavý režim jsem se také rozhodl pro tv
 
 \section{Využité frontendové technologie}
 \subsection{Svelte}
-Svelte je open source JavaScriptový framework vyvíjený od roku týmem Riche Harrise, jeho hlavní výhodou je rychlost ale také intuitivita, protože jazyk se snaží vypadat jako JavaScript, zatímco rozšiřuje jeho možnosti, díky tomu se za posledních let těší rostoucí popularitě webobých vývojářů. Na rozdíl od ostatních webových frameworků (například React, Angular, Solid nebo Qwik) Svelte disponuje vlastním jazykem, který se zapisuje do \texttt{.svelte} souboru, ten se následně kompiluje do vysoce efektivního JavaScriptu. Soubor jako samotný velice připomíná HTML, které se ale dělí na určité prvky.
+Svelte je open source JavaScriptový framework vyvíjený od roku týmem Riche Harrise, jeho hlavní výhodou je rychlost ale také intuitivita, protože jazyk se snaží vypadat jako JavaScript, zatímco rozšiřuje jeho možnosti, díky tomu se za posledních let těší rostoucí popularitě webobých vývojářů. Na rozdíl od ostatních webových frameworků (například React, Angular, Solid nebo Qwik) Svelte disponuje vlastním jazykem, který se zapisuje do \texttt{.svelte} souboru, ten se následně kompiluje do vysoce efektivního JavaScriptu. Kód samotný velice připomíná HTML ale a tvoří jej na tři určité části.
 
-A to přesněji na 3:
-\begin{itemize}
+\begin{enumerate}
 	\item Script - jedná se o část, kde se vypisují funkce, proměnné a řeší se reaktivní deklarace. Celá tato část je obklopená \texttt{<script>} tagy jako v~HTML dokumentu.
 	\begin{lstlisting}[style=ES6, caption=Ukázka Svelte kódu ve script tagu, label=svelte-script-sample]
 	export let inputValue: HTMLTextAreaElement['value'] = '';
@@ -681,7 +678,7 @@ A to přesněji na 3:
 	}
 	\end{lstlisting}
 	\item Style - tato část slouží jako CSS pro daný dokument, výhodou je ale lokální rozsah aplikovaných stylů (jako u CSS modules ale mnohem lépe provedené), aplikovat zde lze i globální styly díky \texttt{:global}. Osobně mi vyhovuje, že se styly nacházejí v~jednom souboru, a i když jsem tento způsob pro stylování Effia převážně nevyužíval, tak osobně mi připadá velice dobře provedený. Celý úsek tohoto kódu je jako v~HTML dokumentu formován do \texttt{<style>} tagů.
-	\clearpage
+	
 	\begin{lstlisting}[style=ES6, caption=Ukázka Svelte CSS kódu, label=svelte-CSS-sample]
 	<style>
 		.grid_cover {
@@ -693,8 +690,8 @@ A to přesněji na 3:
 		}
 	</style>
 	\end{lstlisting}
-	\item Zbytek kódu - vše co se nenachází v~jednom z~těchto tagů je HTML reprezentace dané stránky, nejedná se však o čisté HTML ale jeho obohacenou verzi. Jako v~podobných frameworcích je možné přidávat \uv{event listenery} na jednotlivé elementy, podmínkově zobrazovat, pracovat s~asynchroním kódem nebo dokonce \uv{svazovat} element či hodnotu elementu s~proměnou ve scriptové části.
-	\clearpage
+	\item Obsahová část - vše co se nenachází v~jednom z~těchto tagů je HTML reprezentace dané stránky, nejedná se však o čisté HTML ale jeho obohacenou verzi. Jako v~podobných frameworcích je možné přidávat \uv{event listenery} na jednotlivé elementy, podmínkově zobrazovat, pracovat s~asynchroním kódem nebo dokonce \uv{svazovat} element či hodnotu elementu s~proměnou ve scriptové části.
+	
 	\begin{lstlisting}[style=ES6, caption=Ukázka Svelte kódu, label=svelte-sample]
 	{#await data}
 		<div class="@container h-full">
@@ -734,9 +731,9 @@ A to přesněji na 3:
 		</div>
 	{/await}
 	\end{lstlisting}
-\end{itemize}
-\clearpage
-\subsection{Typescript}
+\end{enumerate}
+
+\subsection{TypeScript}
 Typescript se dá považovat jako nadstavba JavaScriptu, poskytuje ale jednu výraznou výhodu - typy, díky nim je možno mnohem snadněji dohledávat chyby, vracet se k dříve napsanému kódu a celkově mnohem zlepší \uv{developer experience} při vytváření aplikace. Sám o sobě pomůže s otypováním jednotlivých částí kódu, neporadí si však například s API endpointy nebo databázovými dotazy, které se poté musí otypovat ručně, což je ale velice špatný způsob. Proto se v~tomto projektu využívají další knihovny jako Prisma, tRPC a Zod.
 
 \begin{lstlisting}[style=ES6, caption=Ukázka TypeScriptového typu, label=typescript-sample]
@@ -748,6 +745,12 @@ export type IdCardAlternativeProps = CardAlternativeProps & {
 export type CarouselItemInput =
 | IdCardAlternativeProps[]
 | Promise<IdCardAlternativeProps[]>;
+
+type PartialPick<T extends Record<unknown, unknown>, K extends keyof T> = {
+	[Key in Exclude<keyof T, K>]: T[Key];
+} & {
+	[Key in K]?: T[Key];
+}
 \end{lstlisting}
 
 \subsection{Tailwind CSS}
@@ -766,7 +769,7 @@ Tailwind CSS je \uv{CSS utility library}, to znamená, že narozdíl od framewor
 </button>
 \end{lstlisting}
 
-\chapter{Funkcionality aplikace a implementace}
+\chapter{Funkce aplikace}
 
 \section{Domovská stránka}
 Domovská stránka slouží jako místo pro seznámení návštěvníka s~výhodami Effia, rychlá navigace mezi jednotlivými stránkami ale také jako místo nejpečlivěji vytvářeného designu a efektů aby na uživateli zanechala dojem kvalitní aplikace.
@@ -786,7 +789,7 @@ Po kliknutí na tlačítko login se dostaneme na přihlašovací obrazovku kde s
 	\centering %% příkaz, který ti obrázek zarovná na střed
 	\includegraphics[width=1\linewidth]{image/homepage.png} 
 	\caption{Domovská stránka Effia pro přihlášeného uživatele.} %% popisek obrázku, nezapomeň na citace!
-	\label{fig:homepage} %% označení až budeš chtít na obrázek odkazovat
+	\label{fig:homepage-loggedin} %% označení až budeš chtít na obrázek odkazovat
 \end{figure}
 
 \section{Testy a jejich vlastnosti}
@@ -821,7 +824,7 @@ Po dokončení těchto úprav se uživatel dostane do konečných úprav testu, 
 \subsection{Vyplňování kvízu}
 Vytvořený test si poté může kdokoliv s~přístupem k~němu vyplnit (testy jsou základně dostupné pro všechny, po úpravě mohou být zveřejněny pouze pro členy skupin).
 
-Otázky se náhodně seřadí a uživatel je vyplňuje, zamíchané jsou také odpovědi určitých typů otázek. Po vyplnění všech uživatel test odevzdá, zkontroluje se a vrátí mu správné odpovědi, počet bodů, známku co získal a pokud je uživatel přihlášený tak se záznam a vyplnění uloží do databáze, uživatel si ho poté může zpětně zobrazit v sekci \textit{Test history}.
+Otázky se náhodně seřadí a uživatel je vyplňuje, zamíchané jsou také odpovědi určitých typů otázek. Po vyplnění všech uživatel test odevzdá, zkontroluje se a vrátí mu správné odpovědi, počet bodů, známku co získal a pokud je uživatel přihlášený tak se záznam a vyplnění uloží do databáze, uživatel si ho poté může zpětně zobrazit v~sekci \textit{Test history}.
 
 \begin{figure}[H]
 	\centering %% příkaz, který ti obrázek zarovná na střed
@@ -845,7 +848,7 @@ Uživatel dostane popis toho co by měl kód umět, sadu testů, které mají ot
 
 \subsection{Komunitní místo}
 \label{subsec:community}
-Na této stránce může uživatel najít nové a populární testy včetně všech testů, které existují. Testy jsou zobrazovány postupně podle techniky \uv{infinite scrolling}, na což využívám JavaScript API Intersection Observer, abych zjistil, kdy uživatel dosáhl posledního prvku a vyžádal si tak další testy. Implementované je vyhledávací pole, které filtruje zobrazované testy, další možností je filtrace pomocí tagů. Vizuálně jsou také rozlišeny kvízy od programovacích testů. Testy se dají ohodnotit hvězdičkou, jejich aplikování využívá principu \uv{optimistic update}, to znamená, že po přidání hvězdičky ji uživatel okamžitě vidí přidanou, zatímco se ověřuje jeho oprávnění a vytváří záznam hvězdičky v databázi. V~případě neúspěchu se poté uživateli sama hvězdička opět odebere. 
+Na této stránce může uživatel najít nové a populární testy včetně všech testů, které existují. Testy jsou zobrazovány postupně podle techniky \uv{infinite scrolling}, na což využívám JavaScript API Intersection Observer, abych zjistil, kdy uživatel dosáhl posledního prvku a vyžádal si tak další testy. Implementované je vyhledávací pole, které filtruje zobrazované testy, další možností je filtrace pomocí tagů. Vizuálně jsou také rozlišeny kvízy od programovacích testů. Testy se dají ohodnotit hvězdičkou, jejich aplikování využívá principu \uv{optimistic update}, to znamená, že po přidání hvězdičky ji uživatel okamžitě vidí přidanou, zatímco se ověřuje jeho oprávnění a vytváří záznam hvězdičky v~databázi. V~případě neúspěchu se poté uživateli sama hvězdička opět odebere. 
 
 \begin{figure}[H]
 	\centering %% příkaz, který ti obrázek zarovná na střed
@@ -884,12 +887,12 @@ Za úspěch považuji také grafickou část aplikace, která za mě tvoří min
 
 Hlavní neúspěch nebo spíše nedodělanost vidím ve skupinách a přizpůsobení možností testů pro ně, původně jsem zamýšlel vytvořit skupiny jako místo pro sdílení materiálů s více zajímavými možnostmi pro vlastníka, aby sloužili jako funkce vhodná pro výuku. Cíle nejsou zdaleka nerealistické, ale těchto cílů jsem nebyl schopen dosáhnou z~nedostatku času, jako vylepšení by ale za mně bylo velice přínosné.
 	
-Další částečný neúspěch vidím v programovacích testech, ty se i přes snahu vyladit nepovedly dostat do stavu kdy by byly pro uživatele nezávadné, v~aktuálním stavu je naprosto možné přetížit vlastní prohlížeč napsáním např. \texttt{while(true) {}}, JavaScript je \uv{single threaded} jazyk a proto není možné proces ukončit, protože neskončí ten předchozí (právě zmínění while loop). Řešení nabízí \uv{Web workers}, což je možnost jak JavaScript spouštět na více vláknech, zdálo se tedy, že řešení je na světě. Po bližším přezkoumání jsem ale zjistil, že nejsem schopen web workery v~SvelteKit aplikaci v~produkci načítat žádným způsobem, daním web workeru do stejné složky dojde k~neexistující referenci (web worker se zbundluje se zbytkem kódu a jeho funkcionalita se rozbije), řešení je tedy dát worker do public složky, která se odděluje od zbytku, zde ale dojde k~erroru MIME.
+Další částečný neúspěch vidím v~programovacích testech, ty se i přes snahu vyladit nepovedly dostat do stavu kdy by byly pro uživatele nezávadné, v~aktuálním stavu je naprosto možné přetížit vlastní prohlížeč napsáním např. \texttt{while(true) {}}, JavaScript je \uv{single threaded} jazyk a proto není možné proces ukončit, protože neskončí ten předchozí (právě zmínění while loop). Řešení nabízí \uv{Web workers}, což je možnost jak JavaScript spouštět na více vláknech, zdálo se tedy, že řešení je na světě. Po bližším přezkoumání jsem ale zjistil, že nejsem schopen web workery v~SvelteKit aplikaci v~produkci načítat žádným způsobem, daním web workeru do stejné složky dojde k~neexistující referenci (web worker se zbundluje se zbytkem kódu a jeho funkcionalita se rozbije), řešení je tedy dát worker do public složky, která se odděluje od zbytku, zde ale dojde k~erroru MIME.
 \chapter*{Závěr}
 	
-Cílem projektu bylo vytvořit webovou aplikaci pro vytváření a vyplňování testů. Aplikace je postavená na frameworku SvelteKit, psaný v jazyce TypeScript. Přihlašování stojí na knihovně Auth.js, MySQL databáze je hostovaná službou Planetscale, jako ORM je použita Prisma. Frontend řeší framework Svelte s~CSS utility knihovnou Tailwind, pro validaci využívá Zod.
+Cílem projektu bylo vytvořit webovou aplikaci pro vytváření a vyplňování testů. Aplikace je postavená na frameworku SvelteKit, psaný v~jazyce TypeScript. Přihlašování stojí na knihovně Auth.js, MySQL databáze je hostovaná službou Planetscale, jako ORM je použita Prisma. Frontend řeší framework Svelte s~CSS utility knihovnou Tailwind, pro validaci využívá Zod.
 
-Základem aplikace je generátor testů, kde uživatel využívá předpřipravené typy otázek. Testy se následně dají vyplnit v rámci komunity nebo vlastníkovi kolekce. Nepřihlášený uživatel může testy pouze vyplňovat, přihlásit se uživatel může pomocí Google nebo GitHub účtu. Uživatelé také mají k~dispozici skupiny kde je chat a také možnosti sdílet testy, test historii k~zobrazení dříve vyplněných testů a přehled nedávné aktivity v podobě grafů. Využité technologie činí aplikaci lehce škálovatelnou a velice výkonnou. Aplikace je téměř zcela funkční a použitelná na všech zařízeních díky responzivnímu designu.
+Základem aplikace je generátor testů, kde uživatel využívá předpřipravené typy otázek. Testy se následně dají vyplnit v~rámci komunity nebo vlastníkovi kolekce. Nepřihlášený uživatel může testy pouze vyplňovat, přihlásit se uživatel může pomocí Google nebo GitHub účtu. Uživatelé také mají k~dispozici skupiny kde je chat a také možnosti sdílet testy, test historii k~zobrazení dříve vyplněných testů a přehled nedávné aktivity v~podobě grafů. Využité technologie činí aplikaci lehce škálovatelnou a velice výkonnou. Aplikace je téměř zcela funkční a použitelná na všech zařízeních díky responzivnímu designu.
 
 \noindent Aplikace je zálohovaná na GitHubu na adrese \url{https://github.com/matej-kotrba/effio}.
 Je také volně přístupná na adrese \url{https://effio.vercel.app/}

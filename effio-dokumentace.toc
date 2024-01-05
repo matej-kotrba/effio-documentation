@@ -23,9 +23,9 @@
 \contentsline {section}{\numberline {3.3}Světlý a tmavý režim}{17}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Využité frontendové technologie}{17}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Svelte}{17}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Typescript}{21}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Tailwind CSS}{21}{subsection.3.4.3}%
-\contentsline {chapter}{\numberline {4}Funkcionality aplikace a implementace}{22}{chapter.4}%
+\contentsline {subsection}{\numberline {3.4.2}TypeScript}{20}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Tailwind CSS}{20}{subsection.3.4.3}%
+\contentsline {chapter}{\numberline {4}Funkce aplikace}{22}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Domovská stránka}{22}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Přihlášení}{23}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Testy a jejich vlastnosti}{23}{section.4.3}%

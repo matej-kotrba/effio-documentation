@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.12.23)  4 JAN 2024 21:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.12.23)  5 JAN 2024 20:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -648,11 +648,7 @@ Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 \l__lipsum_b_int=\count319
 
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex))
-(effio-dokumentace.aux
-
-LaTeX Warning: Label `fig:homepage' multiply defined.
-
-)
+(effio-dokumentace.aux)
 \openout1 = `effio-dokumentace.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 176.
@@ -892,27 +888,16 @@ Package pdftex.def Info: image/schema.png  used on input line 405.
 (pdftex.def)             Requested size: 455.24411pt x 448.68985pt.
  [9
 
- <./image/schema.png>] [10]
-Overfull \hbox (2.00945pt too wide) in paragraph at lines 453--454
-[]\T1/ptm/m/n/12 Svelte je open source Ja-vaScrip-tový fra-mework vy-ví-jený od
- roku 2016 tý-mem Riche Harrise,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 453--454
-
- []
-
-[11]
+ <./image/schema.png>] [10] [11]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 464.
+nput line 462.
  [12
 
 ] [13] [14
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
-600.
+598.
 
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmtt.fd
 File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
@@ -923,7 +908,7 @@ Kapitola 3.
 <image/figma.png, id=374, 1539.95325pt x 829.29825pt>
 File: image/figma.png Graphic file (type png)
 <use image/figma.png>
-Package pdftex.def Info: image/figma.png  used on input line 621.
+Package pdftex.def Info: image/figma.png  used on input line 619.
 (pdftex.def)             Requested size: 455.24411pt x 245.15967pt.
 [16
 
@@ -931,64 +916,58 @@ Package pdftex.def Info: image/figma.png  used on input line 621.
 <image/res1.png, id=381, 224.63925pt x 486.618pt>
 File: image/res1.png Graphic file (type png)
 <use image/res1.png>
-Package pdftex.def Info: image/res1.png  used on input line 635.
+Package pdftex.def Info: image/res1.png  used on input line 633.
 (pdftex.def)             Requested size: 111.53606pt x 241.61545pt.
 <image/res2.png, id=382, 221.02576pt x 486.01575pt>
 File: image/res2.png Graphic file (type png)
 <use image/res2.png>
-Package pdftex.def Info: image/res2.png  used on input line 642.
+Package pdftex.def Info: image/res2.png  used on input line 640.
 (pdftex.def)             Requested size: 111.53606pt x 245.25432pt.
  [17 <./image/res1.png> <./image/res2.png>] [18]
-[19
-
-] [20
-
-] [21
-
-]
+[19] [20] [21]
 Kapitola 4.
-<image/homepage-notlogged.png, id=508, 1373.13pt x 687.31781pt>
+<image/homepage-notlogged.png, id=517, 1373.13pt x 687.31781pt>
 File: image/homepage-notlogged.png Graphic file (type png)
 <use image/homepage-notlogged.png>
-Package pdftex.def Info: image/homepage-notlogged.png  used on input line 776.
+Package pdftex.def Info: image/homepage-notlogged.png  used on input line 779.
 (pdftex.def)             Requested size: 455.24411pt x 227.86433pt.
 [22
 
  <./image/homepage-notlogged.png>]
-<image/homepage.png, id=515, 1369.36594pt x 685.8122pt>
+<image/homepage.png, id=524, 1369.36594pt x 685.8122pt>
 File: image/homepage.png Graphic file (type png)
 <use image/homepage.png>
-Package pdftex.def Info: image/homepage.png  used on input line 787.
+Package pdftex.def Info: image/homepage.png  used on input line 790.
 (pdftex.def)             Requested size: 455.24411pt x 227.99307pt.
  [23
 
  <./image/homepage.png>]
-<image/test-creator1.png, id=523, 1099.7085pt x 547.44525pt>
+<image/test-creator1.png, id=532, 1099.7085pt x 547.44525pt>
 File: image/test-creator1.png Graphic file (type png)
 <use image/test-creator1.png>
-Package pdftex.def Info: image/test-creator1.png  used on input line 807.
+Package pdftex.def Info: image/test-creator1.png  used on input line 810.
 (pdftex.def)             Requested size: 223.07211pt x 111.04082pt.
-<image/test-creator2.png, id=524, 1099.7085pt x 550.4565pt>
+<image/test-creator2.png, id=533, 1099.7085pt x 550.4565pt>
 File: image/test-creator2.png Graphic file (type png)
 <use image/test-creator2.png>
-Package pdftex.def Info: image/test-creator2.png  used on input line 813.
+Package pdftex.def Info: image/test-creator2.png  used on input line 816.
 (pdftex.def)             Requested size: 223.07211pt x 111.65161pt.
-<image/test-taking.png, id=525, 971.42924pt x 548.64975pt>
+<image/test-taking.png, id=534, 971.42924pt x 548.64975pt>
 File: image/test-taking.png Graphic file (type png)
 <use image/test-taking.png>
-Package pdftex.def Info: image/test-taking.png  used on input line 828.
+Package pdftex.def Info: image/test-taking.png  used on input line 831.
 (pdftex.def)             Requested size: 341.43307pt x 192.83397pt.
  [24 <./image/test-creator1.png> <./image/test-creator2.png>]
-<image/programming.png, id=534, 972.63374pt x 548.64975pt>
+<image/programming.png, id=543, 972.63374pt x 548.64975pt>
 File: image/programming.png Graphic file (type png)
 <use image/programming.png>
-Package pdftex.def Info: image/programming.png  used on input line 838.
+Package pdftex.def Info: image/programming.png  used on input line 841.
 (pdftex.def)             Requested size: 341.43307pt x 192.59119pt.
  [25 <./image/test-taking.png> <./image/programming.png>]
-<image/community.png, id=544, 970.827pt x 548.64975pt>
+<image/community.png, id=553, 970.827pt x 548.64975pt>
 File: image/community.png Graphic file (type png)
 <use image/community.png>
-Package pdftex.def Info: image/community.png  used on input line 852.
+Package pdftex.def Info: image/community.png  used on input line 855.
 (pdftex.def)             Requested size: 455.24411pt x 257.27103pt.
  [26
 
@@ -1009,21 +988,17 @@ Kapitola 5.
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `effio-dokumentace.out' has not changed.
-(rerunfilecheck)             Checksum: C9D8AC95576785EB9CB58917AA8281DF;3624.
+(rerunfilecheck)             Checksum: 97781AB5CCA5300057EB20C883C34BBD;3508.
  ) 
 Here is how much of TeX's memory you used:
- 18933 strings out of 475248
- 304131 string characters out of 5758756
- 2206785 words of memory out of 5000000
- 39756 multiletter control sequences out of 15000+600000
+ 18963 strings out of 475248
+ 304510 string characters out of 5758756
+ 2205785 words of memory out of 5000000
+ 39777 multiletter control sequences out of 15000+600000
  626179 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,11n,122p,1309b,1596s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,11n,122p,1208b,2322s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Oem\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt10
 00.pk> <C:\Users\Oem\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ec
 tt1000.pk> <C:\Users\Oem\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
@@ -1032,9 +1007,9 @@ tic/uhvb8a.pfb><C:/Users/Oem/AppData/Local/Programs/MiKTeX/fonts/type1/urw/time
 s/utmb8a.pfb><C:/Users/Oem/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/
 utmr8a.pfb><C:/Users/Oem/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/ut
 mri8a.pfb>
-Output written on effio-dokumentace.pdf (35 pages, 4440535 bytes).
+Output written on effio-dokumentace.pdf (35 pages, 4441635 bytes).
 PDF statistics:
- 853 PDF objects out of 1000 (max. 8388607)
- 326 named destinations out of 1000 (max. 500000)
+ 864 PDF objects out of 1000 (max. 8388607)
+ 335 named destinations out of 1000 (max. 500000)
  301 words of extra memory for PDF output out of 10000 (max. 10000000)
 
