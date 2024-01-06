@@ -259,7 +259,7 @@ openright
 %% Abstrakt v češtině
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\noindent{\Large{\bfseries{Abstrakt}\\}}
-	\noindent Výsledkem projektu je funkční webová aplikace pro vytváření a vyplňování testů, které se skládají z~různých možností otázek včetně programovací. Aplikace zahrnuje přihlášení přes Google a GitHub. Uživatel vytváří jednotlivé testy výběrem šablony, nebo importem z GIFT formátu, otázek, komentářů a následně upravuje detaily testu. Hotový test může sám zkusit z~vlastní kolekce testů a nebo z~komunitního centra, kde se nacházejí komunitou vytvořené testy, po vyplnění testu se uživateli objeví výsledky a známka. Kromě tvorby a vyplňování testů aplikace obsahuje také skupiny, v~níž mohou mezi sebou uživatelé např. komunikovat, na dříve vyplněné testy se může podívat v sekci testové historie. Přehled o aktivitě uživatele si může prohlédnout v dashboardu prostřednictvím vizuálních grafů. Dříve vytvořené testy se dají v části kolekce editovat, mazat a také exportovat do GIFT formátu~v textovém souboru pro použití například v~Moodlu. Aplikace disponuje zcela responsivním designem se světlým a tmavým režimem.
+	\noindent Výsledkem projektu je funkční webová aplikace pro vytváření a vyplňování testů, které se skládají z~různých možností otázek včetně programovací. Aplikace zahrnuje přihlášení přes Google a GitHub. Uživatel vytváří jednotlivé testy výběrem šablony, nebo importem z GIFT formátu, otázek, komentářů a následně upravuje detaily testu. Hotový test může sám zkusit z~vlastní kolekce testů a nebo z~komunitního centra, kde se nacházejí komunitou vytvořené testy, po vyplnění testu se uživateli objeví výsledky a známka. Kromě tvorby a vyplňování testů aplikace obsahuje také skupiny, v~níž mohou mezi sebou uživatelé např. komunikovat, na dříve vyplněné testy se může podívat v~sekci testové historie. Přehled o aktivitě uživatele si může prohlédnout v~dashboardu prostřednictvím vizuálních grafů. Dříve vytvořené testy se dají v~části kolekce editovat, mazat a také exportovat do GIFT formátu~v textovém souboru pro použití například v~Moodlu. Aplikace disponuje zcela responsivním designem se světlým a tmavým režimem.
 	
 	\vspace{18pt}
 	
@@ -273,7 +273,7 @@ openright
 	
 	\clearpage %% Zalomení stránky
 	\noindent{\Large{\bfseries{Abstract}\\}}
-	\noindent The result of the project is a functional web application for creating and filling out tests, which consist of various types of questions, including programming ones. The application includes login via Google and GitHub. Users can create individual tests by selecting a template or importing from the GIFT format. They can add questions, comments, and then edit test details such as name, description, image, editable grading system, grouping, and tags. A completed test can be taken from their own collection or from the community center, where tests created by the community are available. After completing a test, users can view the results and grade. In addition to test creation and completion, the application also includes groups where users can communicate through a chat, and the owner can share tests. Previously completed tests can be reviewed in the test history section. Users can check their activity overview in the dashboard through visual graphs. Previously created tests can be edited, deleted, and exported to GIFT format in a text file for use, for example, in Moodle. The application features a fully responsive design with both light and dark modes.
+	\noindent The result of the project is a functional web application for creating and taking tests, which consist of various types of questions, including programming questions. The application supports login via Google and GitHub. Users can create individual tests by selecting a template or importing from the GIFT format, including questions, comments, and then customize the details of the test. The completed test can be tried by the user from their own collection of tests or from the community center, where tests created by the community are available. After completing the test, users will see the results and a grade. In addition to test creation and completion, the application also includes groups where users can communicate with each other. Users can review previously taken tests in the test history section. An overview of user activity can be viewed in the dashboard through visual graphs. Previously created tests can be edited, deleted, and exported to the GIFT format in a text file for use, for example, in Moodle. The application features a fully responsive design with both light and dark modes.
 	
 	\vspace{18pt}
 	
@@ -343,7 +343,7 @@ Pro vytvoření webové aplikace je možno využít mnoho postupů, proto zmín�
 \item Metaframework je technologie, která kombinuje výhody \uv{single page application} a tradičního web serveru. Disponuje možností běhu kódu na serveru, přesměrováním na klientské části a dalšími výhodami. Takových technologií existuje celá řada, jako například populární NextJS, já si pro svůj projekt zvolil SvelteKit. Další fází této architektury je hostování, nejlepší variantou většinou bývá hostování přes providery jako Vercel nebo Netlify, tato architektura se poté spíše primárně aplikuje se \uv{serverless}.
 \end{itemize}
 
-Jednou z hlavních myšlenek bylo hostování Effia na cloudových službách, proto jsem si vybíral hlavně mezi technologiemi \uv{serverless} a \uv{edge computing}, výhodou providera, kterého jsem si vybral - Vercel je, že kombinace těchto technologií je velice snadná, základní variantou je \uv{serverless} s~jednoduchým přepnutím dané cesty na \uv{edge}. Ve spojení s~konceptem metaframeworku nakonec utváří velmi flexibilní, rychlou a příjmenou variantu.
+Jednou z hlavních myšlenek bylo hostování Effia na cloudových službách, proto jsem si vybíral hlavně mezi technologiemi \uv{serverless} a \uv{edge computing}, výhodou providera, kterého jsem si vybral - Vercel je, že kombinace těchto technologií je velice snadná, základní variantou je \uv{serverless} s~jednoduchým přepnutím dané cesty na \uv{edge}. Ve spojení s~konceptem metaframeworku nakonec utváří velmi flexibilní, rychlou a příjemnou variantu.
 
 \begin{figure}[h!]
 	\centering %% příkaz, který ti obrázek zarovná na střed
@@ -355,6 +355,7 @@ Jednou z hlavních myšlenek bylo hostování Effia na cloudových službách, p
 %Vzhledem k tomu, že záměrem bylo vytvořit aplikaci, která bude pro veškeré \uv{backendové} úlohy využívat cloud, tak je architektura relativně složité téma, proto se pokusím stručně popsat základní proces vykreslení stránky. Uživatel získává statické soubory ze \uv{CDN}, dynamicky vytvořené stránky pro první zobrazení (\uv{first render}) jsou generovány na instancích \uv{serverless funkcí} třetí strany, každá instance se vytváří podle potřeby na reálném serveru poskytovatele, není dedikovaná a ani nezůstavá aktivní po delší dobu. Server je dále využíván pro potřeby klienta, které si on sám nemůže obstarat především z bezpečnostních důvodů (DB queries, secret env variables...). Databáze vytváří spojení se serverem a ten získává potřebná data.
 
 \section{Typesafety}
+\label{sec:typesafety}
 
 Webové aplikace standardně využívají JavaScript, ten ale obnáší signifikantní nevýhodu v~podobě nemožnosti \uv{otypovat} kód, to způsobuje obtíž orientovat se v~kódu, velké množství produkčních chyb a také spoustu času stráveného pochopením dříve napsaného kódu. Pro Effio jsem se tedy rozhodl využít moderní technologie a vytvořit tak téměř plně \uv{typesafe} (otypovanou) aplikaci. TypeScript v~Effiu nahrazuje JavaScript, ten do tohoto jazyka přináší typy. To ale nestačí, API endpointy, stejně jako databázové dotazy stále nemůžou být otypované a proto jsem připojil také knihovny tRPC a Prisma.
 
@@ -393,19 +394,16 @@ Prvním krokem bylo založení projektu a stažení potřebných knihoven techno
 \section{Autentifikace}
 \subsection{Auth.js}
 Auth.js je knihovna sloužící pro autentifikaci, poskytuje možnost \uv{session based}, to je použito v~Effiu, a JWT autentifikace. Dále knihovna podporuje OAuth s mnohými providery, v~tomto projektu je využit GitHub a Google s~jednoduchou možností přidat další. Výhodou knihovny je, že data si vývojář spravuje sám, neboli jsou ukládána do jeho vlastní databáze v~podobě tabulek (které si také může sám upravit): Account, Session, User a Verification Token, které poskytují naprostou kontrolu nad ověřením uživatelů.
-
+\clearpage
 \subsection{Proces přihlášení}
 Uživatel se na podstránce /login rozhodne zdali se přihlásit pomocí Google nebo GitHub účtu, je poté přesměrován na stránku těchto providerů, kde potvrdí přístup k~informacím o jejich účtu a je navrácen zpět do Effia. V~databázi jsou vytvořeny tabulky o tomto uživateli včetně nové relace (Session), díky které je schopen přihlášení. To proběhne automaticky po navrácení se zpět od providera.
 
 \clearpage
-\section{Model databáze}
+\section{Databáze}
 
-\begin{figure}[H]
-	\centering %% příkaz, který ti obrázek zarovná na střed
-	\includegraphics[width=1\linewidth]{image/schema.png} 
-	\caption{Databázový model Effia. Vytvořeno pomocí \href{https://github.com/Ovyerus/prismaliser}{Prismaliser}} %% popisek obrázku, nezapomeň na citace!
-	\label{fig:schema} %% označení až budeš chtít na obrázek odkazovat
-\end{figure}
+Databáze je podrobněji popsaná v~backendové architektuře, ale pro shrnutí se jedná o MySQL-compatible databázi hostovaná přes Planetscale. Jako ORM využívám Prismu. Databázový model je umístěn jako příloha \ref{fig:schema}.
+
+\subsection{Stručný popis účelů jednotlivých tabulek}
 
 Autorizace a autentifikace
 \begin{itemize}
@@ -457,76 +455,60 @@ SvelteKit je metaframework postavený na Svelte, jako ostatní metaframeworky ty
 	\item Přehlednost - SvelteKit využívá \uv{file based routing}, tedy cesty aplikace jsou generovány podle složek, které vývojář vytvoří, soubory se poté vždy jmenují stejně, \texttt{+page.svelte} pro stránku, \texttt{+layout.svelte} pro layout apod. Díky tomu je vždy jasné pro co specifický souboru slouží, přehlednosti také přidává, již u Sveltu zmíněná podobnost s JavaScriptem.
 \end{itemize} 
 
-\clearpage
-Tento kód ukazuje získání dat z~databáze při načtení stránky (load funkce) a poté také actions, což jsou formulářové akce vytvářené pro specifickou cestu, které poté můžeme využívat, zde je vidět mazání uživatele ze skupiny
+V~mé aplikaci SvelteKit zastává naprosto zásadní roli, od routování, přes serverové operace jako load funkce a API endpointy, konfiguraci bundleru až po přesměrování. Ve zkratce se jedná o základní stavební blok, bez kterého by aplikace nebyla funkční.
+
+Tento kód ukazuje získání dat z~databáze při načtení stránky, ale před zobrazením uživateli, (load funkce) a poté také actions, což jsou formulářové akce vytvářené pro specifickou cestu, které poté můžeme využívat, zde je vidět mazání uživatele ze skupiny
 \begin{lstlisting}[style=ES6, caption=Ukázka z +page.server.ts, label=sveltekit_code]
 export const load: ServerLoad = async (event) => {
+	// Mohou se vracet i Promisy, SvelteKit je sám resolvne, mění se ve SvelteKit 2.0
 	const users = prisma.user.findMany({ where: {name: event.params.name}})
-	
 	return users
 }
-
 export const actions: Actions = {
 	deleteUsers: async (event) => {
 		const formData = await event.request.formData()
 		const users: string[] = []
-		
-		formData.forEach((value) => {
-			users.push(value.toString())
-		})
-		
+		formData.forEach((value) => { users.push(value.toString()) })
 		try {
-			
 			await (await trpcServer(event)).groups.kickUsersFromGroup({
 				groupSlug: event.params.name as string,
 				userIds: users,
 			})
-			return {
-				success: true
-			}
+			return { success: true }
 		}
 		catch (e) {
 			if (e instanceof TRPCError) {
 				return fail(getHTTPStatusCodeFromError(e), { message: e.message })
 			}
-			else {
-				return fail(500, { message: "Something went wrong." })
-			}
+			else { return fail(500, { message: "Something went wrong." }) }
 		}
 	}
 }
 \end{lstlisting}
 
 \subsection{tRPC}
-V~minulé sekci jsem se zmínil o problémech s otypováním API endpointů, tRPC (Typescript Remote Procedure Call) tento problém řeší tím, že vytváří dynamické typy pro jednotlivé endpointy, podle toho jak si je sami nadefinujeme, ty se potom dají volat pomocí funkcí bez přímého použití \texttt{fetche} nebo třeba \texttt{axiosu} (tyto funkce ve skutnčnosti \uv{fetch} requesty vykonávají ale programátor se o ně nemusí starat přímo), tyto funkce jsou dokonale otypované a v~kódu tím pádem fungují jako jakákoliv jiná funkce vytvořená programátorem. Další výhodou je také to, že jednotlivé \uv{procedury}, což je vlastně API endpoint, mají k~dispozici metody pro kontrolu vstupu nebo třeba middleware, který například může zjišťovat stav přihlášení uživatele, jako zbytek knihovny jsou i tyto metody perfektně otypované.
+V~minulé kapitole jsem se zmínil o problémech s otypováním API endpointů, tRPC (Typescript Remote Procedure Call) tento problém řeší tím, že vytváří dynamické typy pro jednotlivé endpointy, podle toho jak si je sami nadefinujeme, ty se potom dají volat pomocí funkcí bez přímého použití \texttt{fetche} nebo třeba \texttt{axiosu} (tyto funkce ve skutnčnosti \uv{fetch} requesty vykonávají ale programátor se o ně nemusí starat přímo), tyto funkce jsou dokonale otypované a v~kódu tím pádem fungují jako jakákoliv jiná funkce vytvořená programátorem. Další výhodou je také to, že jednotlivé \uv{procedury}, což je vlastně API endpoint, mají k~dispozici metody pro kontrolu vstupu nebo třeba middleware, který například může zjišťovat stav přihlášení uživatele, jako zbytek knihovny jsou i tyto metody perfektně otypované.
+
+V Effiu tRPC využívám hlavně jako možnost komunikace klienta s~databází, neboli tRPC v~build timu vytvoří API endpointy, které poté klient přes zmíněné funkce volá. V~těchto endpointech se většinou nachází operace s~databází, ty na klientu provádět nemohu. Výhodou je, že tyto funkce mohu využívat i na serveru s~trochu odlišnou implementací.
+
+Ukázka kódu zobrazuje vytvoření procedury, neboli endpointu, který se poté dá volat. V~druhé části je zobrazena právě zmíněná funkce, díky které získáme potřebné data.
+
 \begin{lstlisting}[style=ES6, caption=Endpoint generovaný pomocí tRPC, label=trpc_code]
 getTestById: procedure.input(z.object({
 	id: z.string(),
 	includeGroupSubcategories: z.boolean().optional()
 })).query(async ({ ctx, input }) => {
 	const test = await ctx.prisma.test.findUnique({
-		where: {
-			id: input.id,
-		},
+		where: { id: input.id },
 		include: {
 			subcategories: input.includeGroupSubcategories || false,
 			owner: true,
-			tags: {
-				include: {
-					tag: true
-				}
-			},
+			tags: {	include: { tag: true } },
 			testVersions: {
 				include: {
-					questions: {
-						include: {
-							type: true
-						}
-					}
+					questions: { include: { type: true } }
 				},
-				orderBy: {
-					version: "desc"
-				},
+				orderBy: { version: "desc" },
 				take: 1
 			}
 		},
@@ -544,61 +526,58 @@ getTestById: procedure.input(z.object({
 \end{lstlisting}
 \subsection{Prisma}
 Prisma slouží jako ORM (Object–relational mapping), to znamená pomocí JavaScriptu získávat data z databáze bez přímého použití jazyka SQL, Prisma se skládá z klientské části, která pomocí protokolu založeném na JSON komunikuje se serverovou částí, tam je následně uskutečněn SQL dotaz a odpověď je poslána klientovi. Také řeší již zmíněný problém s otypováním těchto dotazů, pro Prismu je totiž nutné vytvořit \texttt{schema.prisma} soubor kde se definuje model databáze, ten poté můžeme pomocí Prisma CLI nahrávat do databáze ale také vytvářet dynamické typy, které poté využijeme jak v~dotazech tak v~aplikaci pro data, která dostaneme zpět.
-Prisma je asi hlavní důvod nemožnosti využívat Edge runtime, tato knihovna totiž potřebuje využít TCP sokety pro komunikaci s~databázi, které aktuálně Edge runtime nepodporuje, jako řešení by se nabízelo využít jinou knihovnu jako Drizzle ORM.
+Prisma je asi hlavní důvod nemožnosti využívat Edge runtime, tato knihovna totiž potřebuje využít TCP spojení pro komunikaci s~databázi, které aktuálně Edge runtime nepodporuje, jako řešení by se nabízelo využít jinou knihovnu jako Drizzle ORM nebo Database JS. I přes to se na řešení tohoto problému pro Prismu intenzivně pracuje a ve velmi brzké budoucnosti se očekává řešení (jiné než další balíčky a úprava kódu jako nyní).
+
+Effia Prismu využívá jako ORM, tedy pro veškeré databázové operace, v~celé aplikaci se nevyskytuje jediná SQL query, která by nevyužívala Prismu buď pro sestavení dané query nebo minimálně pro komunikaci s~databází.
+
+Tato ukázka kódu zobrazuje SQL operaci, kterou Prisma vytvoří podle této objektové struktury, kterou jsem sestavil. Cílem je získat unikátní test pomocí jeho ID společně s~přidruženými tabulkami. Druhá ukázka poté vytváření modelu.
+
 \begin{lstlisting}[style=ES6, caption=Získání testu podle id a přidání dat ze spojených tabulek, label=prisma_code_use]
 	const test = await ctx.prisma.test.findUnique({
 		where: {id: input.id},
 		include: {
 			subcategories: input.includeGroupSubcategories || false,
 			owner: true,
-			tags: {
-				include: {tag: true}
-			},
+			tags: {	include: {tag: true} },
 			testVersions: {
-				include: {
-					questions: {
-						include: {
-							type: true
-						}
-					}
-				},
-				orderBy: {
-					version: "desc"
-				},
+				include: { questions: { include: { type: true } } },
+				orderBy: { version: "desc" },
 				take: 1
 			}
 		},
 	})
 \end{lstlisting}
 
-\clearpage
 \begin{lstlisting}[style=ES6, caption=Schéma modelu verze testu, label=prisma_code_schema]
-model TestVersion {
-	versionId      String       @id @default(uuid())
-	createdAt      DateTime     @default(now())
-	updatedAt      DateTime     @updatedAt
-	version        Int
-	testId         String
-	markSystemJSON Json
-	totalPoints    Int          @default(0)
-	testGroup      Test         @relation(fields: [testId], references: [id], onDelete: Cascade)
-	questions      Question[]
-	records        TestRecord[]
+model Question {
+	id        String           @id @default(uuid())
+	title     String
+	createdAt DateTime         @default(now())
+	updatedAt DateTime         @updatedAt
+	typeId    String
+	testId    String
+	content   Json
+	points    Int              @default(0)
+	type      QuestionType     @relation(fields: [typeId], references: [id], onDelete: Cascade)
+	test      TestVersion      @relation(fields: [testId], references: [versionId], onDelete: Cascade)
+	records   QuestionRecord[]
 	
+	@@index([typeId])
 	@@index([testId])
-	@@index([version])
 }
 \end{lstlisting}
 
 \subsection{Zod}
-Zod je validační knihovna jako např. Yup. To znamená, že jeho prací je kontrolovat mnou vložené vstupy, knihovna vrací úspšnost a také chyby na které během kontroly narazí. Jeho výhodou je avšak možnost využít jeho validační schémata jako typy a také samotná validace funguje jako \uv{type guard} (kontroluje a nastavuje typy u vložené proměnné). Jeho další výhodou je například jeho nízká velikost.
+Zod je validační knihovna jako např. Yup. To znamená, že jeho prací je kontrolovat mnou vložené vstupy, knihovna vrací úspšnost a také chyby na které během kontroly narazí. Jeho výhodou je avšak možnost využít jeho validační schémata jako typy a také samotná validace funguje jako \uv{type guard} (kontroluje a nastavuje typy u vložené proměnné).
+
+Zod je v~Effiu využíván jak na backendu tak na frontendu, jeho umístění do backendové části je pouze z~důvodu, že validační operace častěji probíhají na serveru. Díky Zodu jsem schopen přehledným a spolehlivým způsobem kontrolovat data testů, formulářů apod. Zásluhou hezky formátovaných vrácených chyb je poté mohu bezproblémově zobrazovat uživateli.
 
 Tento kód kontroluje zdali vložený input odpovídá struktuře \uv{answerSchema}, popřípadě nastaví error do proměné, která se poté zobrazí klientovi.
+
 \begin{lstlisting}[style=ES6, caption=Validace vstupu pomocí validační knihovny Zod, label=zod]
 const answerSchema = z.string().min(ANSWER_MIN, `Answer has to be at least ${ANSWER_MIN} character long.`).max(ANSWER_MAX, `Answer can be max ${ANSWER_MAX} characters long.`)
 const result = answerSchema.safeParse(content.answers[item].answer)
 if (result.success === false) {
-	isError = true
 	content.answers[item].error = result.error.errors[0].message
 }
 \end{lstlisting}
@@ -677,7 +656,7 @@ Svelte je open source JavaScriptový framework vyvíjený od roku týmem Riche H
 		dispatch('inputChange', inputRef.value);
 	}
 	\end{lstlisting}
-	\item Style - tato část slouží jako CSS pro daný dokument, výhodou je ale lokální rozsah aplikovaných stylů (jako u CSS modules ale mnohem lépe provedené), aplikovat zde lze i globální styly díky \texttt{:global}. Osobně mi vyhovuje, že se styly nacházejí v~jednom souboru, a i když jsem tento způsob pro stylování Effia převážně nevyužíval, tak osobně mi připadá velice dobře provedený. Celý úsek tohoto kódu je jako v~HTML dokumentu formován do \texttt{<style>} tagů.
+	\item Style - tato část slouží jako CSS pro daný dokument, výhodou je ale lokální rozsah aplikovaných stylů (jako u CSS modules), aplikovat zde lze i globální styly díky \texttt{:global}. Osobně mi vyhovuje, že se styly nacházejí v~jednom souboru, a i když jsem tento způsob pro stylování Effia převážně nevyužíval, tak osobně mi připadá velice dobře provedený. Celý úsek tohoto kódu je jako v~HTML dokumentu formován do \texttt{<style>} tagů.
 	
 	\begin{lstlisting}[style=ES6, caption=Ukázka Svelte CSS kódu, label=svelte-CSS-sample]
 	<style>
@@ -736,7 +715,12 @@ Svelte je open source JavaScriptový framework vyvíjený od roku týmem Riche H
 \subsection{TypeScript}
 Typescript se dá považovat jako nadstavba JavaScriptu, poskytuje ale jednu výraznou výhodu - typy, díky nim je možno mnohem snadněji dohledávat chyby, vracet se k dříve napsanému kódu a celkově mnohem zlepší \uv{developer experience} při vytváření aplikace. Sám o sobě pomůže s otypováním jednotlivých částí kódu, neporadí si však například s API endpointy nebo databázovými dotazy, které se poté musí otypovat ručně, což je ale velice špatný způsob. Proto se v~tomto projektu využívají další knihovny jako Prisma, tRPC a Zod.
 
+V Effiu jsem se pro TypeScript rozhodl z~důvodů v sekci \ref{sec:typesafety}, zkráceně šlo ale hlavně o možnost efektivně psát kód, který bude obsahovat méně produkčních chyb, způsob jak se lépe vracet k~dřívějšímu kódu, také rychlost a jistota psaní, díky automatickému doplňování IDE, v~mém případě Visual Studio Codem.
+
+Ukázka kódu zobrazuje vytváření různých typů, které poté v~aplikaci využívám.
+
 \begin{lstlisting}[style=ES6, caption=Ukázka TypeScriptového typu, label=typescript-sample]
+// Carousel.svelte
 export type IdCardAlternativeProps = CardAlternativeProps & {
 	id: string;
 	type: TestType;
@@ -746,6 +730,9 @@ export type CarouselItemInput =
 | IdCardAlternativeProps[]
 | Promise<IdCardAlternativeProps[]>;
 
+// customUtilities.d.ts
+
+// Ručně vytvořený generic, který mi umožňuje zkombinovat funckionalitu Partial a Pick genericu. 
 type PartialPick<T extends Record<unknown, unknown>, K extends keyof T> = {
 	[Key in Exclude<keyof T, K>]: T[Key];
 } & {
@@ -755,6 +742,11 @@ type PartialPick<T extends Record<unknown, unknown>, K extends keyof T> = {
 
 \subsection{Tailwind CSS}
 Tailwind CSS je \uv{CSS utility library}, to znamená, že narozdíl od frameworků jako je třeba Bootstrap nebo Material UI neposkytuje celé předpřipravené komponenty ale připravené CSS classy, které se aplikují na HTML elementy, jeho výhodou je naprostá kontrola nad chováním stylů, které se aplikují, přehlednost a rychlost se kterou se dá styly vytvářet.
+
+Pro Effia jsem se rozhodl využívat Tailwind hlavně díky jeho flexibilitě a rychlosti použití, pro nějaké komponenty jsem využil Daisy UI, což je komponentová knihovna, která využívá pouze CSS, a slouží jako plugin pro Tailwind.
+
+Tento kód zobrazuje využití Tailwind class na určitý element, pro ukázku jsem záměrně vybral rozsáhlejší, pro většinu případů si ale vystačím s~jedním až dvěma řádky class.
+
 \begin{lstlisting}[style=ES6, caption=Ukázka Tailwind kódu, label=tailwind-sample]
 <button
 	type="button"
@@ -926,6 +918,14 @@ Je také volně přístupná na adrese \url{https://effio.vercel.app/}
 	
 	\titleformat{\chapter}[block]{\scshape\bfseries\LARGE}{Příloha \thechapter}{10pt}{\vspace{0pt}}[\vspace{-22pt}] %% nastavení nadpisu u příloh
 	
+	\chapter{
+		Databázový model}
 
+	\begin{figure}[H]
+		\centering %% příkaz, který ti obrázek zarovná na střed
+		\includegraphics[width=1\linewidth]{image/schema.png} 
+		\caption{Databázový model Effia. Vytvořeno pomocí \href{https://github.com/Ovyerus/prismaliser}{Prismaliser}} %% popisek obrázku, nezapomeň na citace!
+		\label{fig:schema} %% označení až budeš chtít na obrázek odkazovat
+	\end{figure}
 	
 \end{document}
