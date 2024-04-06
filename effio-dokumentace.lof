@@ -1,21 +1,20 @@
 \babel@toc {czech}{}\relax 
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Rozdíl mezi serverless a edge.}}{4}{figure.caption.5}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Možnost přepnutí dané cesty ze Serverless na Edge. \cite {SvelteKit}}}{4}{figure.caption.6}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Jednoduchý přehled backendové části Effia.}}{6}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Jednoduchý přehled backendové části Effia.}}{5}{figure.caption.6}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Prvotní návrh domovské stránky.}}{15}{figure.caption.8}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Domovská stránka na mobilním zařízení}}{16}{figure.caption.9}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Generátor testů na mobilním zařízení}}{16}{figure.caption.9}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Prvotní návrh domovské stránky.}}{13}{figure.caption.7}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Domovská stránka na mobilním zařízení}}{14}{figure.caption.8}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Generátor testů na mobilním zařízení}}{14}{figure.caption.8}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Domovská stránka Effia pro nepřihlášeného uživatele.}}{21}{figure.caption.10}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Domovská stránka Effia pro přihlášeného uživatele.}}{22}{figure.caption.11}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Kvízový test}}{23}{figure.caption.12}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Programovací test}}{23}{figure.caption.12}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Obrázek kvízu.}}{24}{figure.caption.13}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Obrázek programovací úlohy.}}{24}{figure.caption.14}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Komunitní místo.}}{25}{figure.caption.15}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Domovská stránka Effia pro nepřihlášeného uživatele.}}{19}{figure.caption.9}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Domovská stránka Effia pro přihlášeného uživatele.}}{20}{figure.caption.10}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Kvízový test}}{21}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Programovací test}}{21}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Obrázek kvízu.}}{22}{figure.caption.12}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Obrázek programovací úlohy.}}{22}{figure.caption.13}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Komunitní místo.}}{23}{figure.caption.14}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Databázový model Effia. Vytvořeno pomocí \href {https://github.com/Ovyerus/prismaliser}{Prismaliser}}}{31}{figure.caption.18}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Databázový model Effia. Vytvořeno pomocí \href {https://github.com/Ovyerus/prismaliser}{Prismaliser}}}{29}{figure.caption.17}%

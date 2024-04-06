@@ -259,7 +259,7 @@ openright
 %% Abstrakt v češtině
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\noindent{\Large{\bfseries{Abstrakt}\\}}
-	\noindent Výsledkem projektu je funkční webová aplikace pro vytváření a vyplňování testů, které se skládají z~různých možností otázek včetně programovací. Aplikace zahrnuje přihlášení přes Google a GitHub. Uživatel vytváří jednotlivé testy výběrem šablony, nebo importem z GIFT formátu, otázek, komentářů a následně upravuje detaily testu. Hotový test může sám zkusit z~vlastní kolekce testů a nebo z~komunitního centra, kde se nacházejí komunitou vytvořené testy, po vyplnění testu se uživateli objeví výsledky a známka. Kromě tvorby a vyplňování testů aplikace obsahuje také skupiny, v~níž mohou mezi sebou uživatelé např. komunikovat, na dříve vyplněné testy se může podívat v~sekci testové historie. Přehled o aktivitě uživatele si může prohlédnout v~dashboardu prostřednictvím vizuálních grafů. Dříve vytvořené testy se dají v~části kolekce editovat, mazat a také exportovat do GIFT formátu~v textovém souboru pro použití například v~Moodlu. Aplikace disponuje zcela responsivním designem se světlým a tmavým režimem.
+	\noindent Výsledkem projektu je funkční webová aplikace pro vytváření a vyplňování testů, které se skládají z~různých možností otázek včetně programovací. Aplikace zahrnuje přihlášení přes Google a GitHub. Uživatel vytváří jednotlivé testy výběrem šablony, nebo importem z GIFT formátu, otázek, komentářů a následně upravuje detaily testu. Hotový test může sám zkusit z~vlastní kolekce testů a nebo z~komunitního centra, kde se nacházejí komunitou vytvořené testy, po vyplnění testu se uživateli objeví výsledky a známka. Kromě tvorby a vyplňování testů aplikace obsahuje také skupiny, v~níž mohou mezi sebou uživatelé např. komunikovat, sdílet testy, zobrazovat statistiky apod., na dříve vyplněné testy se může podívat v~sekci testové historie. Přehled o aktivitě uživatele si může prohlédnout v~dashboardu prostřednictvím vizuálních grafů. Dříve vytvořené testy se dají v~části kolekce editovat, mazat a také exportovat do GIFT formátu~v textovém souboru pro použití například v~Moodlu. Aplikace disponuje zcela responsivním designem se světlým a tmavým režimem.
 	
 	\vspace{18pt}
 	
@@ -321,7 +321,7 @@ V~dokumentaci jsou popsané využité technologie, postupy a jednotlivé funkcio
 
 \section{Architektura}
 
-\subsection{Možnosti řešení}
+\subsection{Možnosti architektury}
 Pro vytvoření webové aplikace je možno využít mnoho postupů, proto zmíním několik variant nad kterými jsem uvažoval s~jejich klady se zápory
 
 \begin{itemize}
@@ -331,7 +331,8 @@ Pro vytvoření webové aplikace je možno využít mnoho postupů, proto zmín�
 
 \item Serverless - je architektura kdy vývojář využívá server poskytovatele, o ten se nemusí starat, a je škálován podle potřeby. Tento koncept ale má i své nevýhody, omezená doba relace odpovědi, menší úložný prostor pro načtení knihoven nebo třeba nemožnost spravovat svůj server.
 
-\item Edge runtime - tato technologie je podobná Serverless architektuře, serverový kód ale neběží v jedné lokalitě ale na jednotlivých CDN. Funkce se spouštějí ne skrze Node ale přes Edge runtime, toto obsahuje svou nevýhodu, Edge není Node, a proto nemůžeme používat Node moduly, jako je třeba \uv{fs}. Další nevýhodou je velice malé množství paměti, které je pro dostupnou instanci dostupné. Výhodou je poté velice nízká cena spuštění takové funkce a bezkonkurenční rychlost odpovědi, tato výhoda je největší u serverových úkolů jako přesměrování, cookies nebo geograficky založených údajů, v~případě několikanásobných dotazů do databáze se ale cesta potřebná k~získání dat zvětšuje a výhoda rychlosti mizí.
+\item Edge runtime - tato technologie je podobná Serverless architektuře, serverový kód ale neběží v jedné lokalitě ale na jednotlivých CDN. Funkce se spouštějí ne skrze Node apod. ale přes Edge runtime, toto obsahuje svou nevýhodu, Edge není Node, a proto nemůžeme používat Node moduly, jako je třeba \uv{fs}. Další nevýhodou je velice malé množství paměti, které je pro dostupnou instanci dostupné. Výhodou je poté velice nízká cena spuštění takové funkce a bezkonkurenční rychlost odpovědi, tato výhoda je největší u serverových úkolů jako přesměrování, cookies nebo geograficky založených údajů, v~případě několikanásobných dotazů do databáze se ale cesta potřebná k~získání dat zvětšuje a výhoda rychlosti mizí.
+
 
 \begin{figure}[h!]
 	\centering %% příkaz, který ti obrázek zarovná na střed
@@ -345,12 +346,12 @@ Pro vytvoření webové aplikace je možno využít mnoho postupů, proto zmín�
 
 Jednou z hlavních myšlenek bylo hostování Effia na cloudových službách, proto jsem si vybíral hlavně mezi technologiemi \uv{serverless} a \uv{edge computing}, výhodou providera, kterého jsem si vybral - Vercel je, že kombinace těchto technologií je velice snadná, základní variantou je \uv{serverless} s~jednoduchým přepnutím dané cesty na \uv{edge}. Ve spojení s~konceptem metaframeworku nakonec utváří velmi flexibilní, rychlou a příjemnou variantu.
 
-\begin{figure}[h!]
-	\centering %% příkaz, který ti obrázek zarovná na střed
-	\includegraphics[width=1\linewidth]{image/edge-adapter.png} 
-	\caption{Možnost přepnutí dané cesty ze Serverless na Edge. \cite{SvelteKit}} %% popisek obrázku, nezapomeň na citace!
-	\label{fig:edge-adapter} %% označení až budeš chtít na obrázek odkazovat
-\end{figure}
+%\begin{figure}[h!]
+%	\centering %% příkaz, který ti obrázek zarovná na střed
+%	\includegraphics[width=1\linewidth]{image/edge-adapter.png} 
+%	\caption{Možnost přepnutí dané cesty ze Serverless na Edge. \cite{SvelteKit}} %% popisek obrázku, nezapomeň na citace!
+%	\label{fig:edge-adapter} %% označení až budeš chtít na obrázek odkazovat
+%\end{figure}
 
 %Vzhledem k tomu, že záměrem bylo vytvořit aplikaci, která bude pro veškeré \uv{backendové} úlohy využívat cloud, tak je architektura relativně složité téma, proto se pokusím stručně popsat základní proces vykreslení stránky. Uživatel získává statické soubory ze \uv{CDN}, dynamicky vytvořené stránky pro první zobrazení (\uv{first render}) jsou generovány na instancích \uv{serverless funkcí} třetí strany, každá instance se vytváří podle potřeby na reálném serveru poskytovatele, není dedikovaná a ani nezůstavá aktivní po delší dobu. Server je dále využíván pro potřeby klienta, které si on sám nemůže obstarat především z bezpečnostních důvodů (DB queries, secret env variables...). Databáze vytváří spojení se serverem a ten získává potřebná data.
 
@@ -360,9 +361,6 @@ Jednou z hlavních myšlenek bylo hostování Effia na cloudových službách, p
 Webové aplikace standardně využívají JavaScript, ten ale obnáší signifikantní nevýhodu v~podobě nemožnosti \uv{otypovat} kód, to způsobuje obtíž orientovat se v~kódu, velké množství produkčních chyb a také spoustu času stráveného pochopením dříve napsaného kódu. Pro Effio jsem se tedy rozhodl využít moderní technologie a vytvořit tak téměř plně \uv{typesafe} (otypovanou) aplikaci. TypeScript v~Effiu nahrazuje JavaScript, ten do tohoto jazyka přináší typy. To ale nestačí, API endpointy, stejně jako databázové dotazy stále nemůžou být otypované a proto jsem připojil také knihovny tRPC a Prisma.
 
 \chapter{Backend}
-
-\section{Založení a konfigurace projektu}
-Prvním krokem bylo založení projektu a stažení potřebných knihoven technologií, které jsem plánoval využít. Kombinace mnou vybraných technologií nebyla kompletně konvenční a proto jsem se musel v~některých případech obrátit na komunitou vytvořené adaptéry, příkladem je například knihovna \texttt{trpc-sveltekit}, která propojuje SvelteKit a tRPC, které je primárně navrženo buď jako samostatný server a nebo jako implementace do Next.js.
 
 \section{Architektura backendu}
 \begin{figure}[h!]
@@ -376,17 +374,19 @@ Prvním krokem bylo založení projektu a stažení potřebných knihoven techno
 		\item CDN - neboli Content Delivery Network je síť serverů, které jsou charakteristické hlavně tím, že jsou rozmístěny po celém světě a ve velkém množství, starají se o distribuci statického obsahu díky čemu nemusí klient data získávat ze vzdáleného server ale právě z~tohoto, který je ve většině případů mnohem blíže. Dále se starají o cachování dat, což opět zkracuje dobu pro uživatele aby zobrazil obsah.
 		\item Server - neoznačuje server jako takový ale spíše místo kde se spouštějí instance serverových funkcí, což jsou funkce, které se vytváří podle potřeby na reálných serverech, které ale spravuje provider této služby, v~mém případě Vercel, respektive Cloudflare.
 		
-		Programátora nemusí tyto serveru vůbec zajímat, instance se sami škálují a obecně jsou pro vývojáře velice příjemných řešením. V~poslední letech se tato architektura těší významné oblibě nejen malých projektů ale také velikých firem jako je Amazon, ty se ale v~poslední době opět začínají vracet k~hostování vlastních serverů, které se po dlouholetých diskuzích znovu zdají výhodnější pro takto masivní účely typu Amazonu.
+		Programátora nemusí tyto servery vůbec zajímat, instance se sami spouštějí, škálují a obecně jsou pro vývojáře velice příjemným řešením.
 		
-		Tento server je v~Effiu využíván hlavně pro první zobrazení stránky metodou SSR (\uv{server side rendering}) a také získáváním dat, které nemohou být získány na klientu (např. SQL dotazy), pro jednotlivé stránky, formulářovými akcemi nebo jako API endpointy.
+		Tento server je v~Effiu využíván hlavně pro první zobrazení stránky metodou SSR (\uv{server side rendering}) a také pro získávání dat, které nemohou být získány na klientu (např. SQL dotazy), pro jednotlivé stránky, formulářové akce nebo API endpointy.
 		
-		\item DB - MySQL databáze hostovaná přes službu Planetscale, ta disponuje velice zajímavými možnosti jako jsou \uv{větve} podobné verzovacímu systému Git, \uv{Deploy requesty}, které zlepšují práci v~týmu nebo možnost distribuce \uv{read-only} instancí databáze do rozdílných regionů. Pro mě byla veliká výhoda rychlost a velice štědrý \uv{free tier}.
-		\item Pusher, Cloudinary - jedná se o cloudové služby, které slouží účelům, které s~touto architekturou nejsem schopný zařídit.
+		\item DB - PostgreSQL databáze hostovaná přes službu Supabase, ta nabízí mnoho nástrojů pro vývoj webových aplikací včetně databáze, je open source a má také \uv{free tier}.
+		\item Pusher, Cloudinary, Upstash - jedná se o cloudové služby, které slouží účelům, které s~touto architekturou nejsem schopný zařídit.
 		
 		\begin{itemize}
 			\item Pusher se stará o web sockety, respektive stále spojení, které se \uv{serverless} spojením není možné. V~Effiu posloužil pro chat v~kanálech skupin pro aktualizaci zpráv všech uživatelů pokud nějaký pošle zprávu.
 			
 			\item Cloudinary slouží pro ukládání obrázků a jejich distribuci do CDN.
+			
+			\item Upstash je služba, která nabízí Redis instanci, kterou využívám pro caching a také \uv{rate limiting} (to znamená, že kontroluju počet requestů na jednotlivé endpointy). Redis je \uv{inmemory} databáze a hlavní výhodou je právě jeho rychlost.
 		\end{itemize}
 	\end{itemize}
 
@@ -394,7 +394,7 @@ Prvním krokem bylo založení projektu a stažení potřebných knihoven techno
 \section{Autentifikace}
 \subsection{Auth.js}
 Auth.js je knihovna sloužící pro autentifikaci, poskytuje možnost \uv{session based}, to je použito v~Effiu, a JWT autentifikace. Dále knihovna podporuje OAuth s mnohými providery, v~tomto projektu je využit GitHub a Google s~jednoduchou možností přidat další. Výhodou knihovny je, že data si vývojář spravuje sám, neboli jsou ukládána do jeho vlastní databáze v~podobě tabulek (které si také může sám upravit): Account, Session, User a Verification Token, které poskytují naprostou kontrolu nad ověřením uživatelů.
-\clearpage
+
 \subsection{Proces přihlášení}
 Uživatel se na podstránce /login rozhodne zdali se přihlásit pomocí Google nebo GitHub účtu, je poté přesměrován na stránku těchto providerů, kde potvrdí přístup k~informacím o jejich účtu a je navrácen zpět do Effia. V~databázi jsou vytvořeny tabulky o tomto uživateli včetně nové relace (Session), díky které je schopen přihlášení. To proběhne automaticky po navrácení se zpět od providera.
 
