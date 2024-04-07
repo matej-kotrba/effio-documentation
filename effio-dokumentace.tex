@@ -340,7 +340,7 @@ Pro vytvoření webové aplikace je možné využít mnoho postupů, proto zmín
 \begin{itemize}
 \item Tradiční web server představuje nejběžnější způsob vytváření webových stránek. Jednotlivé stránky jsou generovány na serveru a poté odeslány klientovi. Poslaný kód může zahrnovat i JavaScript pro frontendovou funkcionalitu. Pro backendovou část je možné využít jazyk dle výběru. Pro veškerá přesměrování a další akce je nezbytné komunikovat se serverem.
 
-\item Single Page Application (SPA) - Toto řešení v~podstatě odstraňuje nutnost serveru a nechává veškerou zodpovědnost frontendovému frameworku, jako jsou například React, Svelte nebo Solid. Toto řešení však nemá k~dispozici žádný způsob, jak spouštět kód, který na klientovi nemůžeme použít, jako například SQL dotazy. Další nevýhodou je, že stránka je generována až na klientovi pomocí JavaScriptu, což znamená, že vyhledávače nejsou schopny detekovat obsah stránky, což vede k~mnohem nižším výsledkům ve vyhledávačích (SEO).
+\item Single Page Application (SPA) - Toto řešení v~podstatě odstraňuje nutnost serveru a nechává veškerou zodpovědnost frontendovému frameworku, jako jsou například React, Svelte nebo Solid. Nemá ale k~dispozici žádný způsob, jak spouštět kód, který na klientovi nemůžeme použít, jako například SQL dotazy. Další nevýhodou je, že stránka je generována až na klientovi pomocí JavaScriptu, což znamená, že vyhledávače nejsou schopny detekovat obsah stránky, což vede k~mnohem horším výsledkům ve vyhledávačích (SEO).
 
 \item Serverless - Jedná se o architekturu, kde vývojář využívá server poskytovatele, o který se nemusí starat, a je škálován podle potřeby. Tento koncept však má i své nevýhody, jako je omezená doba relace odpovědi, menší úložný prostor pro načítání knihoven a nemožnost spravovat vlastní server.
 
@@ -373,6 +373,29 @@ Jednou z hlavních myšlenek bylo hostování Effia na cloudových službách, p
 \label{sec:typesafety}
 
 Webové aplikace standardně využívají JavaScript, který ale přináší signifikantní nevýhodu v~podobě nemožnosti \uv{otypovat} kód. To způsobuje obtížnou orientaci v~kódu, vysoké množství produkčních chyb a také mnoho času stráveného pochopením dříve napsaného kódu. Pro Effio jsem se tedy rozhodl využít moderní technologie a vytvořit téměř plně \uv{typesafe} (otypovanou) aplikaci. TypeScript v~Effiu nahrazuje JavaScript a do tohoto jazyka přináší typovou strukturu. To však nestačí, protože API endpointy a databázové dotazy stále nemohou být otypované. Proto jsem přidal také knihovny tRPC a Prisma.
+
+\section{Datové modely}
+\subsection{Model Moodlu}
+Pro import a export testů v rámci platformy Moodl, je využíván formát GIFT, ten obsahuje speciální syntaxi v~rámci textového souboru pro záznam jednotlivých otázek, k~zajištění konverze tohoto formátu do JSON, se kterým se dá dobře pracovat jsem využil knihovnu \texttt{gift-pegjs}, pokud ale šlo o konverzi opačnou, tedy z~JSON do GIFTu, rozhodl jsem se o napsání vlastní malé knihovny pro generaci daného souboru \texttt{gift-format-generator}.
+
+\subsection{Datový model testu v Effiu}
+Pro práci s~testem v~rámci Effia jsem se ale rozhodl pro vytvoření vlastního formátu, ve kterém by byl test uchováván ve \uv{storu} (objektu) až do jeho uložení do databáze.
+
+\begin{lstlisting}[style=ES6, caption=Ukázka z +page.server.ts, label=test_format]
+	type ClientTest = {
+		title: string;
+		description: string;
+		questions: QuestionClient[]; // Otázky mají poté dalších spoustu atributů
+		errors: {
+			title?: string;
+			description?: string;
+			markSystem?: {
+				[Key in keyof MarkSystemJSON as Key extends "marks" ? never : Key]?: string;} & {	marks: {[Key in keyof MarkSystemJSON["marks"][number]]?: string;}[]
+				};
+			tagIds?: string[];
+		};
+	}
+\end{lstlisting}
 
 \section{Backend}
 
@@ -609,7 +632,7 @@ if (result.success === false) {
 Jednou z~hlavních myšlenek bylo vytvořit pohledem přívětivou aplikaci, proto se návrh designu stál klíčovou částí pro stylově propracovanější prvky stránky. Pro tvorbu designu, stejně jako vytváření a úpravu potřebných obrázků jsem využil aplikaci Figma.
 \begin{figure}[H]
 	\centering %% příkaz, který ti obrázek zarovná na střed
-	\includegraphics[width=1\linewidth]{image/figma.png} 
+	\includegraphics[width=0.8\linewidth]{image/figma.png} 
 	\caption{Prvotní návrh domovské stránky.} %% popisek obrázku, nezapomeň na citace!
 	\label{fig:figma} %% označení až budeš chtít na obrázek odkazovat
 \end{figure}
@@ -640,6 +663,7 @@ Problematika však nespočívá pouze v~zobrazení prvků ale také v~jejich fun
 S~ohledem na uživatele, kteří preferují tmavý režim, jsem se také rozhodl vytvořit tmavý režim. Ten je možné vidět na obrázku \ref{fig:test-creator2}. Oba tyto režimy vyžadovaly vlastní paletu barev a byly mnohokrát přepracovány, aby jednotlivé barvy co nejlépe ladily k~sobě.
 
 \subsection{Využité frontendové technologie}
+\clearpage
 \subsection{Svelte}
 Svelte je open-source JavaScriptový framework vyvíjený týmem Riche Harrise od roku 2016. Jeho hlavní výhodou je rychlost a intuitivnost, protože jazyk, který používá, se snaží vypadat jako JavaScript, zatímco rozšiřuje jeho možnosti, tím se odlišuje od jiných framework jako je React, Angular, Solid nebo Qwik, ten se zapisuje do souborů s příponou .svelte. Tyto soubory jsou následně kompilovány do vysoce efektivního JavaScriptu. Díky tomu získává stále rostoucí popularitu mezi webovými vývojáři. Kód v~Svelte se skládá ze tří hlavních částí.
 
@@ -687,18 +711,7 @@ Svelte je open-source JavaScriptový framework vyvíjený týmem Riche Harrise o
 	
 	\begin{lstlisting}[style=ES6, caption=Ukázka Svelte kódu, label=svelte-sample]
 	{#await data}
-		<div class="@container h-full">
-		<div class="flex w-full py-1 scroller flex-nowrap">
-			{#each Array(countOfItems).fill('') as _}
-				<div
-				class="min-w-[calc(100%/var(--items-count))] h-full relative aspect-[4/5]"
-				>
-					<!-- Zde se nachází další kód -->
-				</div>
-			{/each}
-			<span class="loading loading-infinity loading-lg" />
-		</div>
-	</div>
+		<!-- Zde se nachází další kód -->
 	{:then awaitedData}
 		<div class="@container h-full">
 			<div
@@ -711,12 +724,9 @@ Svelte je open-source JavaScriptový framework vyvíjený týmem Riche Harrise o
 					class="min-w-[calc(100%/var(--items-count))] relative aspect-[4/5]"
 					>
 						<CardAlternative
-						class="mx-auto"
 						navigationLink={'/tests/' + item.id}
 						type={item.type}
-						data={{
-								...item
-						}}
+						data={{...item}}
 						/>
 					</div>
 				{/each}
@@ -797,10 +807,10 @@ Po kliknutí na tlačítko \uv{Login} se dostanete na přihlašovací obrazovku,
 	\label{fig:homepage-loggedin} %% označení až budeš chtít na obrázek odkazovat
 \end{figure}
 
-\section{Testy a jejich vlastnosti}
+\subsection{Testy a jejich vlastnosti}
 Jednou z esenciálních funkcionalit Effia je možnost vytvořit test. K~tomu existuje mnoho různých přístupů. Nejprve jsem se zamýšlel nad danou problematikou a až poté jsem napsal funkční nástroj pro jejich vytváření. Nicméně, i přes tuto předběžnou úvahu, bylo nakonec nutné téměř celou funkcionalitu při vytváření testu přepsat.
 
-\subsection{Tvorba testu}
+\subsubsection{Tvorba testu}
 \label{subsec:creation}
 Jako první si uživatel zvolí mezi kvízovým a programovacím testem, u obou si poté vybere šablonu.
 \begin{itemize}
@@ -824,9 +834,9 @@ Po dokončení těchto úprav se uživatel přesune do konečných úprav testu,
 	\end{minipage}
 \end{figure}
 
-\section{Vyplňování testu}
+\subsection{Vyplňování testu}
 \label{sec:test-take}
-\subsection{Vyplňování kvízu}
+\subsubsection{Vyplňování kvízu}
 Vytvořený test si poté může kdokoliv s~přístupem k~němu vyplnit (testy jsou základně dostupné pro všechny, po úpravě mohou být zveřejněny pouze pro členy skupin).
 
 Otázky jsou náhodně seřazeny, a uživatel musí odpovědět na všechny z~nich. Odpovědi některých typů otázek jsou náhodně zamíchány. Po vyplnění všech otázek uživatel odevzdá test, který se následně zkontroluje. Uživateli jsou zobrazeny správné odpovědi, počet získaných bodů, udělená známka a pokud je uživatel přihlášený, záznam o vyplnění se uloží do databáze. Uživatel si poté může zobrazit záznam v~sekci \textit{Test history}.
@@ -838,8 +848,8 @@ Otázky jsou náhodně seřazeny, a uživatel musí odpovědět na všechny z~ni
 	\label{fig:test-taking} %% označení až budeš chtít na obrázek odkazovat
 \end{figure}
 
-\subsection{Plnění programovacího testu}
-Uživatel obdrží popis toho, co by měl kód schopný vykonat, sadu testů, které mají ověřit funkčnost kódu, a případné nápovědy. V~případě programovacích testů je k~dispozici vlastní editor, do kterého uživatel píše kód. Pro kontrolu správnosti kódu může použít tlačítko \textit{\uv{Run}} a v~případě, že testy procházejí, může odevzdat své řešení.
+\subsubsection{Plnění programovacího testu}
+Uživatel obdrží popis toho, co by měl kód schopný vykonat, sadu testů, které mají ověřit funkčnost kódu, a případné nápovědy. V~případě programovacích testů je k~dispozici vlastní editor, do kterého uživatel píše kód. Pro kontrolu správnosti kódu může použít tlačítko \textit{\uv{Run}} a v~případě, že testy procházejí, může odevzdat své řešení. Jednotlivý běh kódu probíhá na klientovi v~rámci \uv{web workerů}, které přesouvají zátěž na jiné vlákno procesoru, hlavní výhodou je ale, že pokud dojde k nějaké situaci, kterou nelze snadno vyřešit (třeba while true), tak je možné tento worker zrušit a spustit nový.
 
 \begin{figure}[H]
 	\centering %% příkaz, který ti obrázek zarovná na střed
@@ -872,9 +882,36 @@ Zde si uživatel může zobrazit jím vytvořené testy, aplikovaná je stejná 
 	\item Delete - smazání testu z databáze
 \end{itemize}
 
+\subsection{Testová historie}
+\label{subsec:historie}
+Toto místo slouží pro zobrazení dříve vyplněných testů, na výpis testů je zde pro změnu využita metoda "pagination", která rozděluje jejich zobrazení na jednotlivé části, mezi kterými se přepíná. Na kliknutí na test se zobrazí záznam testu přesně v tom stavu jak ho uživatel dříve vyplnil.
+
+\begin{figure}[H]
+	\centering %% příkaz, který ti obrázek zarovná na střed
+	\includegraphics[width=1\linewidth]{image/history.png} 
+	\caption{Ukázka skupin} %% popisek obrázku, nezapomeň na citace!
+	\label{fig:history} %% označení až budeš chtít na obrázek odkazovat
+\end{figure}
 
 \section{Skupiny}
 Každý přihlášený uživatel si může vytvořit vlastní skupinu, do které se můžou pomocí generovaného kódu připojit ostatní uživatelé, tyto kódy se poté pomocí cronu mažou. Skupina obsahuje jednotlivé kanály, které funguje jednak jako chat (nebo pouze pro oznámení a psát do něj může pouze majitel), a také jako místo pro sdílení testů vlastníka, u těchto testů poté může vlastník kontrolovat vyplnění jednotlivými členy skupiny, grafy výsledků a také si zobrazit jednotlivá řešení uživatelů (na testy přidané do skupin lze aplikovat limit počtu vyplnění pro uživatele). Majitel má také možnost vyhodit/zabanovat jednotlivé členy.
+
+\begin{figure}[H]
+	\centering %% příkaz, který ti obrázek zarovná na střed
+	\includegraphics[width=1\linewidth]{image/groups.png} 
+	\caption{Ukázka skupin} %% popisek obrázku, nezapomeň na citace!
+	\label{fig:groups} %% označení až budeš chtít na obrázek odkazovat
+\end{figure}
+
+\section{Administrátorská část}
+Pro administrátory aplikace je dostupná také stránka se správou jednotlivých testů a uživatelů, zde si je můžou zobrazit v tabulce a například je mazat nebo měnit uživatelské role. Další funkcí je také zobrazování logů akcií, které byli adminy provedeny.
+
+\begin{figure}[H]
+	\centering %% příkaz, který ti obrázek zarovná na střed
+	\includegraphics[width=1\linewidth]{image/admin.png} 
+	\caption{Ukázka skupin} %% popisek obrázku, nezapomeň na citace!
+	\label{fig:admin} %% označení až budeš chtít na obrázek odkazovat
+\end{figure}
 
 %\chapter{Výsledky práce}
 %\section{Funkce aplikace}
@@ -884,20 +921,23 @@ Každý přihlášený uživatel si může vytvořit vlastní skupinu, do které
 \chapter{Zhodnocení práce}
 
 \section{Splněné a nesplněné cíle}
-Cíle byly rozdělené jak do rozsahu aplikace tak do kvality implementace jednotlivých prvků, co se týče rozsahu tak ten jsem v~určitých místech významně předčil, ne všechny body původních cílů jsou ale aktuálně plně dosaženy.
+Hlavním cílem bylo vytvořit rychlou, cloudovou aplikaci pro vytváření a sdílení testů využívající moderních \uv{techstack}, v~tomto ohledu jsem cíl kompletně splnil, aplikace je v~těchto bodech plně funkční a můj původní plán využití technologií se během vývoje ještě významně rozrostl. Aplikace mimo již výše zmíněné možnosti nabízí také historii, export a import, skupiny, administrátorskou část a spoustu menších dílčích prvků dotvářející celkový dojem.
 
-Hlavním cílem bylo vytvořit rychlou, cloudovou aplikaci pro vytváření a sdílení testů využívající moderních \uv{techstack}, v~tomto ohledu jsem cíl kompletně splnil, aplikace je v~těchto bodech plně funkční a můj původní plán využití technologií se během vývoje ještě významně rozrostl.
+Za úspěch považuji také grafickou část aplikace, která za mě tvoří minimalistický moderní vzhled, responsivitu umožňující využití aplikace na více zařízení a barevně vyvážený světlý a tmavý režim.
 
-Za úspěch považuji také grafickou část aplikace, která za mě tvoří minimalistický moderní vzhled.
+\section{Produkční připravenost}
+Díky zvoleným technologiím si dovoluji aplikaci prohlásit za produkčně způsobilou, jednotlivé služby mají snadnou možnost škálování, implementace je z~velké většiny stabilní.
 
-Hlavní neúspěch nebo spíše nedodělanost vidím ve skupinách a přizpůsobení možností testů pro ně, původně jsem zamýšlel vytvořit skupiny jako místo pro sdílení materiálů s více zajímavými možnostmi pro vlastníka, aby sloužili jako funkce vhodná pro výuku. Cíle nejsou zdaleka nerealistické, ale těchto cílů jsem nebyl schopen dosáhnou z~nedostatku času, jako vylepšení by ale za mně bylo velice přínosné.
-	
-Další částečný neúspěch vidím v~programovacích testech, ty se i přes snahu vyladit nepovedly dostat do stavu kdy by byly pro uživatele nezávadné, v~aktuálním stavu je naprosto možné přetížit vlastní prohlížeč napsáním např. \texttt{while(true) {}}, JavaScript je \uv{single threaded} jazyk a proto není možné proces ukončit, protože neskončí ten předchozí (právě zmínění while loop). Řešení nabízí \uv{Web workers}, což je možnost jak JavaScript spouštět na více vláknech, zdálo se tedy, že řešení je na světě. Po bližším přezkoumání jsem ale zjistil, že nejsem schopen web workery v~SvelteKit aplikaci v~produkci načítat žádným způsobem, daním web workeru do stejné složky dojde k~neexistující referenci (web worker se zbundluje se zbytkem kódu a jeho funkcionalita se rozbije), řešení je tedy dát worker do public složky, která se odděluje od zbytku, zde ale dojde k~erroru MIME.
+Možnosti využití aplikace jsou od nenáročného občasného návštěvníka, který si chce zkusit nějaký kvíz, až po implementaci v~rámci třídy, kde učitel zadá kvíz, který následně žáci musejí vyplnit.
+
+\section{Možná vylepšení}
+Nelze ale říct, že by aplikace byla dokonalá, určitě je zde prostor pro mnoha vylepšení v~rámci funkcionality, ať už jde o například přidání časového limitu do kvízů, více individuálních funkcí pro členy skupiny nebo třeba širší možnosti sociálního rázu, jako třeba zobrazování profilu apod.
+
 \chapter*{Závěr}
 	
 Cílem projektu bylo vytvořit webovou aplikaci pro vytváření a vyplňování testů. Aplikace je postavená na frameworku SvelteKit, psaný v~jazyce TypeScript. Přihlašování stojí na knihovně Auth.js, MySQL databáze je hostovaná službou Planetscale, jako ORM je použita Prisma. Frontend řeší framework Svelte s~CSS utility knihovnou Tailwind, pro validaci využívá Zod.
 
-Základem aplikace je generátor testů, kde uživatel využívá předpřipravené typy otázek. Testy se následně dají vyplnit v~rámci komunity nebo vlastníkovi kolekce. Nepřihlášený uživatel může testy pouze vyplňovat, přihlásit se uživatel může pomocí Google nebo GitHub účtu. Uživatelé také mají k~dispozici skupiny kde je chat a také možnosti sdílet testy, test historii k~zobrazení dříve vyplněných testů a přehled nedávné aktivity v~podobě grafů. Využité technologie činí aplikaci lehce škálovatelnou a velice výkonnou. Aplikace je téměř zcela funkční a použitelná na všech zařízeních díky responzivnímu designu.
+Základem aplikace je generátor testů, kde uživatel využívá předpřipravené typy otázek. Testy se následně dají vyplnit v~rámci komunity nebo vlastníkovi kolekce. Nepřihlášený uživatel může testy pouze vyplňovat, přihlásit se uživatel může pomocí Google nebo GitHub účtu. Uživatelé také mají k~dispozici skupiny kde je chat a také možnosti sdílet testy společně s výsledky a grafy pro vlastníka, test historii k~zobrazení dříve vyplněných testů a přehled nedávné aktivity v~podobě grafů. Využité technologie činí aplikaci lehce škálovatelnou a velice výkonnou. Aplikace je téměř zcela funkční a použitelná na všech zařízeních díky responzivnímu designu.
 
 \noindent Aplikace je zálohovaná na GitHubu na adrese \url{https://github.com/matej-kotrba/effio}.
 Je také volně přístupná na adrese \url{https://effio.vercel.app/}
