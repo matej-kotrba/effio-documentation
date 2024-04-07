@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.12.23)  7 APR 2024 20:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.12.23)  7 APR 2024 22:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -959,11 +959,11 @@ File: image/programming.png Graphic file (type png)
 Package pdftex.def Info: image/programming.png  used on input line 856.
 (pdftex.def)             Requested size: 341.43307pt x 213.41708pt.
  [22 <./image/test-taking.png> <./image/programming.png>]
-<image/community.png, id=473, 970.827pt x 548.64975pt>
+<image/community.png, id=473, 1540.5555pt x 866.0355pt>
 File: image/community.png Graphic file (type png)
 <use image/community.png>
 Package pdftex.def Info: image/community.png  used on input line 870.
-(pdftex.def)             Requested size: 455.24411pt x 257.27103pt.
+(pdftex.def)             Requested size: 455.24411pt x 255.91434pt.
  [23
 
  <./image/community.png>]
@@ -1003,22 +1003,22 @@ P\v {r}\'{\i }loha A.
 <image/schema.png, id=568, 2876.7475pt x 3685.77pt>
 File: image/schema.png Graphic file (type png)
 <use image/schema.png>
-Package pdftex.def Info: image/schema.png  used on input line 980.
-(pdftex.def)             Requested size: 455.24411pt x 583.26762pt.
+Package pdftex.def Info: image/schema.png  used on input line 979.
+(pdftex.def)             Requested size: 409.71692pt x 524.89024pt.
 [30
 
 
-] [31 <./image/schema.png>] (effio-dokumentace.aux)
+ <./image/schema.png>] (effio-dokumentace.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
 Package rerunfilecheck Info: File `effio-dokumentace.out' has not changed.
-(rerunfilecheck)             Checksum: 3E2992B183E526DE18AC882377B4FC59;2255.
+(rerunfilecheck)             Checksum: 55B7469BFF7330376EB022F086D70855;2247.
  ) 
 Here is how much of TeX's memory you used:
- 19283 strings out of 475248
- 310060 string characters out of 5758756
+ 19282 strings out of 475248
+ 310053 string characters out of 5758756
  2160785 words of memory out of 5000000
  40116 multiletter control sequences out of 15000+600000
  626179 words of font info for 106 fonts, out of 8000000 for 9000
@@ -1032,9 +1032,9 @@ tic/uhvb8a.pfb><C:/Users/Oem/AppData/Local/Programs/MiKTeX/fonts/type1/urw/time
 s/utmb8a.pfb><C:/Users/Oem/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/
 utmr8a.pfb><C:/Users/Oem/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/ut
 mri8a.pfb>
-Output written on effio-dokumentace.pdf (35 pages, 3901328 bytes).
+Output written on effio-dokumentace.pdf (34 pages, 4673843 bytes).
 PDF statistics:
- 812 PDF objects out of 1000 (max. 8388607)
- 312 named destinations out of 1000 (max. 500000)
+ 808 PDF objects out of 1000 (max. 8388607)
+ 311 named destinations out of 1000 (max. 500000)
  242 words of extra memory for PDF output out of 10000 (max. 10000000)
 
