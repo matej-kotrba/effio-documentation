@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.12.23)  7 APR 2024 22:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.12.23)  10 APR 2024 21:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -660,24 +660,24 @@ Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 (effio-dokumentace.aux)
 \openout1 = `effio-dokumentace.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -742,7 +742,7 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 187.
+Package hyperref Info: Link coloring OFF on input line 202.
  (effio-dokumentace.out) (effio-dokumentace.out)
 \@outlinefile=\write3
 \openout3 = `effio-dokumentace.out'.
@@ -764,277 +764,348 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 \c@mv@tabular=\count328
 \c@mv@boldtabular=\count329
 \c@lstlisting=\count330
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 19
-7.
-
-(C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
-File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
-)
-<image/logo-skoly.png, id=72, 356.2911pt x 137.5539pt>
-File: image/logo-skoly.png Graphic file (type png)
-<use image/logo-skoly.png>
-Package pdftex.def Info: image/logo-skoly.png  used on input line 201.
-(pdftex.def)             Requested size: 273.14923pt x 105.45715pt.
-<image/effio.png, id=74, 1927.2pt x 1084.05pt>
+<image/effio.png, id=96, 1927.2pt x 1084.05pt>
 File: image/effio.png Graphic file (type png)
 <use image/effio.png>
-Package pdftex.def Info: image/effio.png  used on input line 219.
+Package pdftex.def Info: image/effio.png  used on input line 225.
 (pdftex.def)             Requested size: 364.19667pt x 204.84683pt.
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
- 224.
-
-(C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ztmcm.fd
-File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
-)<<ot1.cmap>>
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 224.
- (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omlztmcm.fd
-File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
-)<<oml.cmap>>
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 224.
-
-(C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omsztmcm.fd
-File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
-)<<oms.cmap>>
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 224.
- (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omxztmcm.fd
-File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
-)<<omx.cmap>>
-LaTeX Font Info:    Trying to load font information for U+esint on input line 2
-24.
-
-(C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/esint\uesint.fd
-File: uesint.fd 
-)
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 22
-4.
-
-(C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 2
-24.
-
-(C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 224.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 224.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 224.
 
 [1
 
-
 {C:/Users/Oem/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Oem/Ap
-pData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./image/logo-skoly.pn
-g> <./image/effio.png>] [2
+pData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./image/effio.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 265--270
+
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.I}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.273 \cleardoublepage
+                       [1
+
+] [2
 
 ] [3
 
 ] [4
 
-] (effio-dokumentace.toc)
+] (effio-dokumentace.toc
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
+ 2.
+
+(C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)<<ot1.cmap>>
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
+ 2.
+ (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)<<oml.cmap>>
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
+ 2.
+
+(C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)<<oms.cmap>>
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
+ 2.
+ (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)<<omx.cmap>>
+LaTeX Font Info:    Trying to load font information for U+esint on input line 2
+.
+
+(C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/esint\uesint.fd
+File: uesint.fd 
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 2.
+
+
+(C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 2
+.
+
+(C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+)
 \tf@toc=\write4
 \openout4 = `effio-dokumentace.toc'.
 
- [1
 
-] [2
+[5
+
+
+]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
+57.
+ (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+[6
 
 
 ]
 Kapitola 1.
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
-41.
+77.
 (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-[3
+[7
 
 
 ]
-<image/edge-serverless.png, id=135, 2533.465pt x 1585.925pt>
+<image/edge-serverless.png, id=172, 2533.465pt x 1585.925pt>
 File: image/edge-serverless.png Graphic file (type png)
 <use image/edge-serverless.png>
-Package pdftex.def Info: image/edge-serverless.png  used on input line 353.
+Package pdftex.def Info: image/edge-serverless.png  used on input line 387.
 (pdftex.def)             Requested size: 318.66948pt x 199.47429pt.
- [4 <./image/edge-serverless.png>]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
-79.
+ [8 <./image/edge-serverless.png>]
+Overfull \hbox (3.19739pt too wide) in paragraph at lines 418--419
+\T1/ptm/m/n/12 a na-pro-gra-mo-val jsem ma-lou kni-hovnu pro ge-ne-raci da-ného
+ sou-boru \T1/cmtt/m/n/12 gift-format-generator\T1/ptm/m/n/12 . 
+ []
 
-(C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
-File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 384.
- [5]
-<image/effio-architecture.png, id=164, 2380.895pt x 1588.93625pt>
+nput line 423.
+[9]
+<image/schema.png, id=203, 2876.7475pt x 3685.77pt>
+File: image/schema.png Graphic file (type png)
+<use image/schema.png>
+Package pdftex.def Info: image/schema.png  used on input line 444.
+(pdftex.def)             Requested size: 409.71692pt x 524.89024pt.
+ [10 <./image/schema.png>]
+Kapitola 2.
+<image/effio-architecture.png, id=213, 2380.895pt x 1588.93625pt>
 File: image/effio-architecture.png Graphic file (type png)
 <use image/effio-architecture.png>
-Package pdftex.def Info: image/effio-architecture.png  used on input line 408.
+Package pdftex.def Info: image/effio-architecture.png  used on input line 457.
 (pdftex.def)             Requested size: 455.24411pt x 303.81639pt.
+[11
 
-[6 <./image/effio-architecture.png>]
-Overfull \hbox (0.10573pt too wide) in paragraph at lines 419--420
+
+ <./image/effio-architecture.png>]
+Overfull \hbox (0.10573pt too wide) in paragraph at lines 468--469
 []\T1/ptm/m/n/12 Tento ser-ver je v Ef-fiu vy-u-ºí-ván hlavn¥ pro první zob-ra-
 zení stránky me-to-dou SSR (^^Rserver
  []
 
 
-Overfull \hbox (31.17664pt too wide) in paragraph at lines 425--426
+Overfull \hbox (31.17664pt too wide) in paragraph at lines 474--475
 []\T1/ptm/m/n/12 Pusher se stará o webové sockety, kon-krétn¥ o tr-valé spo-jen
 í, coº není moºné s ^^Rserverless^^P
  []
 
-[7] [8
-
-] [9] [10] [11
+[12] [13
 
 ]
-Overfull \hbox (6.33592pt too wide) in paragraph at lines 535--536
+Overfull \hbox (7.4108pt too wide) in paragraph at lines 528--529
+[]\T1/ptm/m/n/12 Auth.js je knihovna slou-ºící pro au-ten-ti-fi-kaci, po-sky-tu
+je moº-nost JWT au-ten-ti-fi-kace i ^^Rsession
+ []
+
+[14] [15] [16
+
+]
+Overfull \hbox (6.33592pt too wide) in paragraph at lines 588--589
 []\T1/ptm/m/n/12 Ukázka kódu zob-ra-zuje vy-tvo-°ení pro-cedury, ne-boli en-d-p
 ointu, který se poté dá vo-lat. V druhé
  []
 
-[12] [13]
+[17] [18]
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
-615.
+668.
  (C:\Users\Oem\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmtt.fd
 File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-<image/figma.png, id=299, 1539.95325pt x 829.29825pt>
+) [19]
+Kapitola 3.
+<image/figma.png, id=354, 1539.95325pt x 829.29825pt>
 File: image/figma.png Graphic file (type png)
 <use image/figma.png>
-Package pdftex.def Info: image/figma.png  used on input line 635.
+Package pdftex.def Info: image/figma.png  used on input line 688.
 (pdftex.def)             Requested size: 364.19667pt x 196.12521pt.
- [14 <./image/figma.png>]
-<image/res1.png, id=315, 224.63925pt x 486.618pt>
+
+Overfull \hbox (1.22418pt too wide) in paragraph at lines 696--697
+\T1/ptm/m/n/12 ^^RConnect^^P, kde se musí jed-not-livé spoje p°e-sou-vat jak po
+-hy-bem my²i, tak p°i do-ty-ko-vém vstupu. 
+ []
+
+<image/res1.png, id=355, 224.63925pt x 486.618pt>
 File: image/res1.png Graphic file (type png)
 <use image/res1.png>
-Package pdftex.def Info: image/res1.png  used on input line 649.
+Package pdftex.def Info: image/res1.png  used on input line 702.
 (pdftex.def)             Requested size: 111.53606pt x 241.61545pt.
-<image/res2.png, id=316, 221.02576pt x 486.01575pt>
+<image/res2.png, id=356, 221.02576pt x 486.01575pt>
 File: image/res2.png Graphic file (type png)
 <use image/res2.png>
-Package pdftex.def Info: image/res2.png  used on input line 656.
+Package pdftex.def Info: image/res2.png  used on input line 709.
 (pdftex.def)             Requested size: 111.53606pt x 245.25432pt.
- [15 <./image/res1.png> <./image/res2.png>] [16
-
-]
-[17] [18] [19]
-Kapitola 2.
-<image/login.png, id=444, 1370.87157pt x 683.55376pt>
-File: image/login.png Graphic file (type png)
-<use image/login.png>
-Package pdftex.def Info: image/login.png  used on input line 805.
-(pdftex.def)             Requested size: 455.24411pt x 226.99194pt.
 [20
 
 
- <./image/login.png>]
-<image/test-creator1.png, id=452, 1099.7085pt x 547.44525pt>
-File: image/test-creator1.png Graphic file (type png)
-<use image/test-creator1.png>
-Package pdftex.def Info: image/test-creator1.png  used on input line 825.
-(pdftex.def)             Requested size: 223.07211pt x 111.04082pt.
-<image/test-creator2.png, id=453, 1099.7085pt x 550.4565pt>
-File: image/test-creator2.png Graphic file (type png)
-<use image/test-creator2.png>
-Package pdftex.def Info: image/test-creator2.png  used on input line 831.
-(pdftex.def)             Requested size: 223.07211pt x 111.65161pt.
-<image/test-taking.png, id=454, 971.42924pt x 548.64975pt>
-File: image/test-taking.png Graphic file (type png)
-<use image/test-taking.png>
-Package pdftex.def Info: image/test-taking.png  used on input line 846.
-(pdftex.def)             Requested size: 341.43307pt x 192.83397pt.
- [21 <./image/test-creator1.png> <./image/test-creator2.png>]
-<image/programming.png, id=464, 1238.05392pt x 773.89125pt>
-File: image/programming.png Graphic file (type png)
-<use image/programming.png>
-Package pdftex.def Info: image/programming.png  used on input line 856.
-(pdftex.def)             Requested size: 341.43307pt x 213.41708pt.
- [22 <./image/test-taking.png> <./image/programming.png>]
-<image/community.png, id=473, 1540.5555pt x 866.0355pt>
-File: image/community.png Graphic file (type png)
-<use image/community.png>
-Package pdftex.def Info: image/community.png  used on input line 870.
-(pdftex.def)             Requested size: 455.24411pt x 255.91434pt.
- [23
+ <./image/figma.png>] [21 <./image/res1.png> <./image/res2.png>]
+Overfull \hbox (9.19432pt too wide) in paragraph at lines 756--757
+\T1/ptm/m/n/12 dob°e pro-ve-dený. Ná-sle-du-jící kód je for-má-to-ván jako v HT
+ML a je ob-sa-ºen v tagu \T1/cmtt/m/n/12 <style>\T1/ptm/m/n/12 . 
+ []
 
- <./image/community.png>]
-<image/history.png, id=482, 1537.54425pt x 866.0355pt>
-File: image/history.png Graphic file (type png)
-<use image/history.png>
-Package pdftex.def Info: image/history.png  used on input line 891.
-(pdftex.def)             Requested size: 455.24411pt x 256.4165pt.
-<image/groups.png, id=483, 1539.95325pt x 865.43324pt>
-File: image/groups.png Graphic file (type png)
-<use image/groups.png>
-Package pdftex.def Info: image/groups.png  used on input line 901.
-(pdftex.def)             Requested size: 455.24411pt x 255.84201pt.
- [24 <./image/history.png>]
-<image/admin.png, id=491, 1539.95325pt x 862.422pt>
-File: image/admin.png Graphic file (type png)
-<use image/admin.png>
-Package pdftex.def Info: image/admin.png  used on input line 911.
-(pdftex.def)             Requested size: 455.24411pt x 254.95181pt.
- [25 <./image/groups.png> <./image/admin.png>]
-Kapitola 3.
+[22
+
+] [23] [24] [25]
+Kapitola 4.
+<image/login.png, id=487, 1370.87157pt x 683.55376pt>
+File: image/login.png Graphic file (type png)
+<use image/login.png>
+Package pdftex.def Info: image/login.png  used on input line 862.
+(pdftex.def)             Requested size: 455.24411pt x 226.99194pt.
 [26
 
 
-] [27
+ <./image/login.png>]
+<image/test-creator1.png, id=495, 1099.7085pt x 547.44525pt>
+File: image/test-creator1.png Graphic file (type png)
+<use image/test-creator1.png>
+Package pdftex.def Info: image/test-creator1.png  used on input line 882.
+(pdftex.def)             Requested size: 223.07211pt x 111.04082pt.
+<image/test-creator2.png, id=496, 1099.7085pt x 550.4565pt>
+File: image/test-creator2.png Graphic file (type png)
+<use image/test-creator2.png>
+Package pdftex.def Info: image/test-creator2.png  used on input line 888.
+(pdftex.def)             Requested size: 223.07211pt x 111.65161pt.
+<image/test-taking.png, id=497, 971.42924pt x 548.64975pt>
+File: image/test-taking.png Graphic file (type png)
+<use image/test-taking.png>
+Package pdftex.def Info: image/test-taking.png  used on input line 903.
+(pdftex.def)             Requested size: 341.43307pt x 192.83397pt.
+ [27 <./image/test-creator1.png> <./image/test-creator2.png>]
+<image/programming.png, id=506, 1238.05392pt x 773.89125pt>
+File: image/programming.png Graphic file (type png)
+<use image/programming.png>
+Package pdftex.def Info: image/programming.png  used on input line 913.
+(pdftex.def)             Requested size: 341.43307pt x 213.41708pt.
+ [28 <./image/test-taking.png> <./image/programming.png>]
+<image/community.png, id=515, 1540.5555pt x 866.0355pt>
+File: image/community.png Graphic file (type png)
+<use image/community.png>
+Package pdftex.def Info: image/community.png  used on input line 927.
+(pdftex.def)             Requested size: 455.24411pt x 255.91434pt.
+ [29
+
+ <./image/community.png>]
+<image/history.png, id=524, 1537.54425pt x 866.0355pt>
+File: image/history.png Graphic file (type png)
+<use image/history.png>
+Package pdftex.def Info: image/history.png  used on input line 948.
+(pdftex.def)             Requested size: 455.24411pt x 256.4165pt.
+<image/groups.png, id=525, 1539.95325pt x 865.43324pt>
+File: image/groups.png Graphic file (type png)
+<use image/groups.png>
+Package pdftex.def Info: image/groups.png  used on input line 958.
+(pdftex.def)             Requested size: 409.71692pt x 230.2499pt.
+ [30 <./image/history.png>]
+<image/group-admin.png, id=534, 1540.5555pt x 865.43324pt>
+File: image/group-admin.png Graphic file (type png)
+<use image/group-admin.png>
+Package pdftex.def Info: image/group-admin.png  used on input line 965.
+(pdftex.def)             Requested size: 409.71692pt x 230.15746pt.
+ [31 <./image/groups.png> <./image/group-admin.png>]
+Kapitola 5.
+
+Overfull \hbox (4.74832pt too wide) in paragraph at lines 985--986
+\T1/ptm/m/n/12 tech-no-lo-giím si do-vo-luji apli-kaci pro-hlá-sit za pro-duk£n
+¥ zp·-so-bi-lou, jed-not-livé sluºby lze snadno
+ []
+
+[32
 
 
-] (effio-dokumentace.lof [28
+]
+Underfull \hbox (badness 6445) in paragraph at lines 994--995
+[]\T1/ptm/m/n/12 Microsoft [on-line]. Cho-ose Be-tween Tra-di-ti-o-nal Web Apps
+ and Sin-gle Page
+ []
 
 
-])
+Underfull \hbox (badness 3271) in paragraph at lines 994--995
+\T1/ptm/m/n/12 Apps (SPAs). Micro-soft. 2023 [cit. 2024-04-10]. Do-stupné z: []
+$\T1/cmtt/m/n/12 https : / / learn .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 994--995
+\T1/cmtt/m/n/12 microsoft . com / en-[]us / dotnet / architecture / modern-[]we
+b-[]apps-[]azure /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 995--996
+[]\T1/ptm/m/n/12 OpenReplay [on-line]. Ser-ver-less vs. Edge Functi-ons. Go-odl
+uck Woha.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 995--996
+\T1/ptm/m/n/12 2023 [cit. 2024-04-10]. Do-stupné z: []$\T1/cmtt/m/n/12 https : 
+/ / blog . openreplay . com /
+ []
+
+
+Underfull \hbox (badness 3375) in paragraph at lines 996--997
+[]\T1/ptm/m/n/12 Prismic [on-line]. Un-der-stan-ding the Ja-vaScript Meta-frame
+work Eco-sys-tem. Ben
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 996--997
+\T1/ptm/m/n/12 Hol-mes. 2022 [cit. 2024-04-10]. Do-stupné z: []$\T1/cmtt/m/n/12
+ https : / / prismic . io / blog /
+ []
+
+[33
+
+
+] (effio-dokumentace.lof)
 \tf@lof=\write5
 \openout5 = `effio-dokumentace.lof'.
 
- [29]
-P\v {r}\'{\i }loha A.
-<image/schema.png, id=568, 2876.7475pt x 3685.77pt>
-File: image/schema.png Graphic file (type png)
-<use image/schema.png>
-Package pdftex.def Info: image/schema.png  used on input line 979.
-(pdftex.def)             Requested size: 409.71692pt x 524.89024pt.
-[30
-
-
- <./image/schema.png>] (effio-dokumentace.aux)
+ [34] (effio-dokumentace.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
 Package rerunfilecheck Info: File `effio-dokumentace.out' has not changed.
-(rerunfilecheck)             Checksum: 55B7469BFF7330376EB022F086D70855;2247.
+(rerunfilecheck)             Checksum: D846AD5296BDCE2620D770B250685D39;3117.
  ) 
 Here is how much of TeX's memory you used:
- 19282 strings out of 475248
- 310053 string characters out of 5758756
+ 19232 strings out of 475248
+ 309175 string characters out of 5758756
  2160785 words of memory out of 5000000
- 40116 multiletter control sequences out of 15000+600000
- 626179 words of font info for 106 fonts, out of 8000000 for 9000
+ 40076 multiletter control sequences out of 15000+600000
+ 621768 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,12n,122p,1218b,1595s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,12n,122p,1207b,1595s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Oem\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt10
 00.pk> <C:\Users\Oem\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ec
 tt1000.pk> <C:\Users\Oem\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ectt1200.pk><C:/Users/Oem/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helve
-tic/uhvb8a.pfb><C:/Users/Oem/AppData/Local/Programs/MiKTeX/fonts/type1/urw/time
-s/utmb8a.pfb><C:/Users/Oem/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/
-utmr8a.pfb><C:/Users/Oem/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/ut
-mri8a.pfb>
-Output written on effio-dokumentace.pdf (34 pages, 4673843 bytes).
+0\ectt1200.pk><C:/Users/Oem/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times
+/utmb8a.pfb><C:/Users/Oem/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/u
+tmr8a.pfb><C:/Users/Oem/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utm
+ri8a.pfb>
+Output written on effio-dokumentace.pdf (35 pages, 4561628 bytes).
 PDF statistics:
- 808 PDF objects out of 1000 (max. 8388607)
- 311 named destinations out of 1000 (max. 500000)
- 242 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 840 PDF objects out of 1000 (max. 8388607)
+ 309 named destinations out of 1000 (max. 500000)
+ 285 words of extra memory for PDF output out of 10000 (max. 10000000)
 
