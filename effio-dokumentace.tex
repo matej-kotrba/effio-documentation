@@ -278,7 +278,7 @@ openright
 
 \noindent Prohlašuji, že tištěná verze a elektronická verze soutěžní práce SOČ jsou shodné. 
 
-\noindent Nemám závažný důvod proti zpřístupňování této práce v souladu se zákonem č. 121/2000 Sb., o právu autorském, o právech souvisejících s právem autorským a o změně některých zákonů (autorský zákon) ve znění pozdějších předpisů. 
+\noindent Nemám závažný důvod proti zpřístupňování této práce v souladu se zákonem č. 121/2000 Sb., o právu autorském, o právech souvisejících s~právem autorským a o změně některých zákonů (autorský zákon) ve znění pozdějších předpisů. 
 
 \vspace{24 pt}
 
@@ -347,14 +347,14 @@ Rád bych poděkoval Mgr. Marku Lučnému za poskytnutí konzultace ohledně toh
 %Třetí parametr Úvod je text, který se objeví v obsahu. V tomto případě bude v obsahu zobrazen název "Úvod".	
 V~dnešní době jsou webové aplikace běžně využívány pro vytváření testů a kvízů, které poté vyplňují ostatní uživatelé. Prostředí těchto aplikací však často působí neorganizovaně a tvorba testů může být pro běžného uživatele komplikovaná i časově náročná. 
 
-Příkladem mohou být testy vytvářené pedagogy v~populárním e-learningovém systému Moodle, s nimiž se setkává mnoho středoškoláků i vysokoškolských studentů. Od svých učitelů vím, že uživatelské rozhraní pro tvorbu testů není v~tomto systému zrovna přívětivé a zadávání jednotlivých úloh je stojí poměrně hodně času i nervů. Napadlo mě, že by bylo možné inspirovat se jedním ze standardních formátů elektronických testů a pokusit se vytvořit modernější, uživatelsky příjemnější prostředí.  
+Příkladem mohou být testy vytvářené pedagogy v~populárním e-learningovém systému Moodle, s~nimiž se setkává mnoho středoškoláků i vysokoškolských studentů. Od svých učitelů vím, že uživatelské rozhraní pro tvorbu testů není v~tomto systému zrovna přívětivé a zadávání jednotlivých úloh je stojí poměrně hodně času i nervů. Napadlo mě, že by bylo možné inspirovat se jedním ze standardních formátů elektronických testů a pokusit se vytvořit modernější, uživatelsky příjemnější prostředí.  
 
 S touto myšlenkou jsem se rozhodl vytvořit webovou aplikaci, pro jejíž název~jsem zvolil latinské slovo Effio, která by kombinovala typické funkce programů pro elektronické testování s~přehledným moderním rozhraním a dalšími užitečnými prvky. Aplikace tak kromě tvorby testů a kvízů obsahuje i některé prvky typické pro sociální sítě, tedy možnost vytváření komunit uživatelů a vzájemného sdílení testů. 
 
 Jedním mých z cílů bylo rovněž v~praxi si ověřit a využít některé nové technologické postupy, které se nyní prosazují v~oblasti tvorby webu. Výsledkem je tzv. \uv{typesafe}
  a \uv{serverless} aplikace, jež nevyžaduje vlastní server, čerpá z možností současných cloudových technologií a zároveň je plně responzivní pro uživatele na jakémkoli zařízení.
 
-V~dokumentaci aspoň stručně popisuji klíčové využité technologie, postupy a jednotlivé funkcionality celé aplikace. První kapitola se zaměřuje na samotnou architekturu systému a zdůvodňuje zvolený přístup k~řešení. V~dalších kapitolách se snažím přiblížit technické řešení backendové i frontendové části aplikace a ta poslední popisuje základní funkce Effia. S ohledem na šíři celé práce, množství použitých knihoven i počet řádků kódu nemůže dokumentace v~rozsahu doporučovaném pro SOČ ani zdaleka pojmout všechny aspekty projektu, dovoluji si proto odkázat na veřejný repozitář na Githubu: \url{https://github.com/matej-kotrba/effio}.
+V~dokumentaci aspoň stručně popisuji klíčové využité technologie, postupy a jednotlivé funkcionality celé aplikace. První kapitola se zaměřuje na samotnou architekturu systému a zdůvodňuje zvolený přístup k~řešení. V~dalších kapitolách se snažím přiblížit technické řešení backendové i frontendové části aplikace a ta poslední popisuje základní funkce Effia. S~ohledem na šíři celé práce, množství použitých knihoven i počet řádků kódu nemůže dokumentace v~rozsahu doporučovaném pro SOČ ani zdaleka pojmout všechny aspekty projektu, dovoluji si proto odkázat na veřejný repozitář na Githubu: \url{https://github.com/matej-kotrba/effio}.
 
 Samotná aplikace je provozována na doméně \url{https://effio.vercel.app/}
 
@@ -371,7 +371,7 @@ Samotná aplikace je provozována na doméně \url{https://effio.vercel.app/}
 \section{Architektura webové aplikace}
 
 \subsection{Koncepty webu, jejich přednosti a nevýhody}
-K~vytvoření komplexní webové aplikace, jakou je i Effio, je možné využít celou řadu konceptuálních řešení. Předem je proto nutné analyzovat požadavky a potřeby aplikace a tomu přizpůsobit volbu vhodné architektury i technologie. V~následujících odstavcích zmiňuji aspoň ty přístupy, o nichž jsem v~souvislosti s tvorbou webu pro online testování uvažoval a analyzoval jsem jejich možné přínosy i nevýhody.
+K~vytvoření komplexní webové aplikace, jakou je i Effio, je možné využít celou řadu konceptuálních řešení. Předem je proto nutné analyzovat požadavky a potřeby aplikace a tomu přizpůsobit volbu vhodné architektury i technologie. V~následujících odstavcích zmiňuji aspoň ty přístupy, o nichž jsem v~souvislosti s~tvorbou webu pro online testování uvažoval a analyzoval jsem jejich možné přínosy i nevýhody.
 
 \begin{itemize}
 \item \textbf{Tradiční web server} představuje nejběžnější způsob vytváření webových stránek. Jednotlivé stránky jsou generovány na serveru a poté odeslány klientovi. Poslaný kód může zahrnovat i JavaScript pro frontendovou funkcionalitu. Pro backendovou část je možné využít jazyk podle výběru. Pro veškerá přesměrování a další akce je nezbytné komunikovat se serverem. \cite{SPA}
@@ -449,7 +449,7 @@ Databázový model celého systému tvoří mnoho vzájemně propojených tabule
 \chapter{Backend}
 
 \section{Založení a konfigurace projektu}
-Prvním krokem bylo založení projektu a stažení potřebných knihoven, které jsem plánoval využít. Kombinace mnou vybraných technologií nebyla kompletně konvenční, a proto jsem se v~některých případech musel obrátit na komunitou vytvořené adaptéry. Příkladem je například knihovna \texttt{trpc-sveltekit}, která propojuje SvelteKit a tRPC. Toto propojení je vytvořeno s ohledem na skutečnost, že tRPC je primárně navrženo buď jako samostatný server, nebo jako implementace do Next.js.
+Prvním krokem bylo založení projektu a stažení potřebných knihoven, které jsem plánoval využít. Kombinace mnou vybraných technologií nebyla kompletně konvenční, a proto jsem se v~některých případech musel obrátit na komunitou vytvořené adaptéry. Příkladem je například knihovna \texttt{trpc-sveltekit}, která propojuje SvelteKit a tRPC. Toto propojení je vytvořeno s~ohledem na skutečnost, že tRPC je primárně navrženo buď jako samostatný server, nebo jako implementace do Next.js.
 
 \section{Architektura backendu}
 \begin{figure}[h!]
@@ -488,14 +488,14 @@ Jedná se o PostgreSQL databázi, která je hostovaná přes cloudovou platformu
 
 Autorizace a autentifikace
 \begin{itemize}[itemsep=0pt]
-	\item User - tabulka s údaji o uživateli.
+	\item User - tabulka s~údaji o uživateli.
 	\item Account - účet uživatele, typ providera přes kterého je přihlášen a data k~relaci.
 	\item Verification Token - ověřovací identifikátor providera.
 	\item Session - relace, do jisté míry propojuje jednotlivé tabulky.
 \end{itemize} 
 Otázky
 \begin{itemize}
-	\item Question - otázka jako taková, obsahuje název, popis, její propojení s testy atd.
+	\item Question - otázka jako taková, obsahuje název, popis, její propojení s~testy atd.
 	\item QuestionType - typ otázky, rozhodujeo  jejím chování na frontendu.
 	\item QuestionRecord - záznam otázky, po vyplnění testu se vytvoří ke každé otázce jeden nový záznam s~výsledky, je sdružován Test Recordem.
 \end{itemize}
@@ -527,7 +527,7 @@ Ostatní
 
 Auth.js je knihovna sloužící pro autentifikaci, poskytuje možnost JWT autentifikace i  \uv{session based} autentifikace, kterou využívá Effio. 
 
-Knihovna podporuje také OAuth s mnohými providery, v~tomto projektu je využit GitHub a Google s~jednoduchou možností přidat další. 
+Knihovna podporuje také OAuth s~mnohými providery, v~tomto projektu je využit GitHub a Google s~jednoduchou možností přidat další. 
 
 Výhodou knihovny je, že data si vývojář spravuje sám, neboli jsou ukládána do jeho vlastní databáze v~podobě tabulek (které si také může sám upravit): Account, Session, User a Verification Token, které poskytují naprostou kontrolu nad ověřením uživatelů.
 
@@ -581,7 +581,7 @@ export const actions: Actions = {
 \end{lstlisting}
 
 \subsection{tRPC}
-V~minulé kapitole jsem se zmínil o problémech s otypováním API endpointů. tRPC (Typescript Remote Procedure Call) tento problém řeší tím, že vytváří dynamické typy pro jednotlivé endpointy, podle toho, jak si je sami nadefinujem. Ty se potom dají volat pomocí funkcí bez přímého použití \texttt{fetche} nebo třeba \texttt{axiosu} (tyto funkce ve skutečnosti \uv{fetch} requesty vykonávají ale programátor se o ně nemusí starat přímo), tyto funkce jsou dokonale otypované a v~kódu tím pádem fungují jako jakákoliv jiná funkce vytvořená programátorem. Další výhodou je také to, že jednotlivé \uv{procedury}, což je vlastně API endpoint, mají k~dispozici metody pro kontrolu vstupu nebo třeba middleware, který například může zjišťovat stav přihlášení uživatele. Jako zbytek knihovny jsou i tyto metody perfektně otypované.
+V~minulé kapitole jsem se zmínil o problémech s~otypováním API endpointů. tRPC (Typescript Remote Procedure Call) tento problém řeší tím, že vytváří dynamické typy pro jednotlivé endpointy, podle toho, jak si je sami nadefinujem. Ty se potom dají volat pomocí funkcí bez přímého použití \texttt{fetche} nebo třeba \texttt{axiosu} (tyto funkce ve skutečnosti \uv{fetch} requesty vykonávají ale programátor se o ně nemusí starat přímo), tyto funkce jsou dokonale otypované a v~kódu tím pádem fungují jako jakákoliv jiná funkce vytvořená programátorem. Další výhodou je také to, že jednotlivé \uv{procedury}, což je vlastně API endpoint, mají k~dispozici metody pro kontrolu vstupu nebo třeba middleware, který například může zjišťovat stav přihlášení uživatele. Jako zbytek knihovny jsou i tyto metody perfektně otypované.
 
 V~Effiu tRPC využívám hlavně jako možnost komunikace klienta s~databází. Proces spočívá v~tom, že tRPC v~build time vytvoří API endpointy, které poté klient přes zmíněné funkce volá. V~těchto endpointech se většinou nachází operace s~databází - ty na klientu provádět nemohu. Výhodou je, že tyto funkce mohu využívat i na serveru s~trochu odlišnou implementací.
 
@@ -612,7 +612,7 @@ getTestById: procedure.input(z.object({
 	return test
 }),
 \end{lstlisting}
-\begin{lstlisting}[style=ES6, caption=Volání funkce pomocí tRPC klienta s metodou getTestById, label=trpc_code_use]
+\begin{lstlisting}[style=ES6, caption=Volání funkce pomocí tRPC klienta s~metodou getTestById, label=trpc_code_use]
 	const imageUrlToDeleteTest = await trpc($page).getTestById.query({
 		id: props.data.id,
 	})
@@ -691,7 +691,7 @@ Důležitým záměrem projektu Effio bylo vytvořit na pohled přívětivou apl
 \end{figure}
 
 \section{Responzivita}
-Celá aplikace je uzpůsobená jak pro počítače, tak pro mobilní zařízení. Zajištění responzivity není vůbec lehká práce, ale mně pomohl Tailwind. V~něm se CSS media query dělají snadněji společně s moderními CSS kontejnery, které umožňují responzivní breakpointy odvozovat nejen od velikosti stránky, ale také od rozměrů rodičovských elementů.
+Celá aplikace je uzpůsobená jak pro počítače, tak pro mobilní zařízení. Zajištění responzivity není vůbec lehká práce, ale mně pomohl Tailwind. V~něm se CSS media query dělají snadněji společně s~moderními CSS kontejnery, které umožňují responzivní breakpointy odvozovat nejen od velikosti stránky, ale také od rozměrů rodičovských elementů.
 
 Problematika však nespočívá pouze v~zobrazení prvků, ale také v~jejich funkcionalitě, která musí fungovat s~myší i s~dotekem. Příkladem tohoto problému je jeden z~typů otázek, a to \uv{Connect}, kde se musí jednotlivé spoje přesouvat jak pohybem myši, tak při dotykovém vstupu.
 
@@ -718,12 +718,12 @@ Problematika však nespočívá pouze v~zobrazení prvků, ale také v~jejich fu
 S~ohledem na uživatele, kteří preferují tmavý režim, jsem se také rozhodl vytvořit tmavý režim. Ten je možné vidět na obrázku \ref{fig:test-creator2}. Oba tyto režimy vyžadovaly vlastní paletu barev a byly mnohokrát přepracovány, aby jednotlivé barvy co nejlépe ladily k~sobě.
 
 \subsection{Dostupnost}
-Stránky jsem se také snažil tvořit s ohledem na lidi využívající \uv{Tab} k~navigaci stejně jako pro lidi s~omezeními, aktuálně ale podpora pro čtečky není kompletní a je ještě spoustu prostoru pro zlepšení.
+Stránky jsem se také snažil tvořit s~ohledem na lidi využívající \uv{Tab} k~navigaci stejně jako pro lidi s~omezeními, aktuálně ale podpora pro čtečky není kompletní a je ještě spoustu prostoru pro zlepšení.
 
 \clearpage
 \section{Využité frontendové technologie}
 \subsection{Svelte}
-Svelte je open-source JavaScriptový framework vyvíjený týmem Riche Harrise od roku 2016. Jeho hlavní výhodou je rychlost a intuitivnost, protože jazyk, který používá, se snaží vypadat jako JavaScript, zatímco rozšiřuje jeho možnosti. Tím se odlišuje od jiných frameworků, jako jsou React, Angular, Solid nebo Qwik. Kód se zapisuje do souborů s příponou .svelte, které jsou následně kompilovány do vysoce efektivního JavaScriptu. Díky tomu Svelte získává stále rostoucí popularitu mezi webovými vývojáři. 
+Svelte je open-source JavaScriptový framework vyvíjený týmem Riche Harrise od roku 2016. Jeho hlavní výhodou je rychlost a intuitivnost, protože jazyk, který používá, se snaží vypadat jako JavaScript, zatímco rozšiřuje jeho možnosti. Tím se odlišuje od jiných frameworků, jako jsou React, Angular, Solid nebo Qwik. Kód se zapisuje do souborů s~příponou .svelte, které jsou následně kompilovány do vysoce efektivního JavaScriptu. Díky tomu Svelte získává stále rostoucí popularitu mezi webovými vývojáři. 
 
 Kód v~Svelte se skládá ze tří hlavních částí.
 
@@ -765,7 +765,7 @@ Kód v~Svelte se skládá ze tří hlavních částí.
 			background-color: var(--dark-light_grey);
 		}
 	</style>\end{lstlisting}
-	\item Obsahová část. Vše, co se nenachází v~jednom z~těchto tagů, představuje HTML reprezentaci dané stránky. Nejedná se však o čisté HTML, nýbrž obohacenou verzi. Podobně jako v~jiných frameworcích je možné přidávat \uv{event listenery} k~jednotlivým elementům, podmínkově je zobrazovat, pracovat s asynchronním kódem nebo dokonce \uv{svazovat} element nebo hodnotu elementu s~proměnnou ve skriptové části.
+	\item Obsahová část. Vše, co se nenachází v~jednom z~těchto tagů, představuje HTML reprezentaci dané stránky. Nejedná se však o čisté HTML, nýbrž obohacenou verzi. Podobně jako v~jiných frameworcích je možné přidávat \uv{event listenery} k~jednotlivým elementům, podmínkově je zobrazovat, pracovat s~asynchronním kódem nebo dokonce \uv{svazovat} element nebo hodnotu elementu s~proměnnou ve skriptové části.
 	
 	\begin{lstlisting}[style=ES6, caption=Ukázka Svelte kódu, label=svelte-sample]
 	{#await data}
@@ -980,7 +980,7 @@ Pro administrátory aplikace je dostupná také stránka se správou testů a u�
 	
 Cílem projektu bylo vytvořit webovou aplikaci pro vytváření a vyplňování testů. Aplikace je postavená na frameworku SvelteKit, psaný v~jazyce TypeScript. Přihlašování stojí na knihovně Auth.js, PostgreSQL databáze je hostovaná službou Supabase, jako ORM je použita Prisma. Frontend řeší framework Svelte s~CSS utility knihovnou Tailwind, pro validaci využívá Zod.
 
-Základem aplikace je generátor testů, které registrovaný uživatel vytváří z předpřipravených typů otázek. Nepřihlášený uživatel může testy pouze vyplňovat, přihlásit se uživatel může pomocí Google nebo GitHub účtu. Uživatelé se mohou sdružovat do skupin, mohou využívat chat, sdílet testy společně s výsledky a grafy, apod. Možnosti využití aplikace sahají od nenáročného občasného návštěvníka, který si chce zkusit nějaký kvíz, až po implementaci v~rámci třídy, kde učitel zadá kvíz, který následně žáci musejí vyplnit.
+Základem aplikace je generátor testů, které registrovaný uživatel vytváří z předpřipravených typů otázek. Nepřihlášený uživatel může testy pouze vyplňovat, přihlásit se uživatel může pomocí Google nebo GitHub účtu. Uživatelé se mohou sdružovat do skupin, mohou využívat chat, sdílet testy společně s~výsledky a grafy, apod. Možnosti využití aplikace sahají od nenáročného občasného návštěvníka, který si chce zkusit nějaký kvíz, až po implementaci v~rámci třídy, kde učitel zadá kvíz, který následně žáci musejí vyplnit.
 
 Využité technologie činí aplikaci lehce škálovatelnou a velice výkonnou. Díky zvoleným technologiím si dovoluji aplikaci prohlásit za produkčně způsobilou, jednotlivé služby lze snadno škálovat, implementace je z~velké části stabilní. Responzivní design zajišťuje možnost použití aplikace na různých zařízeních.
 
